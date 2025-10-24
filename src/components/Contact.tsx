@@ -107,12 +107,12 @@ export default function Contact() {
                   <div>
                     <h4 className="font-bold text-white mb-1">LinkedIn</h4>
                     <a
-                      href="https://www.linkedin.com/in/ramu-battu"
+                      href="https://www.linkedin.com/in/ramu-battu-01a9a336a/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-blue-400 hover:underline"
                     >
-                      linkedin.com/in/ramu-battu
+                      linkedin.com/in/ramu-battu-01a9a336a
                     </a>
                   </div>
                 </div>

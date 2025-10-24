@@ -70,7 +70,7 @@ export default function Hero() {
 
             <div className="flex gap-4 pt-4">
               <a
-                href="https://www.linkedin.com/in/ramu-battu"
+                href="https://www.linkedin.com/in/ramu-battu-01a9a336a/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group p-4 bg-white/10 hover:bg-blue-600 rounded-xl backdrop-blur-sm transition-all transform hover:scale-110 border border-white/20 hover:border-blue-500"
