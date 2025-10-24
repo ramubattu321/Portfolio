@@ -9,8 +9,8 @@ export default function Certifications() {
       url: 'https://www.coursera.org/account/accomplishments/professional-cert/E2XU0VP50XXP?utm_source=mobile&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button'
     },
     {
-      title: 'Microsoft Power BI Data Analyst',
-      issuer: 'Microsoft',
+      title: 'Microsoft Office Specialist: Power BI Certification',
+      issuer: 'Simplilearn',
       color: 'from-green-500 to-green-600',
       url: 'eyJjb3Vyc2VfaWQiOiIzMzI0IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODc0MjQyNF84OTc4NjI0MTc1NDQyODk1ODc0NC5wbmciLCJ1c2VybmFtZSI6IlJBTVUgQkFUVFUifQ'
     },
