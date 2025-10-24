@@ -1,4 +1,4 @@
-import { ArrowRight, Linkedin, Mail, Sparkles, TrendingUp, Database } from 'lucide-react';
+import { ArrowRight, Linkedin, Mail, Sparkles, TrendingUp, Database, Github } from 'lucide-react';
 
 export default function Hero() {
   const scrollToSection = (id: string) => {
@@ -76,6 +76,14 @@ export default function Hero() {
                 className="group p-4 bg-white/10 hover:bg-blue-600 rounded-xl backdrop-blur-sm transition-all transform hover:scale-110 border border-white/20 hover:border-blue-500"
               >
                 <Linkedin size={24} className="group-hover:scale-110 transition-transform" />
+              </a>
+              <a
+                href="https://github.com/ramubattu321"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group p-4 bg-white/10 hover:bg-blue-600 rounded-xl backdrop-blur-sm transition-all transform hover:scale-110 border border-white/20 hover:border-blue-500"
+              >
+                <Github size={24} className="group-hover:scale-110 transition-transform" />
               </a>
               <a
                 href="mailto:ramuusa61@gmail.com"

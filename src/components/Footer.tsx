@@ -28,7 +28,7 @@ export default function Footer() {
                 <Mail size={20} />
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/ramubattu321"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-slate-800 hover:bg-blue-600 flex items-center justify-center transition-colors"
