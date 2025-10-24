@@ -25,18 +25,6 @@ export default function Certifications() {
       issuer: 'Coursera',
       date: '2023',
       color: 'from-purple-500 to-purple-600'
-    },
-    {
-      title: 'Machine Learning Specialization',
-      issuer: 'Stanford Online',
-      date: '2024',
-      color: 'from-red-500 to-red-600'
-    },
-    {
-      title: 'Statistics and Probability',
-      issuer: 'Khan Academy',
-      date: '2022',
-      color: 'from-orange-500 to-orange-600'
     }
   ];
 
