@@ -112,13 +112,6 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 via-transparent to-cyan-500/20 pointer-events-none"></div>
                 <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent animate-shimmer pointer-events-none"></div>
               </div>
-
-              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 px-7 py-3.5 bg-gradient-to-r from-white to-slate-50 rounded-full shadow-2xl border-2 border-blue-100 group-hover:scale-105 transition-transform duration-300">
-                <p className="text-slate-800 font-bold text-sm flex items-center gap-2">
-                  <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                  Available for Projects
-                </p>
-              </div>
             </div>
           </div>
         </div>
