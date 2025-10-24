@@ -21,8 +21,8 @@ export default function Certifications() {
       color: 'from-yellow-500 to-yellow-600'
     },
     {
-      title: 'Advanced SQL for Data Analysis',
-      issuer: 'Coursera',
+      title: 'SQL Fundamental of Data base',
+      issuer: 'Simplilearn',
       date: '2023',
       color: 'from-purple-500 to-purple-600'
     }
