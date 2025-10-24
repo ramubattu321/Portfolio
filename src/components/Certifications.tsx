@@ -15,6 +15,12 @@ export default function Certifications() {
       url: 'eyJjb3Vyc2VfaWQiOiIzMzI0IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODc0MjQyNF84OTc4NjI0MTc1NDQyODk1ODc0NC5wbmciLCJ1c2VybmFtZSI6IlJBTVUgQkFUVFUifQ'
     },
     {
+      title: 'Microsoft Office Specialist: Excel Certification',
+      issuer: 'Simplilearn',
+      color: 'from-emerald-500 to-emerald-600',
+      url: 'https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIxNzc3IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODYwNjkwNl84OTc4NjI0MTc1MjIwMDA3MDczMi5wbmciLCJ1c2VybmFtZSI6IlJBTVUgQkFUVFUifQ&utm_source=shared-certificate&utm_medium=app_lms&utm_campaign=shared-certificate-promotion&referrer=https%3A%2F%2Fcertificates.simplicdn.net%2Fshare%2F8606906_89786241752200070732.png&_branch_match_id=1423135744260828079&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL87MLcjJ1EssKNDLyczL1i9yL%2FLNi%2FKwCAlNsq8rSk1LLSrKzEuPTyrKLy9OLbL1AapJTfHMAwCAradFPwAAAA%3D%3D'
+    },
+    {
       title: 'Python for Data Analysis',
       issuer: 'IBM',
       color: 'from-yellow-500 to-yellow-600',
@@ -23,7 +29,7 @@ export default function Certifications() {
     {
       title: 'SQL Fundamental of Data base',
       issuer: 'Simplilearn',
-      color: 'from-purple-500 to-purple-600',
+      color: 'from-orange-500 to-orange-600',
       url: 'eyJjb3Vyc2VfaWQiOiIxNzIyIiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODc3ODg0NF84OTc4NjI0MTc1NTA5MTQzMTgwOC5wbmciLCJ1c2VybmFtZSI6IlJBTVUgQkFUVFUifQ'
     }
   ];
