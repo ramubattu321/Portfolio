@@ -5,25 +5,21 @@ export default function Certifications() {
     {
       title: 'Google Data Analytics Professional Certificate',
       issuer: 'Google',
-      date: '2024',
       color: 'from-blue-500 to-blue-600'
     },
     {
       title: 'Microsoft Power BI Data Analyst',
       issuer: 'Microsoft',
-      date: '2023',
       color: 'from-green-500 to-green-600'
     },
     {
       title: 'Python for Data Science',
       issuer: 'IBM',
-      date: '2023',
       color: 'from-yellow-500 to-yellow-600'
     },
     {
       title: 'SQL Fundamental of Data base',
       issuer: 'Simplilearn',
-      date: '2023',
       color: 'from-purple-500 to-purple-600'
     }
   ];
@@ -59,9 +55,8 @@ export default function Certifications() {
               </div>
 
               <div className="p-6">
-                <div className="flex items-start justify-between mb-3">
+                <div className="flex items-start mb-3">
                   <CheckCircle2 className="text-green-400 flex-shrink-0 mt-1" size={24} />
-                  <span className="text-xs text-slate-400 font-semibold">{cert.date}</span>
                 </div>
 
                 <h3 className="font-bold text-white text-lg mb-2 leading-tight group-hover:text-blue-300 transition-colors">
