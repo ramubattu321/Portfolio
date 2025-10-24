@@ -55,24 +55,24 @@ export default function Certifications() {
           {certifications.map((cert, index) => (
             <div
               key={index}
-              className="group bg-slate-800/60 border-2 border-slate-700/50 rounded-2xl p-8 hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 hover:-translate-y-3 backdrop-blur-md"
+              className="group bg-slate-800/60 border-2 border-slate-700/50 rounded-2xl p-6 sm:p-8 hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 hover:-translate-y-3 backdrop-blur-md"
             >
-              <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${cert.color} flex items-center justify-center mb-6 text-4xl shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
+              <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-xl sm:rounded-2xl bg-gradient-to-br ${cert.color} flex items-center justify-center mb-5 sm:mb-6 text-3xl sm:text-4xl shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
                 {cert.icon}
               </div>
 
-              <div className="mb-6">
-                <h3 className="font-bold text-white text-xl mb-3 group-hover:text-blue-300 transition-colors leading-snug">
+              <div className="mb-5 sm:mb-6">
+                <h3 className="font-bold text-white text-lg sm:text-xl mb-2 sm:mb-3 group-hover:text-blue-300 transition-colors leading-snug">
                   {cert.title}
                 </h3>
-                <p className="text-slate-300 text-base flex items-center gap-2 font-medium">
-                  <Award size={18} className="text-blue-400" />
+                <p className="text-slate-300 text-sm sm:text-base flex items-center gap-2 font-medium">
+                  <Award size={16} className="text-blue-400 sm:w-[18px] sm:h-[18px]" />
                   {cert.issuer}
                 </p>
               </div>
 
-              <div className="pt-5 border-t-2 border-slate-700/50">
-                <button className="text-blue-400 text-sm font-semibold flex items-center gap-2 hover:gap-3 hover:text-blue-300 transition-all hover:scale-105">
+              <div className="pt-4 sm:pt-5 border-t-2 border-slate-700/50">
+                <button className="text-blue-400 text-sm font-semibold flex items-center justify-center sm:justify-start w-full sm:w-auto gap-2 hover:gap-3 hover:text-blue-300 transition-all hover:scale-105 py-2 sm:py-0">
                   View Certificate <ExternalLink size={16} />
                 </button>
               </div>
@@ -80,10 +80,10 @@ export default function Certifications() {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-4 px-8 py-5 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-2xl border-2 border-blue-400/40 backdrop-blur-md shadow-xl hover:scale-105 transition-transform duration-300">
-            <Award className="text-blue-400" size={28} />
-            <p className="text-slate-200 font-semibold text-lg">
+        <div className="mt-12 sm:mt-16 text-center px-4">
+          <div className="inline-flex flex-col sm:flex-row items-center gap-3 sm:gap-4 px-6 sm:px-8 py-4 sm:py-5 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-2xl border-2 border-blue-400/40 backdrop-blur-md shadow-xl hover:scale-105 transition-transform duration-300">
+            <Award className="text-blue-400" size={24} />
+            <p className="text-slate-200 font-semibold text-base sm:text-lg text-center">
               Committed to continuous learning and professional development
             </p>
           </div>

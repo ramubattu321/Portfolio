@@ -71,46 +71,47 @@ export default function Portfolio() {
               key={index}
               className="group bg-slate-800/60 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 hover:-translate-y-3 border-2 border-slate-700/50 hover:border-blue-400 backdrop-blur-md"
             >
-              <div className={`relative h-56 bg-gradient-to-br ${project.color} flex items-center justify-center text-white overflow-hidden`}>
+              <div className={`relative h-48 sm:h-56 bg-gradient-to-br ${project.color} flex items-center justify-center text-white overflow-hidden`}>
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
                 <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjEiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-30"></div>
 
-                <div className="relative z-10 flex flex-col items-center justify-center gap-4 transform group-hover:scale-110 transition-all duration-300">
-                  <div className="w-24 h-24 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center shadow-2xl border-2 border-white/30 group-hover:rotate-6 transition-transform duration-300">
-                    <ProjectIcon size={48} className="drop-shadow-2xl" />
+                <div className="relative z-10 flex flex-col items-center justify-center gap-2 sm:gap-4 transform group-hover:scale-110 transition-all duration-300">
+                  <div className="w-16 h-16 sm:w-24 sm:h-24 bg-white/20 backdrop-blur-md rounded-xl sm:rounded-2xl flex items-center justify-center shadow-2xl border-2 border-white/30 group-hover:rotate-6 transition-transform duration-300">
+                    <ProjectIcon size={40} className="sm:hidden drop-shadow-2xl" />
+                    <ProjectIcon size={48} className="hidden sm:block drop-shadow-2xl" />
                   </div>
-                  <div className="text-xl font-bold text-center px-4 drop-shadow-lg">
+                  <div className="text-base sm:text-xl font-bold text-center px-3 sm:px-4 drop-shadow-lg">
                     {project.title}
                   </div>
                 </div>
 
-                <div className="absolute top-5 right-5 px-4 py-2 bg-white/30 backdrop-blur-md rounded-xl text-sm font-bold shadow-lg border border-white/40">
+                <div className="absolute top-3 right-3 sm:top-5 sm:right-5 px-3 py-1.5 sm:px-4 sm:py-2 bg-white/30 backdrop-blur-md rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold shadow-lg border border-white/40">
                   Project {index + 1}
                 </div>
               </div>
 
-              <div className="p-7">
-                <p className="text-slate-300 mb-5 text-sm leading-relaxed">
+              <div className="p-5 sm:p-7">
+                <p className="text-slate-300 mb-4 sm:mb-5 text-sm leading-relaxed">
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-5">
+                <div className="flex flex-wrap gap-2 mb-4 sm:mb-5">
                   {project.tags.map((tag, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1.5 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-blue-300 rounded-lg text-xs font-semibold border border-blue-400/40 hover:from-blue-500/30 hover:to-cyan-500/30 hover:scale-105 transition-all duration-200 cursor-default shadow-md"
+                      className="px-2.5 py-1 sm:px-3 sm:py-1.5 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-blue-300 rounded-lg text-xs font-semibold border border-blue-400/40 hover:from-blue-500/30 hover:to-cyan-500/30 hover:scale-105 transition-all duration-200 cursor-default shadow-md"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex gap-3 pt-5 border-t-2 border-slate-700/50">
-                  <button className="flex items-center gap-2 text-blue-400 hover:text-blue-300 font-semibold text-sm transition-all hover:gap-3 hover:scale-105">
+                <div className="flex flex-col sm:flex-row gap-3 pt-4 sm:pt-5 border-t-2 border-slate-700/50">
+                  <button className="flex items-center justify-center sm:justify-start gap-2 text-blue-400 hover:text-blue-300 font-semibold text-sm transition-all hover:gap-3 hover:scale-105 py-2 sm:py-0">
                     <ExternalLink size={16} />
                     View Project
                   </button>
-                  <button className="flex items-center gap-2 text-slate-400 hover:text-slate-300 font-semibold text-sm transition-all hover:gap-3 hover:scale-105">
+                  <button className="flex items-center justify-center sm:justify-start gap-2 text-slate-400 hover:text-slate-300 font-semibold text-sm transition-all hover:gap-3 hover:scale-105 py-2 sm:py-0">
                     <Github size={16} />
                     GitHub
                   </button>
