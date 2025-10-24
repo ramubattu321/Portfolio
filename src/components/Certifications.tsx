@@ -13,7 +13,7 @@ export default function Certifications() {
       color: 'from-green-500 to-green-600'
     },
     {
-      title: 'Python for Data Science',
+      title: 'Python for Data Analysis',
       issuer: 'IBM',
       color: 'from-yellow-500 to-yellow-600'
     },
