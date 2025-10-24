@@ -5,22 +5,26 @@ export default function Certifications() {
     {
       title: 'Google Data Analytics Professional Certificate',
       issuer: 'Google',
-      color: 'from-blue-500 to-blue-600'
+      color: 'from-blue-500 to-blue-600',
+      url: 'https://www.coursera.org/account/accomplishments/professional-cert/E2XU0VP50XXP?utm_source=mobile&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button'
     },
     {
       title: 'Microsoft Power BI Data Analyst',
       issuer: 'Microsoft',
-      color: 'from-green-500 to-green-600'
+      color: 'from-green-500 to-green-600',
+      url: 'eyJjb3Vyc2VfaWQiOiIzMzI0IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODc0MjQyNF84OTc4NjI0MTc1NDQyODk1ODc0NC5wbmciLCJ1c2VybmFtZSI6IlJBTVUgQkFUVFUifQ'
     },
     {
       title: 'Python for Data Analysis',
       issuer: 'IBM',
-      color: 'from-yellow-500 to-yellow-600'
+      color: 'from-yellow-500 to-yellow-600',
+      url: 'https://courses.cognitiveclass.ai/certificates/d855787e10ef45aeb281146fee7a48b4'
     },
     {
       title: 'SQL Fundamental of Data base',
       issuer: 'Simplilearn',
-      color: 'from-purple-500 to-purple-600'
+      color: 'from-purple-500 to-purple-600',
+      url: 'eyJjb3Vyc2VfaWQiOiIxNzIyIiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODc3ODg0NF84OTc4NjI0MTc1NTA5MTQzMTgwOC5wbmciLCJ1c2VybmFtZSI6IlJBTVUgQkFUVFUifQ'
     }
   ];
 
@@ -66,10 +70,15 @@ export default function Certifications() {
                   {cert.issuer}
                 </p>
 
-                <button className="w-full px-4 py-2.5 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white rounded-xl text-sm font-semibold flex items-center justify-center gap-2 transition-all shadow-lg shadow-blue-500/30">
+                <a
+                  href={cert.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full px-4 py-2.5 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white rounded-xl text-sm font-semibold flex items-center justify-center gap-2 transition-all shadow-lg shadow-blue-500/30"
+                >
                   View Certificate
                   <ExternalLink size={16} />
-                </button>
+                </a>
               </div>
             </div>
           ))}
