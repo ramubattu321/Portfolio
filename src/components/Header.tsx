@@ -22,26 +22,32 @@ export default function Header() {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      isScrolled ? 'bg-white/90 backdrop-blur-xl shadow-lg' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-5">
           <div className="flex items-center">
-            <h1 className={`text-2xl font-bold transition-colors ${
-              isScrolled ? 'text-slate-800' : 'text-white'
+            <h1 className={`text-2xl font-bold transition-all duration-300 ${
+              isScrolled
+                ? 'text-slate-800'
+                : 'text-white drop-shadow-lg'
             }`}>
-              Ramu Battu
+              <span className={isScrolled ? '' : 'bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent'}>
+                Ramu Battu
+              </span>
             </h1>
           </div>
 
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-1">
             {['home', 'about', 'skills', 'certifications', 'portfolio', 'contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
-                className={`capitalize font-medium transition-colors hover:text-blue-600 ${
-                  isScrolled ? 'text-slate-700' : 'text-white'
+                className={`capitalize font-medium px-4 py-2 rounded-lg transition-all duration-300 ${
+                  isScrolled
+                    ? 'text-slate-700 hover:text-blue-600 hover:bg-blue-50'
+                    : 'text-white hover:bg-white/10'
                 }`}
               >
                 {item}
@@ -50,7 +56,11 @@ export default function Header() {
           </nav>
 
           <button
-            className={`md:hidden ${isScrolled ? 'text-slate-800' : 'text-white'}`}
+            className={`md:hidden p-2 rounded-lg transition-all duration-300 ${
+              isScrolled
+                ? 'text-slate-800 hover:bg-slate-100'
+                : 'text-white hover:bg-white/10'
+            }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -59,13 +69,13 @@ export default function Header() {
       </div>
 
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-t">
-          <nav className="flex flex-col space-y-4 px-4 py-6">
+        <div className="md:hidden bg-white/95 backdrop-blur-xl border-t shadow-lg">
+          <nav className="flex flex-col space-y-1 px-4 py-4">
             {['home', 'about', 'skills', 'certifications', 'portfolio', 'contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
-                className="capitalize text-left font-medium text-slate-700 hover:text-blue-600"
+                className="capitalize text-left font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 px-4 py-3 rounded-lg transition-all"
               >
                 {item}
               </button>
