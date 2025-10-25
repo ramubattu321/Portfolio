@@ -11,7 +11,7 @@ export default function Skills() {
   const softSkills = [
     { icon: LineChart, name: 'Data Storytelling', color: 'from-blue-500 to-blue-600' },
     { icon: Lightbulb, name: 'Problem Solving', color: 'from-green-500 to-green-600' },
-    { icon: Target, name: 'Strategic Decision Support', color: 'from-purple-500 to-purple-600' },
+    { icon: Target, name: 'Strategic Decision Support', color: 'from-cyan-500 to-cyan-600' },
     { icon: Users, name: 'Collaboration', color: 'from-orange-500 to-orange-600' },
     { icon: Database, name: 'Attention to Detail', color: 'from-red-500 to-red-600' },
     { icon: Code, name: 'Project Management', color: 'from-teal-500 to-teal-600' }

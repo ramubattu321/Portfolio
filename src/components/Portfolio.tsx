@@ -20,7 +20,7 @@ export default function Portfolio() {
       title: 'HR Analytics Dashboard',
       description: 'Interactive Power BI dashboard visualizing key HR metrics including employee turnover, satisfaction scores, and recruitment analytics.',
       tags: ['Power BI', 'HR Analytics', 'Visualization'],
-      color: 'from-purple-500 to-purple-600',
+      color: 'from-cyan-500 to-cyan-600',
       url: 'https://github.com/ramubattu321/HR-Analytics-Dash-Board--Power-BI'
     },
     {
