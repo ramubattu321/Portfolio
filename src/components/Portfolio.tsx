@@ -7,7 +7,7 @@ export default function Portfolio() {
       description: 'Comprehensive sales dashboard for retail analytics, providing insights into sales trends, customer behavior, and product performance.',
       tags: ['Power BI', 'Sales Analytics', 'Dashboard'],
       color: 'from-blue-500 to-blue-600',
-      url: 'https://github.com/ramubattu321/Vrinda-store-project'
+      url: 'https://drive.google.com/file/d/1Sd-n5kLMrMTwMTGVIzSMYlH9xKKQ7cst/view'
     },
     {
       title: 'Hotel Booking Analysis',
