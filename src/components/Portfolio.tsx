@@ -56,7 +56,7 @@ export default function Portfolio() {
           <div className="inline-block px-5 py-2.5 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-blue-300 rounded-full text-sm font-semibold mb-4 border border-blue-400/40 backdrop-blur-md shadow-lg">
             My Work
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">Portfolio & Projects</h2>
+          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">Projects</h2>
           <div className="w-24 h-1.5 bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400 mx-auto rounded-full shadow-lg shadow-blue-500/50 mb-6"></div>
           <p className="text-slate-300 text-lg max-w-3xl mx-auto leading-relaxed">
             A showcase of data analytics projects demonstrating expertise in business intelligence, statistical analysis, and data visualization
