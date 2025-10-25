@@ -40,7 +40,32 @@ export default function Header() {
           </div>
 
           <nav className="hidden md:flex space-x-1">
-            {['home', 'about', 'skills', 'certifications', 'portfolio', 'contact'].map((item) => (
+            {['home', 'about'].map((item) => (
+              <button
+                key={item}
+                onClick={() => scrollToSection(item)}
+                className={`capitalize font-medium px-4 py-2 rounded-lg transition-all duration-300 ${
+                  isScrolled
+                    ? 'text-slate-700 hover:text-blue-600 hover:bg-blue-50'
+                    : 'text-white hover:bg-white/10'
+                }`}
+              >
+                {item}
+              </button>
+            ))}
+            <a
+              href="https://drive.google.com/file/d/1x4rCxMOjIbD297caGNF-_WM0cqFyFKpn/view"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`capitalize font-medium px-4 py-2 rounded-lg transition-all duration-300 ${
+                isScrolled
+                  ? 'text-slate-700 hover:text-blue-600 hover:bg-blue-50'
+                  : 'text-white hover:bg-white/10'
+              }`}
+            >
+              Resume
+            </a>
+            {['skills', 'certifications', 'portfolio', 'contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
@@ -71,7 +96,24 @@ export default function Header() {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur-xl border-t shadow-lg">
           <nav className="flex flex-col space-y-1 px-4 py-4">
-            {['home', 'about', 'skills', 'certifications', 'portfolio', 'contact'].map((item) => (
+            {['home', 'about'].map((item) => (
+              <button
+                key={item}
+                onClick={() => scrollToSection(item)}
+                className="capitalize text-left font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 px-4 py-3 rounded-lg transition-all"
+              >
+                {item}
+              </button>
+            ))}
+            <a
+              href="https://drive.google.com/file/d/1x4rCxMOjIbD297caGNF-_WM0cqFyFKpn/view"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="capitalize text-left font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 px-4 py-3 rounded-lg transition-all"
+            >
+              Resume
+            </a>
+            {['skills', 'certifications', 'portfolio', 'contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
