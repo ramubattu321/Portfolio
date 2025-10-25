@@ -3,18 +3,18 @@ import { ExternalLink, Github } from 'lucide-react';
 export default function Portfolio() {
   const projects = [
     {
-      title: 'Vrinda Store Project',
-      description: 'Comprehensive sales dashboard for retail analytics, providing insights into sales trends, customer behavior, and product performance.',
-      tags: ['Power BI', 'Sales Analytics', 'Dashboard'],
-      color: 'from-blue-500 to-blue-600',
-      url: 'https://drive.google.com/file/d/1Sd-n5kLMrMTwMTGVIzSMYlH9xKKQ7cst/view'
-    },
-    {
       title: 'Hotel Booking Analysis',
       description: 'Analyzed booking trends and agency performance using Pandas, delivering actionable insights for revenue optimization.',
       tags: ['Python', 'Pandas', 'Data Analysis'],
       color: 'from-green-500 to-green-600',
       url: 'https://github.com/ramubattu321/Hotel-Bookings/blob/main/pandas-intro.ipynb'
+    },
+    {
+      title: 'Vrinda Store Project',
+      description: 'Comprehensive sales dashboard for retail analytics, providing insights into sales trends, customer behavior, and product performance.',
+      tags: ['Power BI', 'Sales Analytics', 'Dashboard'],
+      color: 'from-blue-500 to-blue-600',
+      url: 'https://drive.google.com/file/d/1Sd-n5kLMrMTwMTGVIzSMYlH9xKKQ7cst/view'
     },
     {
       title: 'HR Analytics Dashboard',
