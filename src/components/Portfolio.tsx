@@ -6,37 +6,43 @@ export default function Portfolio() {
       title: 'Vrinda Store Project',
       description: 'Comprehensive sales dashboard for retail analytics, providing insights into sales trends, customer behavior, and product performance.',
       tags: ['Power BI', 'Sales Analytics', 'Dashboard'],
-      color: 'from-blue-500 to-blue-600'
+      color: 'from-blue-500 to-blue-600',
+      url: 'https://github.com/ramubattu321/Vrinda-store-project'
     },
     {
       title: 'Hotel Booking Analysis',
       description: 'Analyzed booking trends and agency performance using Pandas, delivering actionable insights for revenue optimization.',
       tags: ['Python', 'Pandas', 'Data Analysis'],
-      color: 'from-green-500 to-green-600'
+      color: 'from-green-500 to-green-600',
+      url: 'https://github.com/ramubattu321/Hotel-Bookings/blob/main/pandas-intro.ipynb'
     },
     {
       title: 'HR Analytics Dashboard',
       description: 'Interactive Power BI dashboard visualizing key HR metrics including employee turnover, satisfaction scores, and recruitment analytics.',
       tags: ['Power BI', 'HR Analytics', 'Visualization'],
-      color: 'from-purple-500 to-purple-600'
+      color: 'from-purple-500 to-purple-600',
+      url: 'https://github.com/ramubattu321/HR-Analytics-Dash-Board--Power-BI'
     },
     {
       title: '48-Hour Hackathon Sales Dashboard',
       description: 'Rapid development of a comprehensive sales dashboard under tight deadline, showcasing agile analytics capabilities.',
       tags: ['Power BI', 'Rapid Development', 'Sales'],
-      color: 'from-orange-500 to-orange-600'
+      color: 'from-orange-500 to-orange-600',
+      url: 'https://github.com/ramubattu321/IEEE-Hackathon-2023'
     },
     {
       title: 'A/B Test Project',
       description: 'Experimental design and statistical analysis for conversion optimization, including hypothesis testing and performance metrics.',
       tags: ['Python', 'Statistics', 'A/B Testing'],
-      color: 'from-red-500 to-red-600'
+      color: 'from-red-500 to-red-600',
+      url: 'https://github.com/ramubattu321/AB-Test-Case-Study'
     },
     {
       title: 'Manufacturing Process Analysis',
       description: 'Applied cluster sampling methodology to study operational efficiency and product quality in manufacturing processes.',
       tags: ['Statistical Analysis', 'Quality Control', 'Python'],
-      color: 'from-teal-500 to-teal-600'
+      color: 'from-teal-500 to-teal-600',
+      url: 'https://github.com/ramubattu321/Analysis-for-1000-Manufacturing-Process-Data/blob/main/test.ipynb'
     }
   ];
 
@@ -95,14 +101,15 @@ export default function Portfolio() {
                 </div>
 
                 <div className="flex gap-3 pt-5 border-t-2 border-slate-700/50">
-                  <button className="flex items-center gap-2 text-blue-400 hover:text-blue-300 font-semibold text-sm transition-all hover:gap-3 hover:scale-105">
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-blue-400 hover:text-blue-300 font-semibold text-sm transition-all hover:gap-3 hover:scale-105"
+                  >
                     <ExternalLink size={16} />
                     View Project
-                  </button>
-                  <button className="flex items-center gap-2 text-slate-400 hover:text-slate-300 font-semibold text-sm transition-all hover:gap-3 hover:scale-105">
-                    <Github size={16} />
-                    GitHub
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
