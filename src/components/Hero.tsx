@@ -1,4 +1,4 @@
-import { ArrowRight, Linkedin, Mail, Sparkles, TrendingUp, Database, Github } from 'lucide-react';
+import { ArrowRight, Linkedin, Mail, Sparkles, TrendingUp, Database, Github, FileSpreadsheet } from 'lucide-react';
 
 export default function Hero() {
   const scrollToSection = (id: string) => {
@@ -45,6 +45,10 @@ export default function Hero() {
               <div className="flex items-center gap-2 px-5 py-2.5 bg-white/10 rounded-xl backdrop-blur-md border border-white/20 shadow-lg hover:shadow-blue-500/30 hover:scale-105 transition-all duration-300">
                 <Database size={20} className="text-blue-400" />
                 <span className="text-sm font-medium text-slate-200">SQL & Python</span>
+              </div>
+              <div className="flex items-center gap-2 px-5 py-2.5 bg-white/10 rounded-xl backdrop-blur-md border border-white/20 shadow-lg hover:shadow-emerald-500/30 hover:scale-105 transition-all duration-300">
+                <FileSpreadsheet size={20} className="text-emerald-400" />
+                <span className="text-sm font-medium text-slate-200">Excel</span>
               </div>
             </div>
 
