@@ -58,7 +58,7 @@ export default function Hero() {
                 onClick={() => scrollToSection('portfolio')}
                 className="group flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white rounded-xl font-semibold transition-all transform hover:scale-105 shadow-xl shadow-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/70"
               >
-                View Portfolio
+                View Projects
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </button>
               <button
