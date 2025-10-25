@@ -50,7 +50,7 @@ export default function Header() {
                     : 'text-white hover:bg-white/10'
                 }`}
               >
-                {item}
+                {item === 'portfolio' ? 'projects' : item}
               </button>
             ))}
           </nav>
@@ -77,7 +77,7 @@ export default function Header() {
                 onClick={() => scrollToSection(item)}
                 className="capitalize text-left font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 px-4 py-3 rounded-lg transition-all"
               >
-                {item}
+                {item === 'portfolio' ? 'projects' : item}
               </button>
             ))}
           </nav>
