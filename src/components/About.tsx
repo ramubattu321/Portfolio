@@ -145,7 +145,11 @@ export default function About() {
               <ul className="space-y-3 text-slate-300">
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Analyzed financial statements including income statements, balance sheets, and cash flow statements using Excel and Tally ERP</span>
+                  <span>Collected and analyzed financial transaction data including sales, purchases, and tax records using Excel and Tally ERP</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
+                  <span>Managed and processed financial datasets exceeding $250M+ in cumulative transactions, organizing monthly financial records and generating structured reports</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
@@ -153,19 +157,19 @@ export default function About() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Developed financial reports and dashboards for senior management to monitor KPIs and business performance</span>
+                  <span>Reviewed income statements, balance sheets, and cash flow statements to evaluate financial performance</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Extracted and cleaned financial data using Excel and SQL for reporting and analysis</span>
+                  <span>Created financial reports and dashboards to monitor KPIs and operational metrics</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Supported internal and external audits by analyzing transaction records and ensuring compliance</span>
+                  <span>Supported internal and external audits by analyzing transaction records and ensuring compliance with financial regulations</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Filed monthly GST returns and prepared annual financial summaries for income tax reporting</span>
+                  <span>Filed monthly GST reports and prepared annual financial summaries for income tax reporting</span>
                 </li>
               </ul>
             </div>
