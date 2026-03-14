@@ -127,27 +127,45 @@ export default function About() {
               <div className="flex flex-wrap justify-between items-start mb-4">
                 <div>
                   <h4 className="text-xl font-bold text-white">Account Executive Analyst</h4>
-                  <p className="text-blue-400 font-semibold text-lg">Gautam Joshi & Co. LLP</p>
+                  <p className="text-blue-400 font-semibold text-lg">Gautam Joshi & Co. LLP, Chartered Accountants</p>
                 </div>
                 <div className="text-right text-sm">
                   <p className="font-semibold text-slate-300">Apr 2021 – Dec 2022</p>
-                  <span className="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs font-medium mt-1 border border-blue-400/30">
-                    Hybrid
-                  </span>
+                  <div className="flex items-center justify-end gap-2 mt-2">
+                    <span className="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs font-medium border border-blue-400/30">
+                      Hybrid
+                    </span>
+                    <span className="text-slate-400 text-xs flex items-center gap-1">
+                      <MapPin size={14} />
+                      Suryapet, India
+                    </span>
+                  </div>
                 </div>
               </div>
               <ul className="space-y-3 text-slate-300">
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Conducted comprehensive financial analysis, budgeting, and variance analysis</span>
+                  <span>Analyzed financial statements including income statements, balance sheets, and cash flow statements using Excel and Tally ERP</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Created data visualizations using Power BI and Excel for executive reporting</span>
+                  <span>Prepared budgets and financial forecasts and compared them with actual results to identify variances</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Managed SQL databases and performed auditing for financial compliance</span>
+                  <span>Developed financial reports and dashboards for senior management to monitor KPIs and business performance</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
+                  <span>Extracted and cleaned financial data using Excel and SQL for reporting and analysis</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
+                  <span>Supported internal and external audits by analyzing transaction records and ensuring compliance</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
+                  <span>Filed monthly GST returns and prepared annual financial summaries for income tax reporting</span>
                 </li>
               </ul>
             </div>
