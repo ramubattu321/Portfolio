@@ -108,15 +108,27 @@ export default function About() {
               <ul className="space-y-3 text-slate-300">
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Automated dashboard creation and reporting using Power BI, SQL, and Python</span>
+                  <span>Automated interactive dashboards using Power BI, reducing reporting time by 30% and improving KPI visibility for business stakeholders</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Optimized conversion rates through data-driven analysis and A/B testing</span>
+                  <span>Analyzed eCommerce and CRM datasets using SQL and Python to identify customer behavior patterns and improve conversion and retention strategies</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Developed predictive strategies leveraging Salesforce CRM analytics</span>
+                  <span>Conducted A/B testing analysis on marketing campaigns to evaluate performance differences and optimize conversion rates using statistical analysis</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
+                  <span>Built predictive models to estimate customer lifetime value (CLV) and support revenue forecasting</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
+                  <span>Developed retail sales data analysis project (Vrinda Store) using Excel dashboards to analyze sales trends, customer demographics, and top-performing states</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
+                  <span>Transformed raw datasets into visual reports and dashboards to support data-driven decision-making across marketing and business teams</span>
                 </li>
               </ul>
             </div>
