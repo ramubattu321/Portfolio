@@ -43,6 +43,13 @@ export default function Portfolio() {
       tags: ['Statistical Analysis', 'Quality Control', 'Python'],
       color: 'from-teal-500 to-teal-600',
       url: 'https://github.com/ramubattu321/Analysis-for-1000-Manufacturing-Process-Data/blob/main/test.ipynb'
+    },
+    {
+      title: 'Financial Data Analysis',
+      description: 'Analyzed $250M+ annual revenue using ERP-generated XML reports and Excel; evaluated trends, reconciled balances, and ensured GST-compliant reporting.',
+      tags: ['Excel', 'XML', 'ERP Systems', 'Data Analysis'],
+      color: 'from-yellow-500 to-yellow-600',
+      url: 'https://github.com/ramubattu321/financial-data-analysis'
     }
   ];
 
