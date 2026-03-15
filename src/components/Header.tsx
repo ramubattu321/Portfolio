@@ -65,7 +65,7 @@ export default function Header() {
             >
               Resume
             </a>
-            {['skills', 'certifications', 'portfolio', 'contact'].map((item) => (
+            {['skills', 'certifications', 'awards', 'portfolio', 'contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
@@ -113,7 +113,7 @@ export default function Header() {
             >
               Resume
             </a>
-            {['skills', 'certifications', 'portfolio', 'contact'].map((item) => (
+            {['skills', 'certifications', 'awards', 'portfolio', 'contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
