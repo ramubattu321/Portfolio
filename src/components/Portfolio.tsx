@@ -3,39 +3,11 @@ import { ExternalLink, Github } from 'lucide-react';
 export default function Portfolio() {
   const projects = [
     {
-      title: 'Financial Data Analysis',
-      description: 'Analyzed $250M+ annual revenue using ERP-generated XML reports and Excel; evaluated trends, reconciled balances, and ensured GST-compliant reporting.',
-      tags: ['Excel', 'XML', 'ERP Systems', 'Data Analysis'],
-      color: 'from-yellow-500 to-yellow-600',
-      url: 'https://github.com/ramubattu321/financial-data-analysis'
-    },
-    {
-      title: 'Hotel Booking Analysis',
-      description: 'Analyzed booking trends and agency performance using Pandas, delivering actionable insights for revenue optimization.',
-      tags: ['Python', 'Pandas', 'Data Analysis'],
-      color: 'from-green-500 to-green-600',
-      url: 'https://github.com/ramubattu321/Hotel-Bookings/blob/main/pandas-intro.ipynb'
-    },
-    {
-      title: 'Vrinda-Store-Sales-Data-Analysis',
-      description: 'Comprehensive sales dashboard for retail analytics, providing insights into sales trends, customer behavior, and product performance.',
-      tags: ['Power BI', 'Sales Analytics', 'Dashboard'],
-      color: 'from-blue-500 to-blue-600',
-      url: 'https://drive.google.com/file/d/1Sd-n5kLMrMTwMTGVIzSMYlH9xKKQ7cst/view'
-    },
-    {
-      title: 'HR Analytics Dashboard',
-      description: 'Interactive Power BI dashboard visualizing key HR metrics including employee turnover, satisfaction scores, and recruitment analytics.',
-      tags: ['Power BI', 'HR Analytics', 'Visualization'],
-      color: 'from-cyan-500 to-cyan-600',
-      url: 'https://github.com/ramubattu321/HR-Analytics-Dash-Board--Power-BI'
-    },
-    {
-      title: '48-Hour Hackathon Sales Dashboard',
-      description: 'Rapid development of a comprehensive sales dashboard under tight deadline, showcasing agile analytics capabilities.',
-      tags: ['Power BI', 'Rapid Development', 'Sales'],
-      color: 'from-orange-500 to-orange-600',
-      url: 'https://github.com/ramubattu321/IEEE-Hackathon-2023'
+      title: 'Machine Learning Using Python',
+      description: 'Comprehensive machine learning projects covering supervised and unsupervised learning algorithms, model evaluation, and practical implementations.',
+      tags: ['Python', 'Machine Learning', 'Scikit-learn'],
+      color: 'from-emerald-500 to-emerald-600',
+      url: 'https://github.com/ramubattu321/Machine-Learning-Practice-using-python'
     },
     {
       title: 'AB-Testing-analysis',
@@ -45,6 +17,27 @@ export default function Portfolio() {
       url: 'https://github.com/ramubattu321/AB-Test-Case-Study'
     },
     {
+      title: 'HR Analytics Dashboard',
+      description: 'Interactive Power BI dashboard visualizing key HR metrics including employee turnover, satisfaction scores, and recruitment analytics.',
+      tags: ['Power BI', 'HR Analytics', 'Visualization'],
+      color: 'from-cyan-500 to-cyan-600',
+      url: 'https://github.com/ramubattu321/HR-Analytics-Dash-Board--Power-BI'
+    },
+    {
+      title: 'Vrinda-Store-Sales-Data-Analysis',
+      description: 'Comprehensive sales dashboard for retail analytics, providing insights into sales trends, customer behavior, and product performance.',
+      tags: ['Power BI', 'Sales Analytics', 'Dashboard'],
+      color: 'from-blue-500 to-blue-600',
+      url: 'https://drive.google.com/file/d/1Sd-n5kLMrMTwMTGVIzSMYlH9xKKQ7cst/view'
+    },
+    {
+      title: 'Financial Data Analysis',
+      description: 'Analyzed $250M+ annual revenue using ERP-generated XML reports and Excel; evaluated trends, reconciled balances, and ensured GST-compliant reporting.',
+      tags: ['Excel', 'XML', 'ERP Systems', 'Data Analysis'],
+      color: 'from-yellow-500 to-yellow-600',
+      url: 'https://github.com/ramubattu321/financial-data-analysis'
+    },
+    {
       title: 'Analysis for 1000 Manufacturing Process Data',
       description: 'Applied cluster sampling methodology to study operational efficiency and product quality in manufacturing processes.',
       tags: ['Statistical Analysis', 'Quality Control', 'Python'],
@@ -52,11 +45,18 @@ export default function Portfolio() {
       url: 'https://github.com/ramubattu321/Analysis-for-1000-Manufacturing-Process-Data/blob/main/test.ipynb'
     },
     {
-      title: 'Machine Learning Using Python',
-      description: 'Comprehensive machine learning projects covering supervised and unsupervised learning algorithms, model evaluation, and practical implementations.',
-      tags: ['Python', 'Machine Learning', 'Scikit-learn'],
-      color: 'from-emerald-500 to-emerald-600',
-      url: 'https://github.com/ramubattu321/Machine-Learning-Practice-using-python'
+      title: 'Hotel Booking Analysis',
+      description: 'Analyzed booking trends and agency performance using Pandas, delivering actionable insights for revenue optimization.',
+      tags: ['Python', 'Pandas', 'Data Analysis'],
+      color: 'from-green-500 to-green-600',
+      url: 'https://github.com/ramubattu321/Hotel-Bookings/blob/main/pandas-intro.ipynb'
+    },
+    {
+      title: '48-Hour Hackathon Sales Dashboard',
+      description: 'Rapid development of a comprehensive sales dashboard under tight deadline, showcasing agile analytics capabilities.',
+      tags: ['Power BI', 'Rapid Development', 'Sales'],
+      color: 'from-orange-500 to-orange-600',
+      url: 'https://github.com/ramubattu321/IEEE-Hackathon-2023'
     }
   ];
 
