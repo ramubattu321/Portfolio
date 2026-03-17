@@ -50,6 +50,13 @@ export default function Portfolio() {
       tags: ['Statistical Analysis', 'Quality Control', 'Python'],
       color: 'from-teal-500 to-teal-600',
       url: 'https://github.com/ramubattu321/Analysis-for-1000-Manufacturing-Process-Data/blob/main/test.ipynb'
+    },
+    {
+      title: 'Machine Learning Using Python',
+      description: 'Comprehensive machine learning projects covering supervised and unsupervised learning algorithms, model evaluation, and practical implementations.',
+      tags: ['Python', 'Machine Learning', 'Scikit-learn'],
+      color: 'from-emerald-500 to-emerald-600',
+      url: 'https://github.com/ramubattu321/Machine-Learning-Practice-using-python'
     }
   ];
 
