@@ -17,7 +17,7 @@ export default function Portfolio() {
       url: 'https://github.com/ramubattu321/Hotel-Bookings/blob/main/pandas-intro.ipynb'
     },
     {
-      title: 'Vrinda Store Project',
+      title: 'Vrinda-Store-Sales-Data-Analysis',
       description: 'Comprehensive sales dashboard for retail analytics, providing insights into sales trends, customer behavior, and product performance.',
       tags: ['Power BI', 'Sales Analytics', 'Dashboard'],
       color: 'from-blue-500 to-blue-600',
@@ -38,14 +38,14 @@ export default function Portfolio() {
       url: 'https://github.com/ramubattu321/IEEE-Hackathon-2023'
     },
     {
-      title: 'A/B Test Project',
+      title: 'AB-Testing-analysis',
       description: 'Experimental design and statistical analysis for conversion optimization, including hypothesis testing and performance metrics.',
       tags: ['Python', 'Statistics', 'A/B Testing'],
       color: 'from-red-500 to-red-600',
       url: 'https://github.com/ramubattu321/AB-Test-Case-Study'
     },
     {
-      title: 'Manufacturing Process Analysis',
+      title: 'Analysis for 1000 Manufacturing Process Data',
       description: 'Applied cluster sampling methodology to study operational efficiency and product quality in manufacturing processes.',
       tags: ['Statistical Analysis', 'Quality Control', 'Python'],
       color: 'from-teal-500 to-teal-600',
