@@ -7,7 +7,7 @@ export default function Portfolio() {
       description: 'Advanced research in machine learning algorithms, neural networks, and deep learning applications with performance optimization and model interpretability analysis.',
       tags: ['Python', 'Deep Learning', 'TensorFlow', 'Research'],
       color: 'from-purple-500 to-purple-600',
-      url: 'https://github.com/ramubattu321/Machine-Learning-Research'
+      url: 'https://docs.google.com/presentation/d/1vmbymxcSdtZzmWCP03SMCH9m9QDe_eUq/edit?slide=id.p1#slide=id.p1'
     },
     {
       title: 'Machine Learning Using Python',
