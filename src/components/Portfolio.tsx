@@ -3,6 +3,13 @@ import { ExternalLink, Github } from 'lucide-react';
 export default function Portfolio() {
   const projects = [
     {
+      title: 'Machine Learning Research Project',
+      description: 'Advanced research in machine learning algorithms, neural networks, and deep learning applications with performance optimization and model interpretability analysis.',
+      tags: ['Python', 'Deep Learning', 'TensorFlow', 'Research'],
+      color: 'from-purple-500 to-purple-600',
+      url: 'https://github.com/ramubattu321/Machine-Learning-Research'
+    },
+    {
       title: 'Machine Learning Using Python',
       description: 'Comprehensive machine learning projects covering supervised and unsupervised learning algorithms, model evaluation, and practical implementations.',
       tags: ['Python', 'Machine Learning', 'Scikit-learn'],
