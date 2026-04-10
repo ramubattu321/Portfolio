@@ -21,7 +21,7 @@ export default function Hero() {
           <div className="text-white space-y-6 animate-fade-in">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full text-blue-300 text-sm font-medium backdrop-blur-md border border-blue-400/40 shadow-lg hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105">
               <Sparkles size={16} className="animate-pulse" />
-              Data Analyst & Business Analyst
+              Data Professional
             </div>
 
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
