@@ -20,7 +20,7 @@ export default function About() {
             <div className="relative">
               <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-blue-400 to-cyan-400 rounded-full"></div>
               <p className="text-lg text-slate-300 leading-relaxed pl-4">
-                I'm a dedicated <span className="font-semibold text-blue-400">Data Analyst and Business Analyst</span> with a passion for transforming complex data into strategic insights. My expertise spans financial data management, analytics, and collaborative problem-solving.
+                I'm a dedicated <span className="font-semibold text-blue-400">Data Analyst and Data Scientist</span> passionate about transforming complex data into strategic insights. My expertise spans financial data management, analytics, and collaborative problem-solving.
               </p>
             </div>
             <p className="text-lg text-slate-300 leading-relaxed">
