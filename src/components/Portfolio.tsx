@@ -10,18 +10,11 @@ export default function Portfolio() {
       url: 'https://docs.google.com/presentation/d/1vmbymxcSdtZzmWCP03SMCH9m9QDe_eUq/edit?slide=id.p1#slide=id.p1'
     },
     {
-      title: 'Machine Learning Using Python',
-      description: 'Comprehensive machine learning projects covering supervised and unsupervised learning algorithms, model evaluation, and practical implementations.',
-      tags: ['Python', 'Machine Learning', 'Scikit-learn'],
-      color: 'from-emerald-500 to-emerald-600',
-      url: 'https://github.com/ramubattu321/Machine-Learning-Practice-using-python'
-    },
-    {
-      title: 'AB-Testing-analysis',
-      description: 'Experimental design and statistical analysis for conversion optimization, including hypothesis testing and performance metrics.',
-      tags: ['Python', 'Statistics', 'A/B Testing'],
-      color: 'from-red-500 to-red-600',
-      url: 'https://github.com/ramubattu321/AB-Test-Case-Study'
+      title: 'Financial Data Analysis',
+      description: 'Analyzed $250M+ annual revenue using ERP-generated XML reports and Excel; evaluated trends, reconciled balances, and ensured GST-compliant reporting.',
+      tags: ['Excel', 'XML', 'ERP Systems', 'Data Analysis'],
+      color: 'from-yellow-500 to-yellow-600',
+      url: 'https://github.com/ramubattu321/financial-data-analysis'
     },
     {
       title: 'HR Analytics Dashboard',
@@ -38,11 +31,25 @@ export default function Portfolio() {
       url: 'https://drive.google.com/file/d/1Sd-n5kLMrMTwMTGVIzSMYlH9xKKQ7cst/view'
     },
     {
-      title: 'Financial Data Analysis',
-      description: 'Analyzed $250M+ annual revenue using ERP-generated XML reports and Excel; evaluated trends, reconciled balances, and ensured GST-compliant reporting.',
-      tags: ['Excel', 'XML', 'ERP Systems', 'Data Analysis'],
-      color: 'from-yellow-500 to-yellow-600',
-      url: 'https://github.com/ramubattu321/financial-data-analysis'
+      title: 'Machine Learning Using Python',
+      description: 'Comprehensive machine learning projects covering supervised and unsupervised learning algorithms, model evaluation, and practical implementations.',
+      tags: ['Python', 'Machine Learning', 'Scikit-learn'],
+      color: 'from-emerald-500 to-emerald-600',
+      url: 'https://github.com/ramubattu321/Machine-Learning-Practice-using-python'
+    },
+    {
+      title: 'AB-Testing-analysis',
+      description: 'Experimental design and statistical analysis for conversion optimization, including hypothesis testing and performance metrics.',
+      tags: ['Python', 'Statistics', 'A/B Testing'],
+      color: 'from-red-500 to-red-600',
+      url: 'https://github.com/ramubattu321/AB-Test-Case-Study'
+    },
+    {
+      title: '48-Hour Hackathon Sales Dashboard',
+      description: 'Rapid development of a comprehensive sales dashboard under tight deadline, showcasing agile analytics capabilities.',
+      tags: ['Power BI', 'Rapid Development', 'Sales'],
+      color: 'from-orange-500 to-orange-600',
+      url: 'https://github.com/ramubattu321/IEEE-Hackathon-2023'
     },
     {
       title: 'Analysis for 1000 Manufacturing Process Data',
@@ -57,13 +64,6 @@ export default function Portfolio() {
       tags: ['Python', 'Pandas', 'Data Analysis'],
       color: 'from-green-500 to-green-600',
       url: 'https://github.com/ramubattu321/Hotel-Bookings/blob/main/pandas-intro.ipynb'
-    },
-    {
-      title: '48-Hour Hackathon Sales Dashboard',
-      description: 'Rapid development of a comprehensive sales dashboard under tight deadline, showcasing agile analytics capabilities.',
-      tags: ['Power BI', 'Rapid Development', 'Sales'],
-      color: 'from-orange-500 to-orange-600',
-      url: 'https://github.com/ramubattu321/IEEE-Hackathon-2023'
     }
   ];
 
