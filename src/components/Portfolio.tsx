@@ -45,9 +45,9 @@ export default function Portfolio() {
       url: 'https://github.com/ramubattu321/AB-Test-Case-Study'
     },
     {
-      title: '48-Hour Hackathon Sales Dashboard',
-      description: 'Rapid development of a comprehensive sales dashboard under tight deadline, showcasing agile analytics capabilities.',
-      tags: ['Power BI', 'Rapid Development', 'Sales'],
+      title: 'E-commerce Sales Dashboard \u2013 IEEE Hackathon',
+      description: 'Developed an interactive e-commerce sales dashboard as part of IEEE Hackathon 2023 to analyze sales performance, profit trends, and return patterns. Performed data analysis using pivot tables and created dynamic visualizations to identify top-performing regions, product categories, and customer behavior patterns. Implemented interactive slicers to enable real-time filtering and improve decision-making.',
+      tags: ['Excel', 'Pivot Tables', 'Data Visualization'],
       color: 'from-orange-500 to-orange-600',
       url: 'https://github.com/ramubattu321/IEEE-Hackathon-2023'
     },
