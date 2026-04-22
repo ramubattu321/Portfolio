@@ -28,7 +28,7 @@ export default function Portfolio() {
       description: 'Developed an interactive Excel dashboard to analyze retail sales data and generate business insights for Vrinda Store. Performed data cleaning, transformation, and exploratory data analysis using Pivot Tables and charts. Analyzed sales trends, customer demographics, and regional performance to identify key patterns affecting business growth. Built dynamic visualizations using slicers and Pivot Charts to enable interactive filtering and real-time analysis. Identified top-performing states, sales channels, and customer segments to support data-driven decision-making.',
       tags: ['Excel', 'Pivot Tables', 'Data Visualization', 'Business Intelligence'],
       color: 'from-blue-500 to-blue-600',
-      url: 'https://drive.google.com/file/d/1Sd-n5kLMrMTwMTGVIzSMYlH9xKKQ7cst/view'
+      url: 'https://github.com/ramubattu321/Vrinda-Store-Sales-Dashboard-Business-Insights'
     },
     {
       title: 'Machine Learning for Production Optimization',
