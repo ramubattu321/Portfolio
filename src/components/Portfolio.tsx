@@ -1,159 +1,189 @@
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+const projects = [
+  {
+    title: 'Machine Learning Research Project',
+    description: 'Advanced research in machine learning algorithms, neural networks, and deep learning applications with performance optimization and model interpretability analysis.',
+    tags: ['Python', 'Deep Learning', 'TensorFlow', 'Research'],
+    accent: 'sky',
+    url: 'https://docs.google.com/presentation/d/1vmbymxcSdtZzmWCP03SMCH9m9QDe_eUq/edit?slide=id.p1#slide=id.p1',
+  },
+  {
+    title: 'Financial Data ETL Pipeline & Analysis',
+    description: 'Developed a Python-based ETL workflow to extract and transform semi-structured XML financial data into structured datasets. Processed financial transaction records exceeding $250M+, improving reporting accuracy and audit readiness.',
+    tags: ['Python', 'ETL', 'XML', 'Data Pipeline'],
+    accent: 'amber',
+    url: 'https://github.com/ramubattu321/financial-data-analysis',
+  },
+  {
+    title: 'HR Analytics Dashboard (Power BI)',
+    description: 'Developed an interactive HR analytics dashboard using Power BI to analyze employee attrition, workforce demographics, and retention patterns. Used DAX to calculate key metrics such as attrition rate, employee count, average salary, and job satisfaction.',
+    tags: ['Power BI', 'DAX', 'Power Query', 'HR Analytics', 'Attrition Analysis'],
+    accent: 'cyan',
+    url: 'https://github.com/ramubattu321/HR-Analytics-Dash-Board--Power-BI',
+  },
+  {
+    title: 'Vrinda Store Sales Dashboard & Business Insights',
+    description: 'Developed an interactive Excel dashboard to analyze retail sales data and generate business insights. Analyzed sales trends, customer demographics, and regional performance to identify key patterns affecting business growth.',
+    tags: ['Excel', 'Pivot Tables', 'Data Visualization', 'Business Intelligence'],
+    accent: 'blue',
+    url: 'https://github.com/ramubattu321/Vrinda-Store-Sales-Dashboard-Business-Insights',
+  },
+  {
+    title: 'Machine Learning for Production Optimization',
+    description: 'Applied data analysis and machine learning techniques to analyze structured production data and identify patterns affecting system performance. Built and compared models including Random Forest, Gradient Boosting, SVM, and Regression.',
+    tags: ['Python', 'Scikit-learn', 'Machine Learning', 'Research'],
+    accent: 'emerald',
+    url: 'https://github.com/ramubattu321/Machine-Learning-Practice-using-python',
+  },
+  {
+    title: 'A/B Testing Analysis using SQL and Python',
+    description: 'Analyzed marketing campaign performance using A/B testing to compare control and test groups across key engagement and conversion metrics. Used SQL to calculate funnel metrics such as CTR, conversion rate, and revenue per user.',
+    tags: ['SQL', 'Python', 'A/B Testing', 'Marketing Analytics'],
+    accent: 'rose',
+    url: 'https://github.com/ramubattu321/AB-Test-Case-Study',
+  },
+  {
+    title: 'E-commerce Sales Dashboard \u2013 IEEE Hackathon',
+    description: 'Developed an interactive e-commerce sales dashboard as part of IEEE Hackathon 2023 to analyze sales performance, profit trends, and return patterns. Created dynamic visualizations to identify top-performing regions and customer behavior patterns.',
+    tags: ['Excel', 'Pivot Tables', 'Data Visualization'],
+    accent: 'orange',
+    url: 'https://github.com/ramubattu321/IEEE-Hackathon-2023',
+  },
+  {
+    title: 'Manufacturing Process Analysis & Anomaly Detection (SPC)',
+    description: 'Analyzed manufacturing process data using Python to monitor machine performance and detect anomalies using statistical process control (SPC) techniques. Implemented 3-sigma control charts for quality monitoring.',
+    tags: ['Python', 'Pandas', 'Anomaly Detection', 'SPC'],
+    accent: 'teal',
+    url: 'https://github.com/ramubattu321/manufacturing-process-analysis-eda',
+  },
+  {
+    title: 'Hotel Booking Data Wrangling & Platform Analysis',
+    description: 'Cleaned and analyzed semi-structured hotel booking data using Python and Pandas to extract booking platform information and generate business insights. Performed platform-level analysis to compare booking distribution across channels.',
+    tags: ['Python', 'Pandas', 'Data Wrangling', 'EDA'],
+    accent: 'green',
+    url: 'https://github.com/ramubattu321/Hotel-Booking-Data-Wrangling-Platform-Analysis',
+  },
+];
+
+const accentMap: Record<string, { bg: string; text: string; border: string; from: string; to: string }> = {
+  sky:     { bg: 'bg-sky-500/10',     text: 'text-sky-400',     border: 'border-sky-500/20',     from: 'from-sky-500',     to: 'to-sky-600' },
+  amber:   { bg: 'bg-amber-500/10',   text: 'text-amber-400',   border: 'border-amber-500/20',   from: 'from-amber-500',   to: 'to-amber-600' },
+  cyan:    { bg: 'bg-cyan-500/10',    text: 'text-cyan-400',    border: 'border-cyan-500/20',    from: 'from-cyan-500',    to: 'to-cyan-600' },
+  blue:    { bg: 'bg-blue-500/10',    text: 'text-blue-400',    border: 'border-blue-500/20',    from: 'from-blue-500',    to: 'to-blue-600' },
+  emerald: { bg: 'bg-emerald-500/10', text: 'text-emerald-400', border: 'border-emerald-500/20', from: 'from-emerald-500', to: 'to-emerald-600' },
+  rose:    { bg: 'bg-rose-500/10',    text: 'text-rose-400',    border: 'border-rose-500/20',    from: 'from-rose-500',    to: 'to-rose-600' },
+  orange:  { bg: 'bg-orange-500/10',  text: 'text-orange-400',  border: 'border-orange-500/20',  from: 'from-orange-500',  to: 'to-orange-600' },
+  teal:    { bg: 'bg-teal-500/10',    text: 'text-teal-400',    border: 'border-teal-500/20',    from: 'from-teal-500',    to: 'to-teal-600' },
+  green:   { bg: 'bg-green-500/10',   text: 'text-green-400',   border: 'border-green-500/20',   from: 'from-green-500',   to: 'to-green-600' },
+};
 
 export default function Portfolio() {
-  const projects = [
-    {
-      title: 'Machine Learning Research Project',
-      description: 'Advanced research in machine learning algorithms, neural networks, and deep learning applications with performance optimization and model interpretability analysis.',
-      tags: ['Python', 'Deep Learning', 'TensorFlow', 'Research'],
-      color: 'from-purple-500 to-purple-600',
-      url: 'https://docs.google.com/presentation/d/1vmbymxcSdtZzmWCP03SMCH9m9QDe_eUq/edit?slide=id.p1#slide=id.p1'
-    },
-    {
-      title: 'Financial Data ETL Pipeline & Analysis',
-      description: 'Developed a Python-based ETL workflow to extract and transform semi-structured XML financial data into structured datasets. Processed financial transaction records exceeding $250M+, improving reporting accuracy and audit readiness. Implemented data validation checks to ensure consistency and reliability of transformed data. Automated data transformation processes, enabling efficient reporting and analysis.',
-      tags: ['Python', 'ETL', 'XML', 'Data Pipeline'],
-      color: 'from-yellow-500 to-yellow-600',
-      url: 'https://github.com/ramubattu321/financial-data-analysis'
-    },
-    {
-      title: 'HR Analytics Dashboard (Power BI)',
-      description: 'Developed an interactive HR analytics dashboard using Power BI to analyze employee attrition, workforce demographics, and retention patterns. Used DAX to calculate key metrics such as attrition rate, employee count, average salary, and job satisfaction, enabling data-driven HR decision-making. Identified high-risk departments, roles, and employee segments by analyzing attrition trends across age groups, salary levels, and tenure. This project demonstrates business intelligence, data visualization, and people analytics capabilities.',
-      tags: ['Power BI', 'DAX', 'Power Query', 'HR Analytics', 'Attrition Analysis'],
-      color: 'from-cyan-500 to-cyan-600',
-      url: 'https://github.com/ramubattu321/HR-Analytics-Dash-Board--Power-BI'
-    },
-    {
-      title: 'Vrinda Store Sales Dashboard & Business Insights',
-      description: 'Developed an interactive Excel dashboard to analyze retail sales data and generate business insights for Vrinda Store. Performed data cleaning, transformation, and exploratory data analysis using Pivot Tables and charts. Analyzed sales trends, customer demographics, and regional performance to identify key patterns affecting business growth. Built dynamic visualizations using slicers and Pivot Charts to enable interactive filtering and real-time analysis. Identified top-performing states, sales channels, and customer segments to support data-driven decision-making.',
-      tags: ['Excel', 'Pivot Tables', 'Data Visualization', 'Business Intelligence'],
-      color: 'from-blue-500 to-blue-600',
-      url: 'https://github.com/ramubattu321/Vrinda-Store-Sales-Dashboard-Business-Insights'
-    },
-    {
-      title: 'Machine Learning for Production Optimization',
-      description: 'Applied data analysis and machine learning techniques to analyze structured production data and identify patterns affecting system performance and operational efficiency. Performed data cleaning, preprocessing, and EDA using Python. Built and compared models including Random Forest, Gradient Boosting, SVM, and Regression to evaluate predictive performance. Applied feature engineering techniques and analyzed the impact of data quality on model outcomes. Presented research findings at the California Central Valley Research Symposium (2026).',
-      tags: ['Python', 'Scikit-learn', 'Machine Learning', 'Research'],
-      color: 'from-emerald-500 to-emerald-600',
-      url: 'https://github.com/ramubattu321/Machine-Learning-Practice-using-python'
-    },
-    {
-      title: 'A/B Testing Analysis using SQL and Python',
-      description: 'Analyzed marketing campaign performance using A/B testing to compare control and test groups across key engagement and conversion metrics. Used SQL to calculate funnel metrics such as click-through rate (CTR), add-to-cart rate, conversion rate, and revenue per user. Performed segmentation analysis across device and region to evaluate campaign effectiveness. Applied statistical testing in Python to determine whether observed differences between campaigns were statistically significant.',
-      tags: ['SQL', 'Python', 'A/B Testing', 'Marketing Analytics'],
-      color: 'from-red-500 to-red-600',
-      url: 'https://github.com/ramubattu321/AB-Test-Case-Study'
-    },
-    {
-      title: 'E-commerce Sales Dashboard \u2013 IEEE Hackathon',
-      description: 'Developed an interactive e-commerce sales dashboard as part of IEEE Hackathon 2023 to analyze sales performance, profit trends, and return patterns. Performed data analysis using pivot tables and created dynamic visualizations to identify top-performing regions, product categories, and customer behavior patterns. Implemented interactive slicers to enable real-time filtering and improve decision-making.',
-      tags: ['Excel', 'Pivot Tables', 'Data Visualization'],
-      color: 'from-orange-500 to-orange-600',
-      url: 'https://github.com/ramubattu321/IEEE-Hackathon-2023'
-    },
-    {
-      title: 'Manufacturing Process Analysis & Anomaly Detection (SPC)',
-      description: 'Analyzed manufacturing process data using Python to monitor machine performance and detect anomalies using statistical process control (SPC) techniques. Implemented 3-sigma control charts to calculate process mean, upper control limit (UCL), and lower control limit (LCL), enabling identification of abnormal machine behavior. Performed exploratory data analysis (EDA) to understand sensor data patterns and support data-driven quality monitoring.',
-      tags: ['Python', 'Pandas', 'Anomaly Detection', 'SPC'],
-      color: 'from-teal-500 to-teal-600',
-      url: 'https://github.com/ramubattu321/manufacturing-process-analysis-eda'
-    },
-    {
-      title: 'Hotel Booking Data Wrangling & Platform Analysis',
-      description: 'Cleaned and analyzed semi-structured hotel booking data using Python and Pandas to extract booking platform information and generate business insights. Applied data wrangling techniques to handle inconsistent records, including identifying platform marker rows and using backfilling to correctly assign booking sources. Performed platform-level analysis to compare booking distribution across channels such as Expedia, Booking, Hotels, and Cleartrip, enabling structured reporting from messy raw data.',
-      tags: ['Python', 'Pandas', 'Data Wrangling', 'EDA'],
-      color: 'from-green-500 to-green-600',
-      url: 'https://github.com/ramubattu321/Hotel-Booking-Data-Wrangling-Platform-Analysis'
-    }
-  ];
-
   return (
-    <section id="portfolio" className="py-24 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
+    <section id="portfolio" className="py-24 bg-slate-950 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(14,165,233,0.04)_0%,_transparent_60%)]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <div className="inline-block px-5 py-2.5 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-blue-300 rounded-full text-sm font-semibold mb-4 border border-blue-400/40 backdrop-blur-md shadow-lg">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
+          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-semibold tracking-wide uppercase mb-4">
             My Work
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">Projects</h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400 mx-auto rounded-full shadow-lg shadow-blue-500/50 mb-6"></div>
-          <p className="text-slate-300 text-lg max-w-3xl mx-auto leading-relaxed">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Projects</h2>
+          <div className="w-16 h-1 bg-gradient-to-r from-sky-400 to-cyan-400 mx-auto rounded-full mb-6" />
+          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
             A showcase of data analytics projects demonstrating expertise in business intelligence, statistical analysis, and data visualization
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="group bg-slate-800/60 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 hover:-translate-y-3 border-2 border-slate-700/50 hover:border-blue-400 backdrop-blur-md"
-            >
-              <div className={`relative h-56 bg-gradient-to-br ${project.color} flex items-center justify-center text-white overflow-hidden`}>
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
-                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjEiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-30"></div>
-                <div className="relative z-10 text-7xl font-bold transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 drop-shadow-2xl">
-                  {project.title.charAt(0)}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project, index) => {
+            const c = accentMap[project.accent] || accentMap.sky;
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: (index % 3) * 0.08 }}
+                whileHover={{ y: -6, transition: { duration: 0.25 } }}
+                className="group flex flex-col rounded-2xl bg-white/[0.03] border border-white/[0.06] backdrop-blur-sm overflow-hidden hover:border-sky-500/20 transition-all duration-300"
+              >
+                <div className={`relative h-44 bg-gradient-to-br ${c.from} ${c.to} flex items-center justify-center overflow-hidden`}>
+                  <div className="absolute inset-0 bg-black/30" />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,_rgba(255,255,255,0.08)_0%,_transparent_60%)]" />
+                  <span className="relative z-10 text-6xl font-bold text-white/60 group-hover:text-white/80 group-hover:scale-110 transition-all duration-300">
+                    {project.title.charAt(0)}
+                  </span>
+                  <div className="absolute top-4 right-4 px-3 py-1.5 bg-white/20 backdrop-blur-md rounded-lg text-xs font-semibold text-white/90">
+                    Project {index + 1}
+                  </div>
                 </div>
-                <div className="absolute top-5 right-5 px-4 py-2 bg-white/30 backdrop-blur-md rounded-xl text-sm font-bold shadow-lg border border-white/40">
-                  Project {index + 1}
-                </div>
-              </div>
 
-              <div className="p-7">
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors">
-                  {project.title}
-                </h3>
+                <div className="flex flex-col flex-1 p-6">
+                  <h3 className="text-base font-bold text-white mb-2 group-hover:text-sky-300 transition-colors leading-snug">
+                    {project.title}
+                  </h3>
 
-                <p className="text-slate-300 mb-5 text-sm leading-relaxed">
-                  {project.description}
-                </p>
+                  <p className="text-slate-400 text-sm leading-relaxed mb-4 flex-1 line-clamp-4">
+                    {project.description}
+                  </p>
 
-                <div className="flex flex-wrap gap-2 mb-5">
-                  {project.tags.map((tag, idx) => (
-                    <span
-                      key={idx}
-                      className="px-3 py-1.5 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-blue-300 rounded-lg text-xs font-semibold border border-blue-400/40 hover:from-blue-500/30 hover:to-cyan-500/30 hover:scale-105 transition-all duration-200 cursor-default shadow-md"
+                  <div className="flex flex-wrap gap-1.5 mb-5">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className={`px-2.5 py-1 rounded-md ${c.bg} ${c.text} text-[11px] font-medium border ${c.border}`}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="pt-4 border-t border-white/[0.06]">
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sky-400 hover:text-sky-300 text-sm font-medium transition-colors"
                     >
-                      {tag}
-                    </span>
-                  ))}
+                      <ExternalLink size={14} />
+                      View Project
+                    </a>
+                  </div>
                 </div>
-
-                <div className="flex gap-3 pt-5 border-t-2 border-slate-700/50">
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-blue-400 hover:text-blue-300 font-semibold text-sm transition-all hover:gap-3 hover:scale-105"
-                  >
-                    <ExternalLink size={16} />
-                    View Project
-                  </a>
-                </div>
-              </div>
-            </div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
 
-        <div className="mt-20 relative overflow-hidden bg-gradient-to-r from-blue-600 via-cyan-600 to-blue-600 rounded-3xl p-12 md:p-16 text-center text-white shadow-2xl border-2 border-blue-400/30">
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjE1IiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-40"></div>
-          <div className="absolute top-10 right-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
-          <div className="absolute bottom-10 left-10 w-40 h-40 bg-cyan-300/20 rounded-full blur-3xl"></div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mt-20 p-12 md:p-16 rounded-2xl bg-gradient-to-r from-sky-600 to-cyan-600 text-center relative overflow-hidden"
+        >
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,_rgba(255,255,255,0.1)_0%,_transparent_50%)]" />
           <div className="relative z-10">
-            <h3 className="text-4xl md:text-5xl font-bold mb-6 drop-shadow-lg">Interested in Collaboration?</h3>
-            <p className="mb-10 max-w-3xl mx-auto text-lg md:text-xl text-blue-50 leading-relaxed">
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">Interested in Collaboration?</h3>
+            <p className="mb-8 max-w-2xl mx-auto text-lg text-sky-50/80">
               I'm always open to discussing new projects, analytics opportunities, or partnerships in data science and business intelligence.
             </p>
             <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-10 py-5 bg-white text-blue-600 rounded-xl font-bold hover:bg-slate-50 transition-all transform hover:scale-105 shadow-2xl hover:shadow-white/30 text-lg"
+              className="px-8 py-4 bg-white text-sky-600 rounded-xl font-semibold hover:bg-sky-50 transition-all hover:-translate-y-0.5 shadow-lg"
             >
               Get In Touch
             </button>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,130 +1,120 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const navItems = [
+  { id: 'home', label: 'Home' },
+  { id: 'about', label: 'About' },
+  { id: 'resume', label: 'Resume', href: 'https://drive.google.com/file/d/1nxVLeJKD__B8qmdPHxzCYlaAoLzkDb-j/view' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'certifications', label: 'Certifications' },
+  { id: 'awards', label: 'Awards' },
+  { id: 'portfolio', label: 'Projects' },
+  { id: 'contact', label: 'Contact' },
+];
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false);
-    }
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    setIsMobileMenuOpen(false);
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      isScrolled ? 'bg-white/90 backdrop-blur-xl shadow-lg' : 'bg-transparent'
-    }`}>
+    <motion.header
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled
+          ? 'bg-slate-900/80 backdrop-blur-xl border-b border-white/5 shadow-lg shadow-black/10'
+          : 'bg-transparent'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-5">
-          <div className="flex items-center">
-            <h1 className={`text-2xl font-bold transition-all duration-300 ${
-              isScrolled
-                ? 'text-slate-800'
-                : 'text-white drop-shadow-lg'
-            }`}>
-              <span className={isScrolled ? '' : 'bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent'}>
-                Ramu Battu
-              </span>
-            </h1>
-          </div>
+        <div className="flex justify-between items-center py-4">
+          <button onClick={() => scrollToSection('home')} className="text-xl font-bold text-white">
+            <span className="bg-gradient-to-r from-sky-400 to-cyan-400 bg-clip-text text-transparent">
+              Ramu Battu
+            </span>
+          </button>
 
-          <nav className="hidden md:flex space-x-1">
-            {['home', 'about'].map((item) => (
-              <button
-                key={item}
-                onClick={() => scrollToSection(item)}
-                className={`capitalize font-medium px-4 py-2 rounded-lg transition-all duration-300 ${
-                  isScrolled
-                    ? 'text-slate-700 hover:text-blue-600 hover:bg-blue-50'
-                    : 'text-white hover:bg-white/10'
-                }`}
-              >
-                {item}
-              </button>
-            ))}
-            <a
-              href="https://drive.google.com/file/d/1nxVLeJKD__B8qmdPHxzCYlaAoLzkDb-j/view"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`capitalize font-medium px-4 py-2 rounded-lg transition-all duration-300 ${
-                isScrolled
-                  ? 'text-slate-700 hover:text-blue-600 hover:bg-blue-50'
-                  : 'text-white hover:bg-white/10'
-              }`}
-            >
-              Resume
-            </a>
-            {['skills', 'certifications', 'awards', 'portfolio', 'contact'].map((item) => (
-              <button
-                key={item}
-                onClick={() => scrollToSection(item)}
-                className={`capitalize font-medium px-4 py-2 rounded-lg transition-all duration-300 ${
-                  isScrolled
-                    ? 'text-slate-700 hover:text-blue-600 hover:bg-blue-50'
-                    : 'text-white hover:bg-white/10'
-                }`}
-              >
-                {item === 'portfolio' ? 'projects' : item}
-              </button>
-            ))}
+          <nav className="hidden lg:flex items-center gap-1">
+            {navItems.map((item) =>
+              item.href ? (
+                <a
+                  key={item.id}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3.5 py-2 text-sm font-medium text-slate-300 hover:text-white rounded-lg hover:bg-white/5 transition-all duration-200"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="px-3.5 py-2 text-sm font-medium text-slate-300 hover:text-white rounded-lg hover:bg-white/5 transition-all duration-200"
+                >
+                  {item.label}
+                </button>
+              )
+            )}
           </nav>
 
           <button
-            className={`md:hidden p-2 rounded-lg transition-all duration-300 ${
-              isScrolled
-                ? 'text-slate-800 hover:bg-slate-100'
-                : 'text-white hover:bg-white/10'
-            }`}
+            className="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition-all"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
 
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-xl border-t shadow-lg">
-          <nav className="flex flex-col space-y-1 px-4 py-4">
-            {['home', 'about'].map((item) => (
-              <button
-                key={item}
-                onClick={() => scrollToSection(item)}
-                className="capitalize text-left font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 px-4 py-3 rounded-lg transition-all"
-              >
-                {item}
-              </button>
-            ))}
-            <a
-              href="https://drive.google.com/file/d/1nxVLeJKD__B8qmdPHxzCYlaAoLzkDb-j/view"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="capitalize text-left font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 px-4 py-3 rounded-lg transition-all"
-            >
-              Resume
-            </a>
-            {['skills', 'certifications', 'awards', 'portfolio', 'contact'].map((item) => (
-              <button
-                key={item}
-                onClick={() => scrollToSection(item)}
-                className="capitalize text-left font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 px-4 py-3 rounded-lg transition-all"
-              >
-                {item === 'portfolio' ? 'projects' : item}
-              </button>
-            ))}
-          </nav>
-        </div>
-      )}
-    </header>
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="lg:hidden bg-slate-900/95 backdrop-blur-xl border-t border-white/5"
+          >
+            <nav className="flex flex-col px-4 py-3">
+              {navItems.map((item) =>
+                item.href ? (
+                  <a
+                    key={item.id}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-3 text-sm font-medium text-slate-300 hover:text-white rounded-lg hover:bg-white/5 transition-all"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className="text-left px-4 py-3 text-sm font-medium text-slate-300 hover:text-white rounded-lg hover:bg-white/5 transition-all"
+                  >
+                    {item.label}
+                  </button>
+                )
+              )}
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
   );
 }

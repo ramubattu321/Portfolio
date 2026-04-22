@@ -1,51 +1,48 @@
-import { Heart, Linkedin, Mail, Github } from 'lucide-react';
+import { Linkedin, Mail, Github } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-900 text-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+    <footer className="bg-slate-950 border-t border-white/[0.04]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid md:grid-cols-3 gap-10 mb-10">
           <div>
-            <h3 className="text-2xl font-bold mb-4">Ramu Battu</h3>
-            <p className="text-slate-400 mb-4">
+            <h3 className="text-lg font-bold text-white mb-3">
+              <span className="bg-gradient-to-r from-sky-400 to-cyan-400 bg-clip-text text-transparent">
+                Ramu Battu
+              </span>
+            </h3>
+            <p className="text-slate-500 text-sm leading-relaxed mb-5">
               Data Analyst & Business Analyst specializing in transforming data into actionable insights.
             </p>
-            <div className="flex gap-3">
-              <a
-                href="https://www.linkedin.com/in/ramu-battu-01a9a336a/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-slate-800 hover:bg-blue-600 flex items-center justify-center transition-colors"
-              >
-                <Linkedin size={20} />
-              </a>
-              <a
-                href="mailto:ramuusa61@gmail.com"
-                className="w-10 h-10 rounded-lg bg-slate-800 hover:bg-blue-600 flex items-center justify-center transition-colors"
-              >
-                <Mail size={20} />
-              </a>
-              <a
-                href="https://github.com/ramubattu321"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-slate-800 hover:bg-blue-600 flex items-center justify-center transition-colors"
-              >
-                <Github size={20} />
-              </a>
+            <div className="flex gap-2">
+              {[
+                { href: 'https://www.linkedin.com/in/ramu-battu-01a9a336a/', icon: Linkedin },
+                { href: 'mailto:ramuusa61@gmail.com', icon: Mail },
+                { href: 'https://github.com/ramubattu321', icon: Github },
+              ].map(({ href, icon: Icon }) => (
+                <a
+                  key={href}
+                  href={href}
+                  target={href.startsWith('mailto') ? undefined : '_blank'}
+                  rel="noopener noreferrer"
+                  className="p-2.5 rounded-lg bg-white/[0.04] text-slate-400 hover:text-white hover:bg-white/[0.08] transition-all"
+                >
+                  <Icon size={16} />
+                </a>
+              ))}
             </div>
           </div>
 
           <div>
-            <h4 className="font-bold text-lg mb-4">Quick Links</h4>
+            <h4 className="font-semibold text-white text-sm mb-4">Quick Links</h4>
             <ul className="space-y-2">
               {['Home', 'About', 'Skills', 'Certifications', 'Portfolio', 'Contact'].map((item) => (
                 <li key={item}>
                   <button
                     onClick={() => document.getElementById(item.toLowerCase())?.scrollIntoView({ behavior: 'smooth' })}
-                    className="text-slate-400 hover:text-white transition-colors"
+                    className="text-sm text-slate-500 hover:text-slate-300 transition-colors"
                   >
                     {item}
                   </button>
@@ -55,8 +52,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold text-lg mb-4">Services</h4>
-            <ul className="space-y-2 text-slate-400">
+            <h4 className="font-semibold text-white text-sm mb-4">Services</h4>
+            <ul className="space-y-2 text-slate-500 text-sm">
               <li>Data Analysis</li>
               <li>Business Intelligence</li>
               <li>Dashboard Development</li>
@@ -67,9 +64,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-slate-800 pt-8 text-center">
-          <p className="text-slate-400 flex items-center justify-center gap-2">
-            Made with <Heart size={16} className="text-red-500" fill="currentColor" /> by Ramu Battu © {currentYear}
+        <div className="border-t border-white/[0.04] pt-8 text-center">
+          <p className="text-sm text-slate-600">
+            Ramu Battu &copy; {currentYear}. All rights reserved.
           </p>
         </div>
       </div>

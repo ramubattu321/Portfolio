@@ -1,188 +1,186 @@
-import { GraduationCap, Briefcase, MapPin, Calendar, Award, Target } from 'lucide-react';
+import { GraduationCap, Briefcase, MapPin, Calendar } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
-      <div className="absolute top-20 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
+    <section id="about" className="py-24 bg-slate-950 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(14,165,233,0.05)_0%,_transparent_50%)]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <div className="inline-block px-5 py-2.5 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-blue-300 rounded-full text-sm font-semibold mb-4 border border-blue-400/40 backdrop-blur-md shadow-lg">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
+          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-semibold tracking-wide uppercase mb-4">
             Get to Know Me
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">About Me</h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400 mx-auto rounded-full shadow-lg shadow-blue-500/50"></div>
-        </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mt-4 mb-4">About Me</h2>
+          <div className="w-16 h-1 bg-gradient-to-r from-sky-400 to-cyan-400 mx-auto rounded-full" />
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 mb-16">
-          <div className="space-y-6">
-            <div className="relative">
-              <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-blue-400 to-cyan-400 rounded-full"></div>
-              <p className="text-lg text-slate-300 leading-relaxed pl-4">
-                I'm a dedicated <span className="font-semibold text-blue-400">Data Analyst and Data Scientist</span> passionate about transforming complex data into strategic insights. My expertise spans financial data management, analytics, and collaborative problem-solving.
+        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="space-y-6"
+          >
+            <div className="border-l-2 border-sky-500/30 pl-6">
+              <p className="text-lg text-slate-300 leading-relaxed">
+                I'm a dedicated <span className="font-semibold text-sky-400">Data Analyst and Data Scientist</span> passionate about transforming complex data into strategic insights. My expertise spans financial data management, analytics, and collaborative problem-solving.
               </p>
             </div>
-            <p className="text-lg text-slate-300 leading-relaxed">
-              Currently pursuing my <span className="font-semibold text-white">Master's degree at California State University, Fresno</span>, I bring a strong foundation in analytics, combined with hands-on experience in dashboard automation, financial analysis, and business intelligence.
+            <p className="text-lg text-slate-400 leading-relaxed">
+              Currently pursuing my <span className="font-medium text-slate-200">Master's degree at California State University, Fresno</span>, I bring a strong foundation in analytics, combined with hands-on experience in dashboard automation, financial analysis, and business intelligence.
             </p>
-            <p className="text-lg text-slate-300 leading-relaxed">
-              I thrive on leveraging tools like <span className="font-semibold text-white">Power BI, SQL, and Python</span> to drive data-driven decision-making and optimize business processes.
+            <p className="text-lg text-slate-400 leading-relaxed">
+              I thrive on leveraging tools like <span className="font-medium text-slate-200">Power BI, SQL, and Python</span> to drive data-driven decision-making and optimize business processes.
             </p>
+          </motion.div>
 
-            <div className="grid grid-cols-2 gap-4 pt-4">
-              <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-xl p-4 border border-blue-400/30 backdrop-blur-sm">
-                <Target className="text-blue-400 mb-2" size={28} />
-                <p className="text-2xl font-bold text-white">20+</p>
-                <p className="text-sm text-slate-400">Projects</p>
-              </div>
-              <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-xl p-4 border border-green-400/30 backdrop-blur-sm">
-                <Award className="text-green-400 mb-2" size={28} />
-                <p className="text-2xl font-bold text-white">5+</p>
-                <p className="text-sm text-slate-400">Certifications</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-slate-800/60 rounded-2xl p-8 shadow-2xl border border-slate-700/50 backdrop-blur-md hover:shadow-blue-500/20 transition-all duration-300">
-            <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/50">
-                <GraduationCap className="text-white" size={24} />
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="p-8 rounded-2xl bg-white/[0.03] border border-white/[0.06] backdrop-blur-sm"
+          >
+            <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
+              <div className="p-2.5 rounded-xl bg-sky-500/10">
+                <GraduationCap className="text-sky-400" size={22} />
               </div>
               Education
             </h3>
-            <div className="space-y-6">
-              <div className="relative bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-xl p-5 border-l-4 border-blue-400 backdrop-blur-sm">
-                <div className="absolute top-4 right-4 w-12 h-12 bg-blue-500/30 rounded-full flex items-center justify-center border border-blue-400/30">
-                  <span className="text-blue-300 font-bold text-sm">MS</span>
+            <div className="space-y-5">
+              <div className="p-5 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                <div className="flex items-start justify-between mb-2">
+                  <h4 className="font-semibold text-white">Master's Degree</h4>
+                  <span className="px-2.5 py-1 rounded-md bg-sky-500/10 text-sky-400 text-xs font-semibold">MS</span>
                 </div>
-                <h4 className="font-bold text-white mb-1">Master's Degree</h4>
-                <p className="text-slate-300 font-medium">California State University, Fresno</p>
-                <p className="text-sm text-slate-400 flex items-center gap-2 mt-2">
-                  <Calendar size={16} className="text-blue-400" />
-                  Aug 2025 – Present
+                <p className="text-slate-300 text-sm font-medium">California State University, Fresno</p>
+                <p className="text-xs text-slate-500 flex items-center gap-1.5 mt-2">
+                  <Calendar size={12} />
+                  Aug 2025 - Present
                 </p>
               </div>
 
-              <div className="relative bg-gradient-to-br from-slate-700/50 to-blue-500/20 rounded-xl p-5 border-l-4 border-cyan-400 backdrop-blur-sm">
-                <div className="absolute top-4 right-4 w-12 h-12 bg-cyan-500/30 rounded-full flex items-center justify-center border border-cyan-400/30">
-                  <span className="text-cyan-300 font-bold text-sm">BS</span>
+              <div className="p-5 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                <div className="flex items-start justify-between mb-2">
+                  <h4 className="font-semibold text-white">Bachelor's Degree</h4>
+                  <span className="px-2.5 py-1 rounded-md bg-cyan-500/10 text-cyan-400 text-xs font-semibold">BS</span>
                 </div>
-                <h4 className="font-bold text-white mb-1">Bachelor's Degree</h4>
-                <p className="text-slate-300 font-medium">Matrusri Engineering College</p>
-                <p className="text-sm text-slate-400 flex items-center gap-2 mt-2">
-                  <MapPin size={16} className="text-cyan-400" />
+                <p className="text-slate-300 text-sm font-medium">Matrusri Engineering College</p>
+                <p className="text-xs text-slate-500 flex items-center gap-1.5 mt-2">
+                  <MapPin size={12} />
                   Hyderabad, India
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="bg-slate-800/60 rounded-2xl p-8 md:p-10 shadow-2xl border border-slate-700/50 backdrop-blur-md hover:shadow-blue-500/20 transition-all duration-300">
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 flex items-center gap-3">
-            <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/50">
-              <Briefcase className="text-white" size={24} />
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="p-8 md:p-10 rounded-2xl bg-white/[0.03] border border-white/[0.06] backdrop-blur-sm"
+        >
+          <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+            <div className="p-2.5 rounded-xl bg-sky-500/10">
+              <Briefcase className="text-sky-400" size={22} />
             </div>
             Professional Experience
           </h3>
 
-          <div className="relative space-y-8">
-            <div className="absolute left-8 top-8 bottom-8 w-0.5 bg-gradient-to-b from-blue-400 via-cyan-400 to-blue-400 hidden md:block"></div>
-
-            <div className="relative bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-xl p-6 md:pl-20 shadow-sm hover:shadow-lg transition-all duration-300 border border-blue-400/30 backdrop-blur-sm">
-              <div className="absolute left-6 top-6 w-5 h-5 bg-blue-400 rounded-full border-4 border-slate-800 shadow-lg hidden md:block"></div>
-
-              <div className="flex flex-wrap justify-between items-start mb-4">
+          <div className="space-y-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="relative p-6 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-sky-500/20 transition-colors duration-300"
+            >
+              <div className="flex flex-wrap justify-between items-start mb-5 gap-4">
                 <div>
-                  <h4 className="text-xl font-bold text-white">Data Analyst</h4>
-                  <p className="text-blue-400 font-semibold text-lg">TEXCEL INFOTECH</p>
+                  <h4 className="text-lg font-bold text-white">Data Analyst</h4>
+                  <p className="text-sky-400 font-semibold">TEXCEL INFOTECH</p>
                 </div>
                 <div className="text-right text-sm">
-                  <p className="font-semibold text-slate-300">Oct 2023 – Nov 2024</p>
-                  <span className="inline-block px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-xs font-medium mt-1 border border-green-400/30">
+                  <p className="text-slate-400 font-medium">Oct 2023 - Nov 2024</p>
+                  <span className="inline-block mt-1 px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-400 text-xs font-medium">
                     Remote
                   </span>
                 </div>
               </div>
-              <ul className="space-y-3 text-slate-300">
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Built interactive Power BI dashboards, reducing reporting time by 30% and improving KPI visibility for stakeholders</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Analyzed eCommerce and CRM datasets using SQL and Python to identify customer behavior patterns and improve retention strategies</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Conducted A/B testing on marketing campaigns, using statistical analysis to evaluate performance and optimize conversion rates</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Developed a Customer Lifetime Value (CLV) model using Python, enabling data-driven customer segmentation and supporting targeted marketing strategies</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Created predictive models to support revenue forecasting and business planning</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Transformed raw datasets into actionable insights through dashboards and reports for cross-functional teams</span>
-                </li>
+              <ul className="space-y-3">
+                {[
+                  'Built interactive Power BI dashboards, reducing reporting time by 30% and improving KPI visibility for stakeholders',
+                  'Analyzed eCommerce and CRM datasets using SQL and Python to identify customer behavior patterns and improve retention strategies',
+                  'Conducted A/B testing on marketing campaigns, using statistical analysis to evaluate performance and optimize conversion rates',
+                  'Developed a Customer Lifetime Value (CLV) model using Python, enabling data-driven customer segmentation and supporting targeted marketing strategies',
+                  'Created predictive models to support revenue forecasting and business planning',
+                  'Transformed raw datasets into actionable insights through dashboards and reports for cross-functional teams',
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-slate-300 text-sm leading-relaxed">
+                    <span className="flex-shrink-0 w-5 h-5 rounded-full bg-sky-500/20 text-sky-400 flex items-center justify-center text-[10px] font-bold mt-0.5">
+                      &#10003;
+                    </span>
+                    {item}
+                  </li>
+                ))}
               </ul>
-            </div>
+            </motion.div>
 
-            <div className="relative bg-gradient-to-br from-slate-700/50 to-blue-500/20 rounded-xl p-6 md:pl-20 shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-600 backdrop-blur-sm">
-              <div className="absolute left-6 top-6 w-5 h-5 bg-cyan-400 rounded-full border-4 border-slate-800 shadow-lg hidden md:block"></div>
-
-              <div className="flex flex-wrap justify-between items-start mb-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="relative p-6 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-sky-500/20 transition-colors duration-300"
+            >
+              <div className="flex flex-wrap justify-between items-start mb-5 gap-4">
                 <div>
-                  <h4 className="text-xl font-bold text-white">Account Executive Analyst</h4>
-                  <p className="text-blue-400 font-semibold text-lg">Gautam Joshi & Co. LLP, Chartered Accountants</p>
+                  <h4 className="text-lg font-bold text-white">Account Executive Analyst</h4>
+                  <p className="text-sky-400 font-semibold">Gautam Joshi & Co. LLP, Chartered Accountants</p>
                 </div>
                 <div className="text-right text-sm">
-                  <p className="font-semibold text-slate-300">Apr 2021 – Dec 2022</p>
-                  <div className="flex items-center justify-end gap-2 mt-2">
-                    <span className="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs font-medium border border-blue-400/30">
+                  <p className="text-slate-400 font-medium">Apr 2021 - Dec 2022</p>
+                  <div className="flex items-center justify-end gap-2 mt-1">
+                    <span className="px-2.5 py-1 rounded-md bg-sky-500/10 text-sky-400 text-xs font-medium">
                       Hybrid
                     </span>
-                    <span className="text-slate-400 text-xs flex items-center gap-1">
-                      <MapPin size={14} />
+                    <span className="text-slate-500 text-xs flex items-center gap-1">
+                      <MapPin size={11} />
                       Suryapet, India
                     </span>
                   </div>
                 </div>
               </div>
-              <ul className="space-y-3 text-slate-300">
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Analyzed financial statements (income, balance sheet, cash flow) to evaluate company performance and financial health</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Built Power BI dashboards to track budget vs actual performance, improving financial visibility for stakeholders</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Extracted, cleaned, and transformed financial data from Tally ERP (XML) into structured Excel and SQL-ready datasets</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Designed data transformation workflows to convert unstructured XML financial data into analysis-ready formats, supporting reporting and audit processes</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Supported internal and external audits by identifying anomalies and ensuring data accuracy</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Processed and structured financial datasets exceeding $250M+, improving reporting efficiency and data consistency</span>
-                </li>
+              <ul className="space-y-3">
+                {[
+                  'Analyzed financial statements (income, balance sheet, cash flow) to evaluate company performance and financial health',
+                  'Built Power BI dashboards to track budget vs actual performance, improving financial visibility for stakeholders',
+                  'Extracted, cleaned, and transformed financial data from Tally ERP (XML) into structured Excel and SQL-ready datasets',
+                  'Designed data transformation workflows to convert unstructured XML financial data into analysis-ready formats, supporting reporting and audit processes',
+                  'Supported internal and external audits by identifying anomalies and ensuring data accuracy',
+                  'Processed and structured financial datasets exceeding $250M+, improving reporting efficiency and data consistency',
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-slate-300 text-sm leading-relaxed">
+                    <span className="flex-shrink-0 w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-[10px] font-bold mt-0.5">
+                      &#10003;
+                    </span>
+                    {item}
+                  </li>
+                ))}
               </ul>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
