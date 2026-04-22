@@ -31,9 +31,9 @@ export default function Portfolio() {
       url: 'https://drive.google.com/file/d/1Sd-n5kLMrMTwMTGVIzSMYlH9xKKQ7cst/view'
     },
     {
-      title: 'Machine Learning Using Python',
-      description: 'Comprehensive machine learning projects covering supervised and unsupervised learning algorithms, model evaluation, and practical implementations.',
-      tags: ['Python', 'Machine Learning', 'Scikit-learn'],
+      title: 'Machine Learning for Production Optimization',
+      description: 'Applied data analysis and machine learning techniques to analyze structured production data and identify patterns affecting system performance and operational efficiency. Performed data cleaning, preprocessing, and EDA using Python. Built and compared models including Random Forest, Gradient Boosting, SVM, and Regression to evaluate predictive performance. Applied feature engineering techniques and analyzed the impact of data quality on model outcomes. Presented research findings at the California Central Valley Research Symposium (2026).',
+      tags: ['Python', 'Scikit-learn', 'Machine Learning', 'Research'],
       color: 'from-emerald-500 to-emerald-600',
       url: 'https://github.com/ramubattu321/Machine-Learning-Practice-using-python'
     },
