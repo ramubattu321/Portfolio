@@ -10,9 +10,9 @@ export default function Portfolio() {
       url: 'https://docs.google.com/presentation/d/1vmbymxcSdtZzmWCP03SMCH9m9QDe_eUq/edit?slide=id.p1#slide=id.p1'
     },
     {
-      title: 'Financial Data Analysis',
-      description: 'Analyzed $250M+ annual revenue using ERP-generated XML reports and Excel; evaluated trends, reconciled balances, and ensured GST-compliant reporting.',
-      tags: ['Excel', 'XML', 'ERP Systems', 'Data Analysis'],
+      title: 'Financial Data ETL Pipeline & Analysis',
+      description: 'Developed a Python-based ETL workflow to extract and transform semi-structured XML financial data into structured datasets. Processed financial transaction records exceeding $250M+, improving reporting accuracy and audit readiness. Implemented data validation checks to ensure consistency and reliability of transformed data. Automated data transformation processes, enabling efficient reporting and analysis.',
+      tags: ['Python', 'ETL', 'XML', 'Data Pipeline'],
       color: 'from-yellow-500 to-yellow-600',
       url: 'https://github.com/ramubattu321/financial-data-analysis'
     },
