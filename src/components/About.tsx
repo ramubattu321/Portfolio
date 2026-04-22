@@ -108,27 +108,27 @@ export default function About() {
               <ul className="space-y-3 text-slate-300">
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Automated interactive dashboards using Power BI, reducing reporting time by 30% and improving KPI visibility for business stakeholders</span>
+                  <span>Built interactive Power BI dashboards, reducing reporting time by 30% and improving KPI visibility for stakeholders</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Analyzed eCommerce and CRM datasets using SQL and Python to identify customer behavior patterns and improve conversion and retention strategies</span>
+                  <span>Analyzed eCommerce and CRM datasets using SQL and Python to identify customer behavior patterns and improve retention strategies</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Conducted A/B testing analysis on marketing campaigns to evaluate performance differences and optimize conversion rates using statistical analysis</span>
+                  <span>Conducted A/B testing on marketing campaigns, using statistical analysis to evaluate performance and optimize conversion rates</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Built predictive models to estimate customer lifetime value (CLV) and support revenue forecasting</span>
+                  <span>Developed a Customer Lifetime Value (CLV) model using Python, enabling data-driven customer segmentation and supporting targeted marketing strategies</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Developed retail sales data analysis project (Vrinda Store) using Excel dashboards to analyze sales trends, customer demographics, and top-performing states</span>
+                  <span>Created predictive models to support revenue forecasting and business planning</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Transformed raw datasets into visual reports and dashboards to support data-driven decision-making across marketing and business teams</span>
+                  <span>Transformed raw datasets into actionable insights through dashboards and reports for cross-functional teams</span>
                 </li>
               </ul>
             </div>
