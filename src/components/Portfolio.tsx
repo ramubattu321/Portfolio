@@ -17,9 +17,9 @@ export default function Portfolio() {
       url: 'https://github.com/ramubattu321/financial-data-analysis'
     },
     {
-      title: 'HR Analytics Dashboard',
-      description: 'Interactive Power BI dashboard visualizing key HR metrics including employee turnover, satisfaction scores, and recruitment analytics.',
-      tags: ['Power BI', 'HR Analytics', 'Visualization'],
+      title: 'HR Analytics Dashboard (Power BI)',
+      description: 'Developed an interactive HR analytics dashboard using Power BI to analyze employee attrition, workforce demographics, and retention patterns. Used DAX to calculate key metrics such as attrition rate, employee count, average salary, and job satisfaction, enabling data-driven HR decision-making. Identified high-risk departments, roles, and employee segments by analyzing attrition trends across age groups, salary levels, and tenure. This project demonstrates business intelligence, data visualization, and people analytics capabilities.',
+      tags: ['Power BI', 'DAX', 'Power Query', 'HR Analytics', 'Attrition Analysis'],
       color: 'from-cyan-500 to-cyan-600',
       url: 'https://github.com/ramubattu321/HR-Analytics-Dash-Board--Power-BI'
     },
