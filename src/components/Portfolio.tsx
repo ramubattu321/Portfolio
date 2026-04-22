@@ -63,7 +63,7 @@ export default function Portfolio() {
       description: 'Cleaned and analyzed semi-structured hotel booking data using Python and Pandas to extract booking platform information and generate business insights. Applied data wrangling techniques to handle inconsistent records, including identifying platform marker rows and using backfilling to correctly assign booking sources. Performed platform-level analysis to compare booking distribution across channels such as Expedia, Booking, Hotels, and Cleartrip, enabling structured reporting from messy raw data.',
       tags: ['Python', 'Pandas', 'Data Wrangling', 'EDA'],
       color: 'from-green-500 to-green-600',
-      url: 'https://github.com/ramubattu321/Hotel-Bookings/blob/main/pandas-intro.ipynb'
+      url: 'https://github.com/ramubattu321/Hotel-Booking-Data-Wrangling-Platform-Analysis'
     }
   ];
 
