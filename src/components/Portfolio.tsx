@@ -52,9 +52,9 @@ export default function Portfolio() {
       url: 'https://github.com/ramubattu321/IEEE-Hackathon-2023'
     },
     {
-      title: 'Analysis for 1000 Manufacturing Process Data',
-      description: 'Applied cluster sampling methodology to study operational efficiency and product quality in manufacturing processes.',
-      tags: ['Statistical Analysis', 'Quality Control', 'Python'],
+      title: 'Manufacturing Process Analysis & Anomaly Detection (SPC)',
+      description: 'Analyzed manufacturing process data using Python to monitor machine performance and detect anomalies using statistical process control (SPC) techniques. Implemented 3-sigma control charts to calculate process mean, upper control limit (UCL), and lower control limit (LCL), enabling identification of abnormal machine behavior. Performed exploratory data analysis (EDA) to understand sensor data patterns and support data-driven quality monitoring.',
+      tags: ['Python', 'Pandas', 'Anomaly Detection', 'SPC'],
       color: 'from-teal-500 to-teal-600',
       url: 'https://github.com/ramubattu321/Analysis-for-1000-Manufacturing-Process-Data/blob/main/test.ipynb'
     },
