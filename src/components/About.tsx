@@ -157,31 +157,27 @@ export default function About() {
               <ul className="space-y-3 text-slate-300">
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Collected and analyzed financial transaction data including sales, purchases, and tax records using Excel and Tally ERP</span>
+                  <span>Analyzed financial statements (income, balance sheet, cash flow) to evaluate company performance and financial health</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Managed and processed financial datasets exceeding $250M+ in cumulative transactions, organizing monthly financial records and generating structured reports</span>
+                  <span>Built Power BI dashboards to track budget vs actual performance, improving financial visibility for stakeholders</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Prepared budgets and financial forecasts and compared them with actual results to identify variances</span>
+                  <span>Extracted, cleaned, and transformed financial data from Tally ERP (XML) into structured Excel and SQL-ready datasets</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Reviewed income statements, balance sheets, and cash flow statements to evaluate financial performance</span>
+                  <span>Designed data transformation workflows to convert unstructured XML financial data into analysis-ready formats, supporting reporting and audit processes</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Created financial reports and dashboards to monitor KPIs and operational metrics</span>
+                  <span>Supported internal and external audits by identifying anomalies and ensuring data accuracy</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Supported internal and external audits by analyzing transaction records and ensuring compliance with financial regulations</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Filed monthly GST reports and prepared annual financial summaries for income tax reporting</span>
+                  <span>Processed and structured financial datasets exceeding $250M+, improving reporting efficiency and data consistency</span>
                 </li>
               </ul>
             </div>
