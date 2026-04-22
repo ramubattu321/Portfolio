@@ -38,9 +38,9 @@ export default function Portfolio() {
       url: 'https://github.com/ramubattu321/Machine-Learning-Practice-using-python'
     },
     {
-      title: 'AB-Testing-analysis',
-      description: 'Experimental design and statistical analysis for conversion optimization, including hypothesis testing and performance metrics.',
-      tags: ['Python', 'Statistics', 'A/B Testing'],
+      title: 'A/B Testing Analysis using SQL and Python',
+      description: 'Analyzed marketing campaign performance using A/B testing to compare control and test groups across key engagement and conversion metrics. Used SQL to calculate funnel metrics such as click-through rate (CTR), add-to-cart rate, conversion rate, and revenue per user. Performed segmentation analysis across device and region to evaluate campaign effectiveness. Applied statistical testing in Python to determine whether observed differences between campaigns were statistically significant.',
+      tags: ['SQL', 'Python', 'A/B Testing', 'Marketing Analytics'],
       color: 'from-red-500 to-red-600',
       url: 'https://github.com/ramubattu321/AB-Test-Case-Study'
     },
