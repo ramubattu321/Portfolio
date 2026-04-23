@@ -117,25 +117,37 @@ export default function Hero() {
               Available for Opportunities
             </motion.div>
 
-            <motion.h1
+            <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.15 }}
-              className="text-5xl md:text-7xl font-bold text-white leading-[1.1] mb-6"
+              className="flex items-center gap-5 mb-6"
             >
-              Ramu{' '}
-              <span className="relative inline-block">
-                <span className="bg-gradient-to-r from-sky-400 via-teal-400 to-sky-400 bg-clip-text text-transparent">
-                  Battu
+              <div className="relative flex-shrink-0">
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-sky-500/30 shadow-lg shadow-sky-500/10">
+                  <img
+                    src="https://i.postimg.cc/0N5fkdwD/Whats-App-Image-2025-10-23-at-9-19-25-AM.jpg"
+                    alt="Ramu Battu"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <span className="absolute -bottom-0.5 -right-0.5 w-5 h-5 bg-emerald-400 rounded-full border-[3px] border-slate-950" />
+              </div>
+              <h1 className="text-5xl md:text-7xl font-bold text-white leading-[1.1]">
+                Ramu{' '}
+                <span className="relative inline-block">
+                  <span className="bg-gradient-to-r from-sky-400 via-teal-400 to-sky-400 bg-clip-text text-transparent">
+                    Battu
+                  </span>
+                  <motion.span
+                    className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-sky-400 to-teal-400 rounded-full"
+                    initial={{ width: 0 }}
+                    animate={{ width: '100%' }}
+                    transition={{ duration: 1, delay: 1.2 }}
+                  />
                 </span>
-                <motion.span
-                  className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-sky-400 to-teal-400 rounded-full"
-                  initial={{ width: 0 }}
-                  animate={{ width: '100%' }}
-                  transition={{ duration: 1, delay: 1.2 }}
-                />
-              </span>
-            </motion.h1>
+              </h1>
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0 }}
