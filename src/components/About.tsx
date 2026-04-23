@@ -1,188 +1,165 @@
-import { GraduationCap, Briefcase, MapPin, Calendar, Award, Target } from 'lucide-react';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
+import { GraduationCap, Briefcase, MapPin, Calendar } from 'lucide-react';
+
+function AnimatedSection({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: '-80px' });
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 40 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.7, delay }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
-      <div className="absolute top-20 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
+    <section id="about" className="py-28 bg-slate-950 relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-sky-500/20 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <div className="inline-block px-5 py-2.5 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-blue-300 rounded-full text-sm font-semibold mb-4 border border-blue-400/40 backdrop-blur-md shadow-lg">
+        <AnimatedSection className="text-center mb-20">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-sm font-medium mb-6">
+            About Me
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Get to Know Me
-          </div>
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">About Me</h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400 mx-auto rounded-full shadow-lg shadow-blue-500/50"></div>
-        </div>
+          </h2>
+          <div className="w-16 h-1 bg-gradient-to-r from-sky-400 to-teal-400 mx-auto rounded-full" />
+        </AnimatedSection>
 
-        <div className="grid md:grid-cols-2 gap-12 mb-16">
+        <div className="grid lg:grid-cols-2 gap-16 mb-20">
           <div className="space-y-6">
-            <div className="relative">
-              <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-blue-400 to-cyan-400 rounded-full"></div>
-              <p className="text-lg text-slate-300 leading-relaxed pl-4">
-                I'm a dedicated <span className="font-semibold text-blue-400">Data Analyst and Data Scientist</span> passionate about transforming complex data into strategic insights. My expertise spans financial data management, analytics, and collaborative problem-solving.
+            <AnimatedSection>
+              <p className="text-lg text-slate-300 leading-relaxed border-l-2 border-sky-500/40 pl-6">
+                I'm a dedicated <span className="font-semibold text-sky-400">Data Analyst and Data Scientist</span> passionate about transforming complex data into strategic insights. My expertise spans financial data management, analytics, and collaborative problem-solving.
               </p>
-            </div>
-            <p className="text-lg text-slate-300 leading-relaxed">
-              Currently pursuing my <span className="font-semibold text-white">Master's degree at California State University, Fresno</span>, I bring a strong foundation in analytics, combined with hands-on experience in dashboard automation, financial analysis, and business intelligence.
-            </p>
-            <p className="text-lg text-slate-300 leading-relaxed">
-              I thrive on leveraging tools like <span className="font-semibold text-white">Power BI, SQL, and Python</span> to drive data-driven decision-making and optimize business processes.
-            </p>
-
-            <div className="grid grid-cols-2 gap-4 pt-4">
-              <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-xl p-4 border border-blue-400/30 backdrop-blur-sm">
-                <Target className="text-blue-400 mb-2" size={28} />
-                <p className="text-2xl font-bold text-white">20+</p>
-                <p className="text-sm text-slate-400">Projects</p>
-              </div>
-              <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-xl p-4 border border-green-400/30 backdrop-blur-sm">
-                <Award className="text-green-400 mb-2" size={28} />
-                <p className="text-2xl font-bold text-white">5+</p>
-                <p className="text-sm text-slate-400">Certifications</p>
-              </div>
-            </div>
+            </AnimatedSection>
+            <AnimatedSection delay={0.1}>
+              <p className="text-lg text-slate-400 leading-relaxed">
+                Currently pursuing my <span className="font-semibold text-white">Master's degree at California State University, Fresno</span>, I bring a strong foundation in analytics, combined with hands-on experience in dashboard automation, financial analysis, and business intelligence.
+              </p>
+            </AnimatedSection>
+            <AnimatedSection delay={0.2}>
+              <p className="text-lg text-slate-400 leading-relaxed">
+                I thrive on leveraging tools like <span className="font-semibold text-white">Power BI, SQL, and Python</span> to drive data-driven decision-making and optimize business processes.
+              </p>
+            </AnimatedSection>
           </div>
 
-          <div className="bg-slate-800/60 rounded-2xl p-8 shadow-2xl border border-slate-700/50 backdrop-blur-md hover:shadow-blue-500/20 transition-all duration-300">
-            <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/50">
-                <GraduationCap className="text-white" size={24} />
+          <AnimatedSection delay={0.15} className="bg-slate-900/50 rounded-2xl p-8 border border-slate-800/50">
+            <h3 className="text-xl font-bold text-white mb-8 flex items-center gap-3">
+              <div className="w-10 h-10 bg-sky-500/10 rounded-xl flex items-center justify-center border border-sky-500/20">
+                <GraduationCap className="text-sky-400" size={20} />
               </div>
               Education
             </h3>
             <div className="space-y-6">
-              <div className="relative bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-xl p-5 border-l-4 border-blue-400 backdrop-blur-sm">
-                <div className="absolute top-4 right-4 w-12 h-12 bg-blue-500/30 rounded-full flex items-center justify-center border border-blue-400/30">
-                  <span className="text-blue-300 font-bold text-sm">MS</span>
-                </div>
-                <h4 className="font-bold text-white mb-1">Master's Degree</h4>
-                <p className="text-slate-300 font-medium">California State University, Fresno</p>
-                <p className="text-sm text-slate-400 flex items-center gap-2 mt-2">
-                  <Calendar size={16} className="text-blue-400" />
-                  Aug 2025 – Present
+              <div className="relative pl-6 border-l-2 border-sky-500/30">
+                <div className="absolute -left-[5px] top-1 w-2 h-2 bg-sky-400 rounded-full" />
+                <h4 className="font-semibold text-white">Master's Degree</h4>
+                <p className="text-sky-400 text-sm font-medium">California State University, Fresno</p>
+                <p className="text-slate-500 text-sm mt-1 flex items-center gap-1">
+                  <Calendar size={12} /> Aug 2025 - Present
                 </p>
               </div>
-
-              <div className="relative bg-gradient-to-br from-slate-700/50 to-blue-500/20 rounded-xl p-5 border-l-4 border-cyan-400 backdrop-blur-sm">
-                <div className="absolute top-4 right-4 w-12 h-12 bg-cyan-500/30 rounded-full flex items-center justify-center border border-cyan-400/30">
-                  <span className="text-cyan-300 font-bold text-sm">BS</span>
-                </div>
-                <h4 className="font-bold text-white mb-1">Bachelor's Degree</h4>
-                <p className="text-slate-300 font-medium">Matrusri Engineering College</p>
-                <p className="text-sm text-slate-400 flex items-center gap-2 mt-2">
-                  <MapPin size={16} className="text-cyan-400" />
-                  Hyderabad, India
+              <div className="relative pl-6 border-l-2 border-slate-700">
+                <div className="absolute -left-[5px] top-1 w-2 h-2 bg-teal-400 rounded-full" />
+                <h4 className="font-semibold text-white">Bachelor's Degree</h4>
+                <p className="text-teal-400 text-sm font-medium">Matrusri Engineering College</p>
+                <p className="text-slate-500 text-sm mt-1 flex items-center gap-1">
+                  <MapPin size={12} /> Hyderabad, India
                 </p>
               </div>
             </div>
-          </div>
+          </AnimatedSection>
         </div>
 
-        <div className="bg-slate-800/60 rounded-2xl p-8 md:p-10 shadow-2xl border border-slate-700/50 backdrop-blur-md hover:shadow-blue-500/20 transition-all duration-300">
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 flex items-center gap-3">
-            <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/50">
-              <Briefcase className="text-white" size={24} />
-            </div>
-            Professional Experience
-          </h3>
-
-          <div className="relative space-y-8">
-            <div className="absolute left-8 top-8 bottom-8 w-0.5 bg-gradient-to-b from-blue-400 via-cyan-400 to-blue-400 hidden md:block"></div>
-
-            <div className="relative bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-xl p-6 md:pl-20 shadow-sm hover:shadow-lg transition-all duration-300 border border-blue-400/30 backdrop-blur-sm">
-              <div className="absolute left-6 top-6 w-5 h-5 bg-blue-400 rounded-full border-4 border-slate-800 shadow-lg hidden md:block"></div>
-
-              <div className="flex flex-wrap justify-between items-start mb-4">
-                <div>
-                  <h4 className="text-xl font-bold text-white">Data Analyst</h4>
-                  <p className="text-blue-400 font-semibold text-lg">TEXCEL INFOTECH</p>
-                </div>
-                <div className="text-right text-sm">
-                  <p className="font-semibold text-slate-300">Oct 2023 – Nov 2024</p>
-                  <span className="inline-block px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-xs font-medium mt-1 border border-green-400/30">
-                    Remote
-                  </span>
-                </div>
+        <AnimatedSection delay={0.1}>
+          <div className="bg-slate-900/50 rounded-2xl p-8 md:p-10 border border-slate-800/50">
+            <h3 className="text-xl font-bold text-white mb-10 flex items-center gap-3">
+              <div className="w-10 h-10 bg-sky-500/10 rounded-xl flex items-center justify-center border border-sky-500/20">
+                <Briefcase className="text-sky-400" size={20} />
               </div>
-              <ul className="space-y-3 text-slate-300">
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Built interactive Power BI dashboards, reducing reporting time by 30% and improving KPI visibility for stakeholders</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Analyzed eCommerce and CRM datasets using SQL and Python to identify customer behavior patterns and improve retention strategies</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Conducted A/B testing on marketing campaigns, using statistical analysis to evaluate performance and optimize conversion rates</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Developed a Customer Lifetime Value (CLV) model using Python, enabling data-driven customer segmentation and supporting targeted marketing strategies</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Created predictive models to support revenue forecasting and business planning</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Transformed raw datasets into actionable insights through dashboards and reports for cross-functional teams</span>
-                </li>
-              </ul>
-            </div>
+              Professional Experience
+            </h3>
 
-            <div className="relative bg-gradient-to-br from-slate-700/50 to-blue-500/20 rounded-xl p-6 md:pl-20 shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-600 backdrop-blur-sm">
-              <div className="absolute left-6 top-6 w-5 h-5 bg-cyan-400 rounded-full border-4 border-slate-800 shadow-lg hidden md:block"></div>
+            <div className="relative space-y-10">
+              <div className="absolute left-[11px] top-2 bottom-2 w-px bg-gradient-to-b from-sky-500/40 via-teal-500/30 to-transparent hidden md:block" />
 
-              <div className="flex flex-wrap justify-between items-start mb-4">
-                <div>
-                  <h4 className="text-xl font-bold text-white">Account Executive Analyst</h4>
-                  <p className="text-blue-400 font-semibold text-lg">Gautam Joshi & Co. LLP, Chartered Accountants</p>
-                </div>
-                <div className="text-right text-sm">
-                  <p className="font-semibold text-slate-300">Apr 2021 – Dec 2022</p>
-                  <div className="flex items-center justify-end gap-2 mt-2">
-                    <span className="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs font-medium border border-blue-400/30">
-                      Hybrid
-                    </span>
-                    <span className="text-slate-400 text-xs flex items-center gap-1">
-                      <MapPin size={14} />
-                      Suryapet, India
-                    </span>
+              {[
+                {
+                  title: 'Data Analyst',
+                  company: 'TEXCEL INFOTECH',
+                  period: 'Oct 2023 - Nov 2024',
+                  type: 'Remote',
+                  color: 'sky',
+                  bullets: [
+                    'Built interactive Power BI dashboards, reducing reporting time by 30% and improving KPI visibility',
+                    'Analyzed eCommerce and CRM datasets using SQL and Python to identify customer behavior patterns',
+                    'Conducted A/B testing on marketing campaigns using statistical analysis',
+                    'Developed a Customer Lifetime Value (CLV) model for data-driven customer segmentation',
+                    'Created predictive models for revenue forecasting and business planning',
+                  ],
+                },
+                {
+                  title: 'Account Executive Analyst',
+                  company: 'Gautam Joshi & Co. LLP',
+                  period: 'Apr 2021 - Dec 2022',
+                  type: 'Hybrid',
+                  location: 'Suryapet, India',
+                  color: 'teal',
+                  bullets: [
+                    'Analyzed financial statements to evaluate company performance and financial health',
+                    'Built Power BI dashboards to track budget vs actual performance',
+                    'Extracted and transformed financial data from Tally ERP (XML) into structured datasets',
+                    'Processed financial datasets exceeding $250M+, improving reporting efficiency',
+                    'Supported internal and external audits by identifying anomalies',
+                  ],
+                },
+              ].map((job, i) => (
+                <AnimatedSection key={i} delay={0.1 + i * 0.15}>
+                  <div className="relative md:pl-10">
+                    <div className={`absolute left-0 top-2 w-6 h-6 rounded-full border-2 ${
+                      job.color === 'sky' ? 'border-sky-500 bg-sky-500/20' : 'border-teal-500 bg-teal-500/20'
+                    } hidden md:flex items-center justify-center`}>
+                      <div className={`w-2 h-2 rounded-full ${job.color === 'sky' ? 'bg-sky-400' : 'bg-teal-400'}`} />
+                    </div>
+
+                    <div className="flex flex-wrap justify-between items-start mb-4 gap-2">
+                      <div>
+                        <h4 className="text-lg font-semibold text-white">{job.title}</h4>
+                        <p className={`${job.color === 'sky' ? 'text-sky-400' : 'text-teal-400'} font-medium`}>{job.company}</p>
+                      </div>
+                      <div className="text-right text-sm">
+                        <p className="text-slate-400">{job.period}</p>
+                        <span className={`inline-block px-2 py-0.5 mt-1 rounded text-xs font-medium ${
+                          job.color === 'sky' ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-sky-500/10 text-sky-400 border border-sky-500/20'
+                        }`}>
+                          {job.type}
+                        </span>
+                      </div>
+                    </div>
+                    <ul className="space-y-2">
+                      {job.bullets.map((b, j) => (
+                        <li key={j} className="flex gap-3 text-slate-400 text-sm leading-relaxed">
+                          <span className={`mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0 ${job.color === 'sky' ? 'bg-sky-500/60' : 'bg-teal-500/60'}`} />
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                </div>
-              </div>
-              <ul className="space-y-3 text-slate-300">
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Analyzed financial statements (income, balance sheet, cash flow) to evaluate company performance and financial health</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Built Power BI dashboards to track budget vs actual performance, improving financial visibility for stakeholders</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Extracted, cleaned, and transformed financial data from Tally ERP (XML) into structured Excel and SQL-ready datasets</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Designed data transformation workflows to convert unstructured XML financial data into analysis-ready formats, supporting reporting and audit processes</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Supported internal and external audits by identifying anomalies and ensuring data accuracy</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-500 text-white flex items-center justify-center text-xs font-bold mt-0.5">✓</span>
-                  <span>Processed and structured financial datasets exceeding $250M+, improving reporting efficiency and data consistency</span>
-                </li>
-              </ul>
+                </AnimatedSection>
+              ))}
             </div>
           </div>
-        </div>
+        </AnimatedSection>
       </div>
     </section>
   );

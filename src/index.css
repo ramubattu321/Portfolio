@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply text-slate-900;
+    @apply text-white bg-slate-950;
     margin: 0;
     padding: 0;
     overflow-x: hidden;

@@ -1,14 +1,33 @@
+import { motion, useInView } from 'framer-motion';
+import { useRef, useState } from 'react';
 import { Mail, Linkedin, MapPin, Send, CheckCircle, XCircle, Loader2, Phone } from 'lucide-react';
-import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 
+function AnimatedSection({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: '-60px' });
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 40 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.7, delay }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+const contactInfo = [
+  { icon: Mail, label: 'Email', value: 'ramuusa61@gmail.com', href: 'mailto:ramuusa61@gmail.com' },
+  { icon: Phone, label: 'Phone', value: '+1 (413) 273-9688', href: 'tel:+14132739688' },
+  { icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/in/ramu-battu', href: 'https://www.linkedin.com/in/ramu-battu-01a9a336a/', external: true },
+  { icon: MapPin, label: 'Location', value: 'Fresno, California' },
+];
+
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
+  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -18,226 +37,164 @@ export default function Contact() {
     setErrorMessage('');
 
     try {
-      await emailjs.send(
-        'service_r1bqb8e',
-        'template_cjep10u',
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-        },
-        '_Kh3AsYkPumlxqOGY'
-      );
+      await emailjs.send('service_r1bqb8e', 'template_cjep10u', {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      }, '_Kh3AsYkPumlxqOGY');
 
       setStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-
-      setTimeout(() => {
-        setStatus('idle');
-      }, 5000);
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      setTimeout(() => setStatus('idle'), 5000);
     } catch (error) {
       setStatus('error');
       setErrorMessage('Failed to send message. Please try again or email directly.');
       console.error('EmailJS error:', error);
-
-      setTimeout(() => {
-        setStatus('idle');
-      }, 5000);
+      setTimeout(() => setStatus('idle'), 5000);
     }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
-    <section id="contact" className="py-20 bg-slate-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Get In Touch</h2>
-          <div className="w-20 h-1 bg-blue-400 mx-auto mb-4"></div>
-          <p className="text-slate-300 max-w-2xl mx-auto">
+    <section id="contact" className="py-28 bg-slate-950 relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-sky-500/20 to-transparent" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <AnimatedSection className="text-center mb-20">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-sm font-medium mb-6">
+            Get In Touch
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Contact Me</h2>
+          <div className="w-16 h-1 bg-gradient-to-r from-sky-400 to-teal-400 mx-auto rounded-full mb-6" />
+          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
             Let's discuss how I can help with your data analytics and business intelligence needs
           </p>
-        </div>
+        </AnimatedSection>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
+        <div className="grid lg:grid-cols-2 gap-12">
+          <div className="space-y-4">
+            <AnimatedSection>
+              <h3 className="text-xl font-semibold text-white mb-6">Contact Information</h3>
+            </AnimatedSection>
 
-              <div className="space-y-4">
-                <div className="flex items-start gap-4 p-4 bg-slate-800/50 rounded-lg shadow-sm border border-slate-700 backdrop-blur-sm">
-                  <div className="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0 border border-blue-400/30">
-                    <Mail className="text-blue-400" size={24} />
+            {contactInfo.map((item, i) => {
+              const Icon = item.icon;
+              const content = (
+                <motion.div
+                  whileHover={{ x: 4 }}
+                  className="flex items-center gap-4 p-4 rounded-xl bg-slate-900/50 border border-slate-800/50 hover:border-sky-500/20 transition-colors"
+                >
+                  <div className="w-11 h-11 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center flex-shrink-0">
+                    <Icon className="text-sky-400" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-white mb-1">Email</h4>
-                    <a href="mailto:ramuusa61@gmail.com" className="text-blue-400 hover:underline">
-                      ramuusa61@gmail.com
+                    <p className="text-xs text-slate-500 mb-0.5">{item.label}</p>
+                    <p className="text-white font-medium text-sm">{item.value}</p>
+                  </div>
+                </motion.div>
+              );
+
+              return (
+                <AnimatedSection key={i} delay={i * 0.08}>
+                  {item.href ? (
+                    <a href={item.href} target={item.external ? '_blank' : undefined} rel="noopener noreferrer" className="block">
+                      {content}
                     </a>
-                  </div>
-                </div>
+                  ) : content}
+                </AnimatedSection>
+              );
+            })}
 
-                <div className="flex items-start gap-4 p-4 bg-slate-800/50 rounded-lg shadow-sm border border-slate-700 backdrop-blur-sm">
-                  <div className="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0 border border-blue-400/30">
-                    <Phone className="text-blue-400" size={24} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-white mb-1">Phone</h4>
-                    <a href="tel:+14132739688" className="text-blue-400 hover:underline">
-                      +1 (413) 273-9688
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 p-4 bg-slate-800/50 rounded-lg shadow-sm border border-slate-700 backdrop-blur-sm">
-                  <div className="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0 border border-blue-400/30">
-                    <Linkedin className="text-blue-400" size={24} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-white mb-1">LinkedIn</h4>
-                    <a
-                      href="https://www.linkedin.com/in/ramu-battu-01a9a336a/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-400 hover:underline"
-                    >
-                      linkedin.com/in/ramu-battu-01a9a336a
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 p-4 bg-slate-800/50 rounded-lg shadow-sm border border-slate-700 backdrop-blur-sm">
-                  <div className="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0 border border-blue-400/30">
-                    <MapPin className="text-blue-400" size={24} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-white mb-1">Location</h4>
-                    <p className="text-slate-300">Fresno, California</p>
-                  </div>
-                </div>
+            <AnimatedSection delay={0.4}>
+              <div className="mt-4 p-6 rounded-xl bg-gradient-to-br from-sky-500/5 to-teal-500/5 border border-sky-500/10">
+                <h4 className="text-white font-semibold mb-2">Let's Connect!</h4>
+                <p className="text-slate-400 text-sm leading-relaxed mb-2">
+                  I'm always interested in new opportunities, collaborations, or connecting with fellow data enthusiasts.
+                </p>
+                <p className="text-sky-400 text-sm">Response time: Within 24 hours</p>
               </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-blue-500/30 to-blue-600/30 rounded-xl p-6 text-white border border-blue-400/30 backdrop-blur-sm">
-              <h4 className="text-xl font-bold mb-3">Let's Connect!</h4>
-              <p className="mb-4 text-slate-300">
-                I'm always interested in hearing about new opportunities, collaborations, or just connecting with fellow data enthusiasts.
-              </p>
-              <p className="text-blue-300">
-                Response time: Within 24 hours
-              </p>
-            </div>
+            </AnimatedSection>
           </div>
 
-          <div className="bg-slate-800/50 rounded-xl shadow-lg p-8 border border-slate-700 backdrop-blur-sm">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
-                  Your Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-slate-600 bg-slate-900/50 text-white focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 outline-none transition-all"
-                  required
-                  disabled={status === 'sending'}
-                />
-              </div>
+          <AnimatedSection delay={0.15}>
+            <div className="bg-slate-900/50 rounded-2xl p-8 border border-slate-800/50">
+              <form onSubmit={handleSubmit} className="space-y-5">
+                {[
+                  { id: 'name', label: 'Your Name', type: 'text' },
+                  { id: 'email', label: 'Email Address', type: 'email' },
+                  { id: 'subject', label: 'Subject', type: 'text' },
+                ].map(field => (
+                  <div key={field.id}>
+                    <label htmlFor={field.id} className="block text-sm font-medium text-slate-400 mb-2">{field.label}</label>
+                    <input
+                      type={field.type}
+                      id={field.id}
+                      name={field.id}
+                      value={formData[field.id as keyof typeof formData]}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-xl border border-slate-700/50 bg-slate-950/50 text-white focus:border-sky-500/50 focus:ring-2 focus:ring-sky-500/10 outline-none transition-all text-sm"
+                      required
+                      disabled={status === 'sending'}
+                    />
+                  </div>
+                ))}
 
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-slate-600 bg-slate-900/50 text-white focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 outline-none transition-all"
-                  required
-                  disabled={status === 'sending'}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-slate-300 mb-2">
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-slate-600 bg-slate-900/50 text-white focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 outline-none transition-all"
-                  required
-                  disabled={status === 'sending'}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={5}
-                  className="w-full px-4 py-3 rounded-lg border border-slate-600 bg-slate-900/50 text-white focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 outline-none transition-all resize-none"
-                  required
-                  disabled={status === 'sending'}
-                />
-              </div>
-
-              {status === 'success' && (
-                <div className="flex items-center gap-2 p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
-                  <CheckCircle size={20} />
-                  <p className="font-medium">Message sent successfully! I'll get back to you soon.</p>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-slate-400 mb-2">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={5}
+                    className="w-full px-4 py-3 rounded-xl border border-slate-700/50 bg-slate-950/50 text-white focus:border-sky-500/50 focus:ring-2 focus:ring-sky-500/10 outline-none transition-all resize-none text-sm"
+                    required
+                    disabled={status === 'sending'}
+                  />
                 </div>
-              )}
 
-              {status === 'error' && (
-                <div className="flex items-center gap-2 p-4 bg-red-50 border border-red-200 rounded-lg text-red-800">
-                  <XCircle size={20} />
-                  <p className="font-medium">{errorMessage}</p>
-                </div>
-              )}
-
-              <button
-                type="submit"
-                disabled={status === 'sending'}
-                className="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 disabled:cursor-not-allowed text-white rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
-              >
-                {status === 'sending' ? (
-                  <>
-                    <Loader2 size={20} className="animate-spin" />
-                    Sending...
-                  </>
-                ) : (
-                  <>
-                    Send Message <Send size={20} />
-                  </>
+                {status === 'success' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="flex items-center gap-2 p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-emerald-400 text-sm"
+                  >
+                    <CheckCircle size={18} />
+                    Message sent successfully! I'll get back to you soon.
+                  </motion.div>
                 )}
-              </button>
-            </form>
-          </div>
+
+                {status === 'error' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="flex items-center gap-2 p-4 bg-rose-500/10 border border-rose-500/20 rounded-xl text-rose-400 text-sm"
+                  >
+                    <XCircle size={18} />
+                    {errorMessage}
+                  </motion.div>
+                )}
+
+                <motion.button
+                  type="submit"
+                  disabled={status === 'sending'}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full px-6 py-3.5 bg-sky-500 hover:bg-sky-600 disabled:bg-sky-500/50 disabled:cursor-not-allowed text-white rounded-xl font-semibold transition-colors flex items-center justify-center gap-2 shadow-lg shadow-sky-500/20"
+                >
+                  {status === 'sending' ? (
+                    <><Loader2 size={18} className="animate-spin" /> Sending...</>
+                  ) : (
+                    <><Send size={18} /> Send Message</>
+                  )}
+                </motion.button>
+              </form>
+            </div>
+          </AnimatedSection>
         </div>
       </div>
     </section>

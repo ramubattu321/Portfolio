@@ -1,130 +1,108 @@
 import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
+const navItems = [
+  { id: 'home', label: 'Home' },
+  { id: 'about', label: 'About' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'certifications', label: 'Certifications' },
+  { id: 'awards', label: 'Awards' },
+  { id: 'portfolio', label: 'Projects' },
+  { id: 'contact', label: 'Contact' },
+];
+
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false);
-    }
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    setMobileOpen(false);
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      isScrolled ? 'bg-white/90 backdrop-blur-xl shadow-lg' : 'bg-transparent'
-    }`}>
+    <motion.header
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6 }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? 'bg-slate-950/90 backdrop-blur-xl border-b border-slate-800/50 shadow-lg shadow-slate-950/50'
+          : 'bg-transparent'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-5">
-          <div className="flex items-center">
-            <h1 className={`text-2xl font-bold transition-all duration-300 ${
-              isScrolled
-                ? 'text-slate-800'
-                : 'text-white drop-shadow-lg'
-            }`}>
-              <span className={isScrolled ? '' : 'bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent'}>
-                Ramu Battu
-              </span>
-            </h1>
-          </div>
+        <div className="flex justify-between items-center py-4">
+          <button onClick={() => scrollTo('home')} className="text-xl font-bold text-white hover:text-sky-400 transition-colors">
+            RB<span className="text-sky-400">.</span>
+          </button>
 
-          <nav className="hidden md:flex space-x-1">
-            {['home', 'about'].map((item) => (
+          <nav className="hidden md:flex items-center gap-1">
+            {navItems.map((item) => (
               <button
-                key={item}
-                onClick={() => scrollToSection(item)}
-                className={`capitalize font-medium px-4 py-2 rounded-lg transition-all duration-300 ${
-                  isScrolled
-                    ? 'text-slate-700 hover:text-blue-600 hover:bg-blue-50'
-                    : 'text-white hover:bg-white/10'
-                }`}
+                key={item.id}
+                onClick={() => scrollTo(item.id)}
+                className="px-4 py-2 text-sm font-medium text-slate-400 hover:text-white rounded-lg hover:bg-white/5 transition-all"
               >
-                {item}
+                {item.label}
               </button>
             ))}
             <a
               href="https://drive.google.com/file/d/1nxVLeJKD__B8qmdPHxzCYlaAoLzkDb-j/view"
               target="_blank"
               rel="noopener noreferrer"
-              className={`capitalize font-medium px-4 py-2 rounded-lg transition-all duration-300 ${
-                isScrolled
-                  ? 'text-slate-700 hover:text-blue-600 hover:bg-blue-50'
-                  : 'text-white hover:bg-white/10'
-              }`}
+              className="ml-2 px-5 py-2 text-sm font-semibold text-sky-400 rounded-lg border border-sky-500/30 hover:bg-sky-500/10 transition-all"
             >
               Resume
             </a>
-            {['skills', 'certifications', 'awards', 'portfolio', 'contact'].map((item) => (
-              <button
-                key={item}
-                onClick={() => scrollToSection(item)}
-                className={`capitalize font-medium px-4 py-2 rounded-lg transition-all duration-300 ${
-                  isScrolled
-                    ? 'text-slate-700 hover:text-blue-600 hover:bg-blue-50'
-                    : 'text-white hover:bg-white/10'
-                }`}
-              >
-                {item === 'portfolio' ? 'projects' : item}
-              </button>
-            ))}
           </nav>
 
           <button
-            className={`md:hidden p-2 rounded-lg transition-all duration-300 ${
-              isScrolled
-                ? 'text-slate-800 hover:bg-slate-100'
-                : 'text-white hover:bg-white/10'
-            }`}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden p-2 text-slate-400 hover:text-white transition-colors"
+            onClick={() => setMobileOpen(!mobileOpen)}
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-xl border-t shadow-lg">
-          <nav className="flex flex-col space-y-1 px-4 py-4">
-            {['home', 'about'].map((item) => (
-              <button
-                key={item}
-                onClick={() => scrollToSection(item)}
-                className="capitalize text-left font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 px-4 py-3 rounded-lg transition-all"
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-slate-950/95 backdrop-blur-xl border-t border-slate-800/50 overflow-hidden"
+          >
+            <nav className="flex flex-col px-4 py-4 gap-1">
+              {navItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollTo(item.id)}
+                  className="text-left px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-lg transition-all font-medium"
+                >
+                  {item.label}
+                </button>
+              ))}
+              <a
+                href="https://drive.google.com/file/d/1nxVLeJKD__B8qmdPHxzCYlaAoLzkDb-j/view"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-3 text-sky-400 hover:bg-sky-500/10 rounded-lg transition-all font-medium"
               >
-                {item}
-              </button>
-            ))}
-            <a
-              href="https://drive.google.com/file/d/1nxVLeJKD__B8qmdPHxzCYlaAoLzkDb-j/view"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="capitalize text-left font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 px-4 py-3 rounded-lg transition-all"
-            >
-              Resume
-            </a>
-            {['skills', 'certifications', 'awards', 'portfolio', 'contact'].map((item) => (
-              <button
-                key={item}
-                onClick={() => scrollToSection(item)}
-                className="capitalize text-left font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 px-4 py-3 rounded-lg transition-all"
-              >
-                {item === 'portfolio' ? 'projects' : item}
-              </button>
-            ))}
-          </nav>
-        </div>
-      )}
-    </header>
+                Resume
+              </a>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
   );
 }

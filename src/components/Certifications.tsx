@@ -1,102 +1,128 @@
+import { motion, useInView } from 'framer-motion';
+import { useRef, useState } from 'react';
 import { Award, ExternalLink, CheckCircle2 } from 'lucide-react';
 
-export default function Certifications() {
-  const certifications = [
-    {
-      title: 'Google Data Analytics Professional Certificate',
-      issuer: 'Google',
-      color: 'from-blue-500 to-blue-600',
-      url: 'https://www.coursera.org/account/accomplishments/professional-cert/E2XU0VP50XXP?utm_source=mobile&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button'
-    },
-    {
-      title: 'Microsoft Office Specialist: Power BI Certification',
-      issuer: 'Simplilearn',
-      color: 'from-green-500 to-green-600',
-      url: 'https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIxNzIyIiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODc3ODg0NF84OTc4NjI0MTc1NTA5MTQzMTgwOC5wbmciLCJ1c2VybmFtZSI6IlJBTVUgQkFUVFUifQ&utm_source=shared-certificate&utm_medium=app_lms&utm_campaign=shared-certificate-promotion&referrer=https%3A%2F%2Fcertificates.simplicdn.net%2Fshare%2F8778844_89786241755091431808.png&_branch_match_id=1423135744260828079&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL87MLcjJ1EssKNDLyczL1g82iiiK9A5w9wtLsq8rSk1LLSrKzEuPTyrKLy9OLbL1AapJTfHMAwBQWBW8PwAAAA%3D%3D'
-    },
-    {
-      title: 'Microsoft Office Specialist: Excel Certification',
-      issuer: 'Simplilearn',
-      color: 'from-emerald-500 to-emerald-600',
-      url: 'https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIxNzc3IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODYwNjkwNl84OTc4NjI0MTc1MjIwMDA3MDczMi5wbmciLCJ1c2VybmFtZSI6IlJBTVUgQkFUVFUifQ&utm_source=shared-certificate&utm_medium=app_lms&utm_campaign=shared-certificate-promotion&referrer=https%3A%2F%2Fcertificates.simplicdn.net%2Fshare%2F8606906_89786241752200070732.png&_branch_match_id=1423135744260828079&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL87MLcjJ1EssKNDLyczL1i9yL%2FLNi%2FKwCAlNsq8rSk1LLSrKzEuPTyrKLy9OLbL1AapJTfHMAwCAradFPwAAAA%3D%3D'
-    },
-    {
-      title: 'Python for Data Analysis',
-      issuer: 'IBM',
-      color: 'from-yellow-500 to-yellow-600',
-      url: 'https://courses.cognitiveclass.ai/certificates/d855787e10ef45aeb281146fee7a48b4'
-    },
-    {
-      title: 'SQL Fundamental of Data base',
-      issuer: 'Simplilearn',
-      color: 'from-orange-500 to-orange-600',
-      url: 'https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIzMzI0IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODc0MjQyNF84OTc4NjI0MTc1NDQyODk1ODc0NC5wbmciLCJ1c2VybmFtZSI6IlJBTVUgQkFUVFUifQ%3D%3D&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion&referrer=https%3A%2F%2Flms.simplilearn.com%2Fcourses%2F6127%2FFundamentals-of-Database-%3A-What-is-SQL%253F%2Fcertificate%2Fdownload-skillup&%24web_only=true&_branch_match_id=1423135744260828079&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL87MLcjJ1EssKNDLyczL1k%2FVT3bK8%2FIILgp3DEuyrytKTUstKsrMS49PKsovL04tsvUBqkpN8cwDAJtq%2FYdBAAAA'
-    }
-  ];
-
+function AnimatedSection({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: '-60px' });
   return (
-    <section id="certifications" className="py-24 bg-gradient-to-b from-slate-800 via-slate-900 to-slate-800 relative overflow-hidden">
-      <div className="absolute top-20 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 40 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.7, delay }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+function Card3D({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+  const [transform, setTransform] = useState('');
+  const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    setTransform(`perspective(600px) rotateX(${-y * 8}deg) rotateY(${x * 8}deg) scale3d(1.02, 1.02, 1.02)`);
+  };
+  return (
+    <div className={className} style={{ transform, transition: 'transform 0.15s ease-out' }}
+      onMouseMove={handleMove} onMouseLeave={() => setTransform('')}>
+      {children}
+    </div>
+  );
+}
+
+const certifications = [
+  {
+    title: 'Google Data Analytics Professional Certificate',
+    issuer: 'Google',
+    color: 'sky',
+    url: 'https://www.coursera.org/account/accomplishments/professional-cert/E2XU0VP50XXP',
+  },
+  {
+    title: 'Microsoft Office Specialist: Power BI Certification',
+    issuer: 'Simplilearn',
+    color: 'emerald',
+    url: 'https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIxNzIyIiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODc3ODg0NF84OTc4NjI0MTc1NTA5MTQzMTgwOC5wbmciLCJ1c2VybmFtZSI6IlJBTVUgQkFUVFUifQ',
+  },
+  {
+    title: 'Microsoft Office Specialist: Excel Certification',
+    issuer: 'Simplilearn',
+    color: 'teal',
+    url: 'https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIxNzc3IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODYwNjkwNl84OTc4NjI0MTc1MjIwMDA3MDczMi5wbmciLCJ1c2VybmFtZSI6IlJBTVUgQkFUVFUifQ',
+  },
+  {
+    title: 'Python for Data Analysis',
+    issuer: 'IBM',
+    color: 'amber',
+    url: 'https://courses.cognitiveclass.ai/certificates/d855787e10ef45aeb281146fee7a48b4',
+  },
+  {
+    title: 'SQL Fundamentals of Database',
+    issuer: 'Simplilearn',
+    color: 'orange',
+    url: 'https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIzMzI0IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODc0MjQyNF84OTc4NjI0MTc1NDQyODk1ODc0NC5wbmciLCJ1c2VybmFtZSI6IlJBTVUgQkFUVFUifQ%3D%3D',
+  },
+];
+
+const colorMap: Record<string, { gradFrom: string; badge: string; border: string; iconBg: string }> = {
+  sky: { gradFrom: 'from-sky-500', badge: 'bg-sky-500/10 text-sky-400 border-sky-500/20', border: 'border-sky-500/20 hover:border-sky-500/40', iconBg: 'bg-sky-500/10' },
+  emerald: { gradFrom: 'from-emerald-500', badge: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20', border: 'border-emerald-500/20 hover:border-emerald-500/40', iconBg: 'bg-emerald-500/10' },
+  teal: { gradFrom: 'from-teal-500', badge: 'bg-teal-500/10 text-teal-400 border-teal-500/20', border: 'border-teal-500/20 hover:border-teal-500/40', iconBg: 'bg-teal-500/10' },
+  amber: { gradFrom: 'from-amber-500', badge: 'bg-amber-500/10 text-amber-400 border-amber-500/20', border: 'border-amber-500/20 hover:border-amber-500/40', iconBg: 'bg-amber-500/10' },
+  orange: { gradFrom: 'from-orange-500', badge: 'bg-orange-500/10 text-orange-400 border-orange-500/20', border: 'border-orange-500/20 hover:border-orange-500/40', iconBg: 'bg-orange-500/10' },
+};
+
+export default function Certifications() {
+  return (
+    <section id="certifications" className="py-28 bg-slate-950 relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-sky-500/20 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <div className="inline-block px-5 py-2.5 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-blue-300 rounded-full text-sm font-semibold mb-4 border border-blue-400/40 backdrop-blur-md shadow-lg">
+        <AnimatedSection className="text-center mb-20">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-sm font-medium mb-6">
             Professional Credentials
-          </div>
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">Certifications & Achievements</h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400 mx-auto rounded-full shadow-lg shadow-blue-500/50 mb-6"></div>
-          <p className="text-slate-300 text-lg max-w-3xl mx-auto leading-relaxed">
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Certifications</h2>
+          <div className="w-16 h-1 bg-gradient-to-r from-sky-400 to-teal-400 mx-auto rounded-full mb-6" />
+          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
             Certified expertise in data analysis, business intelligence, and technical skills
           </p>
-        </div>
+        </AnimatedSection>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {certifications.map((cert, index) => (
-            <div
-              key={index}
-              className="group bg-slate-800/60 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 hover:-translate-y-3 border-2 border-slate-700/50 hover:border-blue-400 backdrop-blur-md"
-            >
-              <div className={`h-32 bg-gradient-to-br ${cert.color} flex items-center justify-center relative overflow-hidden`}>
-                <div className="absolute inset-0 bg-black/20"></div>
-                <div className="relative z-10">
-                  <Award className="text-white" size={48} />
-                </div>
-              </div>
-
-              <div className="p-6">
-                <div className="flex items-start mb-3">
-                  <CheckCircle2 className="text-green-400 flex-shrink-0 mt-1" size={24} />
-                </div>
-
-                <h3 className="font-bold text-white text-lg mb-2 leading-tight group-hover:text-blue-300 transition-colors">
-                  {cert.title}
-                </h3>
-                <p className="text-blue-400 text-sm font-semibold mb-4">
-                  {cert.issuer}
-                </p>
-
-                <a
-                  href={cert.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full px-4 py-2.5 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white rounded-xl text-sm font-semibold flex items-center justify-center gap-2 transition-all shadow-lg shadow-blue-500/30"
-                >
-                  View Certificate
-                  <ExternalLink size={16} />
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-4 px-8 py-5 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-2xl border border-blue-400/40 backdrop-blur-md shadow-xl">
-            <Award className="text-blue-400" size={32} />
-            <p className="text-white font-bold text-lg">
-              Committed to continuous learning and professional development
-            </p>
-          </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {certifications.map((cert, i) => {
+            const c = colorMap[cert.color];
+            return (
+              <AnimatedSection key={i} delay={i * 0.08}>
+                <Card3D className={`h-full rounded-2xl border ${c.border} bg-slate-900/50 overflow-hidden transition-shadow hover:shadow-xl hover:shadow-slate-950/50`}>
+                  <div className={`h-24 bg-gradient-to-br ${c.gradFrom} to-slate-900 flex items-center justify-center relative`}>
+                    <div className={`w-14 h-14 rounded-xl ${c.iconBg} flex items-center justify-center backdrop-blur-sm border border-white/10`}>
+                      <Award className="text-white" size={28} />
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-center gap-2 mb-3">
+                      <CheckCircle2 className="text-emerald-400 flex-shrink-0" size={16} />
+                      <span className="text-emerald-400 text-xs font-medium">Verified</span>
+                    </div>
+                    <h3 className="font-semibold text-white mb-1 leading-tight">{cert.title}</h3>
+                    <p className="text-sky-400 text-sm font-medium mb-5">{cert.issuer}</p>
+                    <a
+                      href={cert.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium border ${c.badge} hover:scale-105 transition-transform`}
+                    >
+                      View Certificate <ExternalLink size={14} />
+                    </a>
+                  </div>
+                </Card3D>
+              </AnimatedSection>
+            );
+          })}
         </div>
       </div>
     </section>

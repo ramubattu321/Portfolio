@@ -1,144 +1,303 @@
-import { ArrowRight, Linkedin, Mail, Sparkles, TrendingUp, Database, Github, FileSpreadsheet } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
+import { ArrowRight, Linkedin, Mail, Github, ChevronDown } from 'lucide-react';
 
-export default function Hero() {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+function FloatingParticles() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const resize = () => {
+      canvas.width = canvas.offsetWidth * window.devicePixelRatio;
+      canvas.height = canvas.offsetHeight * window.devicePixelRatio;
+      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+    };
+    resize();
+    window.addEventListener('resize', resize);
+
+    const particles: { x: number; y: number; vx: number; vy: number; r: number; o: number }[] = [];
+    for (let i = 0; i < 80; i++) {
+      particles.push({
+        x: Math.random() * canvas.offsetWidth,
+        y: Math.random() * canvas.offsetHeight,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        r: Math.random() * 2 + 0.5,
+        o: Math.random() * 0.5 + 0.1,
+      });
     }
-  };
+
+    let frame: number;
+    const draw = () => {
+      const w = canvas.offsetWidth;
+      const h = canvas.offsetHeight;
+      ctx.clearRect(0, 0, w, h);
+
+      particles.forEach((p, i) => {
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0) p.x = w;
+        if (p.x > w) p.x = 0;
+        if (p.y < 0) p.y = h;
+        if (p.y > h) p.y = 0;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(56, 189, 248, ${p.o})`;
+        ctx.fill();
+
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = p.x - particles[j].x;
+          const dy = p.y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 120) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(56, 189, 248, ${0.08 * (1 - dist / 120)})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      });
+      frame = requestAnimationFrame(draw);
+    };
+    draw();
+
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener('resize', resize);
+    };
+  }, []);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900">
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjAzIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-50"></div>
+    <canvas
+      ref={canvasRef}
+      className="absolute inset-0 w-full h-full"
+      style={{ pointerEvents: 'none' }}
+    />
+  );
+}
 
-      <div className="absolute top-20 left-10 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-cyan-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+const roles = ['Data Scientist', 'Data Analyst', 'ML Engineer', 'BI Specialist'];
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="text-white space-y-6 animate-fade-in">
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full text-blue-300 text-sm font-medium backdrop-blur-md border border-blue-400/40 shadow-lg hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105">
-              <Sparkles size={16} className="animate-pulse" />
-              Data Professional
-            </div>
+export default function Hero() {
+  const [roleIdx, setRoleIdx] = useState(0);
 
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-              Hi, I'm{' '}
-              <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent animate-gradient">
-                Ramu Battu
+  useEffect(() => {
+    const t = setInterval(() => setRoleIdx(i => (i + 1) % roles.length), 3000);
+    return () => clearInterval(t);
+  }, []);
+
+  const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+
+  return (
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-slate-950">
+      <FloatingParticles />
+
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-sky-500/8 rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-teal-500/8 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '2s' }} />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 w-full">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-sm font-medium mb-8"
+            >
+              <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
+              Available for Opportunities
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.15 }}
+              className="text-5xl md:text-7xl font-bold text-white leading-[1.1] mb-6"
+            >
+              Ramu{' '}
+              <span className="relative inline-block">
+                <span className="bg-gradient-to-r from-sky-400 via-teal-400 to-sky-400 bg-clip-text text-transparent">
+                  Battu
+                </span>
+                <motion.span
+                  className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-sky-400 to-teal-400 rounded-full"
+                  initial={{ width: 0 }}
+                  animate={{ width: '100%' }}
+                  transition={{ duration: 1, delay: 1.2 }}
+                />
               </span>
-            </h1>
+            </motion.h1>
 
-            <p className="text-xl md:text-2xl text-slate-300 leading-relaxed">
-              Transforming data into{' '}
-              <span className="text-cyan-400 font-semibold">actionable insights</span>{' '}
-              through financial analysis, data storytelling, and business intelligence.
-            </p>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="h-10 mb-6 overflow-hidden"
+            >
+              <motion.p
+                key={roleIdx}
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -30, opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                className="text-2xl md:text-3xl font-semibold text-sky-400"
+              >
+                {roles[roleIdx]}
+              </motion.p>
+            </motion.div>
 
-            <div className="flex flex-wrap gap-4 pt-2">
-              <div className="flex items-center gap-2 px-5 py-2.5 bg-white/10 rounded-xl backdrop-blur-md border border-white/20 shadow-lg hover:shadow-green-500/30 hover:scale-105 transition-all duration-300">
-                <TrendingUp size={20} className="text-green-400" />
-                <span className="text-sm font-medium text-slate-200">Power BI Expert</span>
-              </div>
-              <div className="flex items-center gap-2 px-5 py-2.5 bg-white/10 rounded-xl backdrop-blur-md border border-white/20 shadow-lg hover:shadow-blue-500/30 hover:scale-105 transition-all duration-300">
-                <Database size={20} className="text-blue-400" />
-                <span className="text-sm font-medium text-slate-200">SQL & Python</span>
-              </div>
-              <div className="flex items-center gap-2 px-5 py-2.5 bg-white/10 rounded-xl backdrop-blur-md border border-white/20 shadow-lg hover:shadow-emerald-500/30 hover:scale-105 transition-all duration-300">
-                <FileSpreadsheet size={20} className="text-emerald-400" />
-                <span className="text-sm font-medium text-slate-200">Excel</span>
-              </div>
-            </div>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="text-lg text-slate-400 leading-relaxed mb-10 max-w-xl"
+            >
+              Transforming complex data into strategic insights through machine learning,
+              business intelligence, and advanced analytics. Master's student at California State University, Fresno.
+            </motion.p>
 
-            <p className="text-base text-slate-400 flex items-center gap-2">
-              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-              Master's Student at California State University, Fresno
-            </p>
-
-            <div className="flex flex-wrap gap-4 pt-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.65 }}
+              className="flex flex-wrap gap-4 mb-10"
+            >
               <button
-                onClick={() => scrollToSection('portfolio')}
-                className="group flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white rounded-xl font-semibold transition-all transform hover:scale-105 shadow-xl shadow-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/70"
+                onClick={() => scrollTo('portfolio')}
+                className="group flex items-center gap-2 px-7 py-3.5 bg-sky-500 hover:bg-sky-600 text-white rounded-xl font-semibold transition-all hover:scale-105 shadow-lg shadow-sky-500/25"
               >
                 View Projects
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </button>
               <button
-                onClick={() => scrollToSection('contact')}
-                className="flex items-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-xl font-semibold backdrop-blur-md transition-all border-2 border-white/30 hover:border-white/50 shadow-lg hover:scale-105"
+                onClick={() => scrollTo('contact')}
+                className="px-7 py-3.5 text-white rounded-xl font-semibold transition-all hover:scale-105 border border-slate-700 hover:border-sky-500/50 hover:bg-sky-500/5"
               >
                 Contact Me
               </button>
-            </div>
-
-            <div className="flex gap-4 pt-4">
               <a
-                href="https://www.linkedin.com/in/ramu-battu-01a9a336a/"
+                href="https://drive.google.com/file/d/1nxVLeJKD__B8qmdPHxzCYlaAoLzkDb-j/view"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-4 bg-white/10 hover:bg-blue-600 rounded-xl backdrop-blur-md transition-all transform hover:scale-110 border-2 border-white/20 hover:border-blue-400 shadow-lg hover:shadow-blue-500/50"
+                className="px-7 py-3.5 text-sky-400 rounded-xl font-semibold transition-all hover:scale-105 border border-sky-500/30 hover:border-sky-400 hover:bg-sky-500/5"
               >
-                <Linkedin size={24} className="group-hover:scale-110 transition-transform" />
+                Resume
               </a>
-              <a
-                href="https://github.com/ramubattu321"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group p-4 bg-white/10 hover:bg-slate-700 rounded-xl backdrop-blur-md transition-all transform hover:scale-110 border-2 border-white/20 hover:border-slate-500 shadow-lg hover:shadow-slate-500/50"
-              >
-                <Github size={24} className="group-hover:scale-110 transition-transform" />
-              </a>
-              <a
-                href="mailto:ramuusa61@gmail.com"
-                className="group p-4 bg-white/10 hover:bg-cyan-600 rounded-xl backdrop-blur-md transition-all transform hover:scale-110 border-2 border-white/20 hover:border-cyan-400 shadow-lg hover:shadow-cyan-500/50"
-              >
-                <Mail size={24} className="group-hover:scale-110 transition-transform" />
-              </a>
-            </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.9 }}
+              className="flex gap-3"
+            >
+              {[
+                { href: 'https://www.linkedin.com/in/ramu-battu-01a9a336a/', icon: Linkedin },
+                { href: 'https://github.com/ramubattu321', icon: Github },
+                { href: 'mailto:ramuusa61@gmail.com', icon: Mail },
+              ].map(({ href, icon: Icon }, i) => (
+                <a
+                  key={i}
+                  href={href}
+                  target={href.startsWith('mailto') ? undefined : '_blank'}
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-xl border border-slate-800 hover:border-sky-500/50 text-slate-400 hover:text-sky-400 transition-all hover:scale-110 hover:bg-sky-500/5"
+                >
+                  <Icon size={20} />
+                </a>
+              ))}
+            </motion.div>
           </div>
 
-          <div className="flex justify-center relative">
-            <div className="absolute inset-0 bg-blue-500 rounded-full blur-3xl opacity-40 animate-pulse"></div>
-            <div className="absolute top-10 right-10 w-24 h-24 bg-cyan-400 rounded-full blur-2xl opacity-50 animate-float"></div>
-            <div className="absolute bottom-10 left-10 w-20 h-20 bg-blue-300 rounded-full blur-xl opacity-50 animate-float" style={{ animationDelay: '0.5s' }}></div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="hidden lg:flex justify-center"
+          >
+            <div className="relative" style={{ perspective: '1000px' }}>
+              <motion.div
+                animate={{ rotateY: [0, 5, -5, 0], rotateX: [0, -3, 3, 0] }}
+                transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+                className="relative"
+              >
+                <div className="absolute -inset-4 bg-gradient-to-r from-sky-500/20 via-teal-500/20 to-sky-500/20 rounded-full blur-2xl animate-pulse" />
+                <div className="relative w-80 h-80 rounded-full overflow-hidden border-2 border-sky-500/30 shadow-2xl shadow-sky-500/20">
+                  <img
+                    src="https://i.postimg.cc/0N5fkdwD/Whats-App-Image-2025-10-23-at-9-19-25-AM.jpg"
+                    alt="Ramu Battu"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-sky-500/10 via-transparent to-teal-500/10" />
+                </div>
+              </motion.div>
 
-            <div className="relative group">
-              <div className="absolute -inset-2 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 rounded-full blur-2xl opacity-75 group-hover:opacity-100 transition-opacity animate-gradient animate-pulse"></div>
-
-              <div className="relative w-80 h-80 rounded-full shadow-2xl overflow-hidden border-4 border-white/30 group-hover:border-white/50 transition-all duration-300 animate-glow">
-                <img
-                  src="https://i.postimg.cc/0N5fkdwD/Whats-App-Image-2025-10-23-at-9-19-25-AM.jpg"
-                  alt="Ramu Battu"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 via-transparent to-cyan-500/20 pointer-events-none"></div>
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent animate-shimmer pointer-events-none"></div>
-              </div>
+              {[
+                { label: '3+ Yrs', x: -60, y: 40, delay: 1.2 },
+                { label: '20+ Projects', x: 60, y: -30, delay: 1.5 },
+                { label: '5+ Certs', x: 70, y: 60, delay: 1.8 },
+              ].map((badge, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1, y: [0, -8, 0] }}
+                  transition={{
+                    opacity: { delay: badge.delay },
+                    scale: { delay: badge.delay },
+                    y: { duration: 3, repeat: Infinity, ease: 'easeInOut', delay: i * 0.5 },
+                  }}
+                  className="absolute px-4 py-2 bg-slate-900/90 backdrop-blur-sm border border-sky-500/30 rounded-xl text-sm font-semibold text-sky-400 shadow-lg"
+                  style={{ left: `calc(50% + ${badge.x}px)`, top: `calc(50% + ${badge.y}px)`, transform: 'translate(-50%, -50%)' }}
+                >
+                  {badge.label}
+                </motion.div>
+              ))}
             </div>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 pt-12 border-t border-white/10">
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-white mb-2">3+</div>
-            <div className="text-sm text-slate-400">Years Experience</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-white mb-2">20+</div>
-            <div className="text-sm text-slate-400">Projects Completed</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-white mb-2">5+</div>
-            <div className="text-sm text-slate-400">Certifications</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-white mb-2">100%</div>
-            <div className="text-sm text-slate-400">Client Satisfaction</div>
-          </div>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.5 }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-24 pt-12 border-t border-slate-800/50"
+        >
+          {[
+            { value: '3+', label: 'Years Experience' },
+            { value: '20+', label: 'Projects Completed' },
+            { value: '5+', label: 'Certifications' },
+            { value: '100%', label: 'Client Satisfaction' },
+          ].map((stat, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.5 + i * 0.1 }}
+              className="text-center"
+            >
+              <div className="text-3xl md:text-4xl font-bold text-white mb-1">{stat.value}</div>
+              <div className="text-sm text-slate-500">{stat.label}</div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
+
+      <motion.div
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-slate-500"
+      >
+        <ChevronDown size={24} />
+      </motion.div>
     </section>
   );
 }
