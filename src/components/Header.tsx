@@ -40,8 +40,17 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <button onClick={() => scrollTo('home')} className="text-xl font-bold text-white hover:text-sky-400 transition-colors">
-            RB<span className="text-sky-400">.</span>
+          <button onClick={() => scrollTo('home')} className="flex items-center gap-2.5 group">
+            <div className="w-9 h-9 rounded-full overflow-hidden border-2 border-slate-700 group-hover:border-sky-500/50 transition-colors shadow-lg shadow-slate-950/50">
+              <img
+                src="https://i.postimg.cc/0N5fkdwD/Whats-App-Image-2025-10-23-at-9-19-25-AM.jpg"
+                alt="Ramu Battu"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <span className="text-lg font-bold text-white group-hover:text-sky-400 transition-colors">
+              Ramu Battu
+            </span>
           </button>
 
           <nav className="hidden md:flex items-center gap-1">
