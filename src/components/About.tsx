@@ -63,19 +63,21 @@ export default function About() {
             <div className="space-y-6">
               <div className="relative pl-6 border-l-2 border-sky-500/30">
                 <div className="absolute -left-[5px] top-1 w-2 h-2 bg-sky-400 rounded-full" />
-                <h4 className="font-semibold text-white">Master's Degree</h4>
+                <h4 className="font-semibold text-white">MS, Data Analytics</h4>
                 <p className="text-sky-400 text-sm font-medium">California State University, Fresno</p>
                 <p className="text-slate-500 text-sm mt-1 flex items-center gap-1">
-                  <Calendar size={12} /> Aug 2025 - Present
+                  <Calendar size={12} /> Jan 2025 – Dec 2026 (Expected)
                 </p>
+                <p className="text-slate-400 text-sm mt-1">GPA: 3.5/4.0 · NRTW Scholar</p>
               </div>
               <div className="relative pl-6 border-l-2 border-slate-700">
                 <div className="absolute -left-[5px] top-1 w-2 h-2 bg-teal-400 rounded-full" />
-                <h4 className="font-semibold text-white">Bachelor's Degree</h4>
-                <p className="text-teal-400 text-sm font-medium">Matrusri Engineering College</p>
+                <h4 className="font-semibold text-white">Bachelor of Engineering</h4>
+                <p className="text-teal-400 text-sm font-medium">Matrusri Engineering College, Osmania University</p>
                 <p className="text-slate-500 text-sm mt-1 flex items-center gap-1">
-                  <MapPin size={12} /> Hyderabad, India
+                  <MapPin size={12} /> Hyderabad, India · Jun 2024
                 </p>
+                <p className="text-slate-400 text-sm mt-1">GPA: 3.0/4.0</p>
               </div>
             </div>
           </AnimatedSection>
