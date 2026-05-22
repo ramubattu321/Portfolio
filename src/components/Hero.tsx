@@ -105,7 +105,7 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 w-full">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -223,7 +223,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="hidden lg:flex justify-center"
+            className="flex justify-center order-first lg:order-last"
           >
             <div className="relative" style={{ perspective: '1000px' }}>
               <motion.div
@@ -232,11 +232,11 @@ export default function Hero() {
                 className="relative"
               >
                 <div className="absolute -inset-4 bg-gradient-to-r from-sky-500/20 via-teal-500/20 to-sky-500/20 rounded-full blur-2xl animate-pulse" />
-                <div className="relative w-80 h-80 rounded-full overflow-hidden border-2 border-sky-500/30 shadow-2xl shadow-sky-500/20">
+                <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-2 border-sky-500/30 shadow-2xl shadow-sky-500/20">
                   <img
                     src="https://i.postimg.cc/cCZdhQ8z/image-606a6029.png"
                     alt="Ramu Battu"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-top"
                   />
                   <div className="absolute inset-0 bg-gradient-to-tr from-sky-500/10 via-transparent to-teal-500/10" />
                 </div>
@@ -256,7 +256,7 @@ export default function Hero() {
                     scale: { delay: badge.delay },
                     y: { duration: 3, repeat: Infinity, ease: 'easeInOut', delay: i * 0.5 },
                   }}
-                  className="absolute px-4 py-2 bg-slate-900/90 backdrop-blur-sm border border-sky-500/30 rounded-xl text-sm font-semibold text-sky-400 shadow-lg"
+                  className="absolute hidden lg:block px-4 py-2 bg-slate-900/90 backdrop-blur-sm border border-sky-500/30 rounded-xl text-sm font-semibold text-sky-400 shadow-lg"
                   style={{ left: `calc(50% + ${badge.x}px)`, top: `calc(50% + ${badge.y}px)`, transform: 'translate(-50%, -50%)' }}
                 >
                   {badge.label}
