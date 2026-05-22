@@ -235,7 +235,7 @@ export default function Hero() {
                 <div className="absolute -inset-4 bg-gradient-to-r from-sky-500/20 via-teal-500/20 to-sky-500/20 rounded-full blur-2xl animate-pulse" />
                 <div className="relative w-80 h-80 rounded-full overflow-hidden border-2 border-sky-500/30 shadow-2xl shadow-sky-500/20">
                   <img
-                    src="https://i.postimg.cc/0N5fkdwD/Whats-App-Image-2025-10-23-at-9-19-25-AM.jpg"
+                    src="https://i.postimg.cc/cCZdhQ8z/image-606a6029.png"
                     alt="Ramu Battu"
                     className="w-full h-full object-cover"
                   />
