@@ -38,17 +38,17 @@ export default function About() {
           <div className="space-y-6">
             <AnimatedSection>
               <p className="text-lg text-slate-300 leading-relaxed border-l-2 border-sky-500/40 pl-6">
-                I'm a dedicated <span className="font-semibold text-sky-400">Data Analyst and Data Scientist</span> passionate about transforming complex data into strategic insights. My expertise spans financial data management, analytics, and collaborative problem-solving.
+                I'm a <span className="font-semibold text-sky-400">Data Scientist and Analytics Engineer</span> with 3 years of experience building ML models, ETL pipelines, LLM systems, and BI dashboards that drive real business decisions.
               </p>
             </AnimatedSection>
             <AnimatedSection delay={0.1}>
               <p className="text-lg text-slate-400 leading-relaxed">
-                Currently pursuing my <span className="font-semibold text-white">Master's degree at California State University, Fresno</span>, I bring a strong foundation in analytics, combined with hands-on experience in dashboard automation, financial analysis, and business intelligence.
+                I processed <span className="font-semibold text-white">$250M+ in financial records</span> through automated Python/SQL pipelines, confirmed +15% CVR lift through A/B testing (p&lt;0.05) on 10,000+ users, and built demand forecasting models using Gradient Boosting (R&sup2;=0.89). My research on LLM fine-tuning and RAG systems was presented at the <span className="font-semibold text-white">California Central Valley Research Symposium (2026)</span> and accepted for publication with CRC Press.
               </p>
             </AnimatedSection>
             <AnimatedSection delay={0.2}>
               <p className="text-lg text-slate-400 leading-relaxed">
-                I thrive on leveraging tools like <span className="font-semibold text-white">Power BI, SQL, and Python</span> to drive data-driven decision-making and optimize business processes.
+                Currently pursuing my <span className="font-semibold text-white">MS in Data Analytics at CSU Fresno (GPA 3.5, NRTW Scholar)</span>, I'm actively seeking Data Scientist, Data Analyst, Data Engineer, and Analytics Engineer roles across the United States.
               </p>
             </AnimatedSection>
           </div>
