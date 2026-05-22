@@ -97,9 +97,9 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
 
 const projects = [
   {
-    title: 'Machine Learning Research Project',
-    description: 'Advanced research in machine learning algorithms, neural networks, and deep learning applications with performance optimization and model interpretability analysis.',
-    tags: ['Python', 'Deep Learning', 'TensorFlow', 'Research'],
+    title: 'E-Commerce Intelligence Platform',
+    description: 'Architected AWS data lake (S3 + Glue + Athena) on 100K+ e-commerce orders. Trained and compared 6 ML models — Gradient Boosting won at R²=0.89. K-Means segmentation (k=4) identified 10x spend gap between Champions ($485) and Hibernating ($45) customers. Confirmed +15% CVR lift from A/B test (p-value 0.05).',
+    tags: ['AWS', 'Python', 'Scikit-learn', 'A/B Testing'],
     color: 'sky',
     url: 'https://docs.google.com/presentation/d/1vmbymxcSdtZzmWCP03SMCH9m9QDe_eUq/edit?slide=id.p1#slide=id.p1',
   },
