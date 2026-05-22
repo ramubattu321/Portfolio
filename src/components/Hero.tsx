@@ -163,8 +163,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="text-lg text-slate-400 leading-relaxed mb-10 max-w-xl"
             >
-              Transforming complex data into strategic insights through machine learning,
-              business intelligence, and advanced analytics. Master's student at California State University, Fresno.
+              3 years building ML models, LLM/RAG pipelines, and data products that drive business decisions. Published researcher @ CRC Press · MS Data Analytics, CSU Fresno · Python · SQL · AWS · LLM/RAG
             </motion.p>
 
             <motion.div
