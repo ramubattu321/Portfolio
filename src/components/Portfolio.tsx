@@ -101,7 +101,7 @@ const projects = [
     description: 'Architected AWS data lake (S3 + Glue + Athena) on 100K+ e-commerce orders. Trained and compared 6 ML models — Gradient Boosting won at R²=0.89. K-Means segmentation (k=4) identified 10x spend gap between Champions ($485) and Hibernating ($45) customers. Confirmed +15% CVR lift from A/B test (p-value 0.05).',
     tags: ['AWS', 'Python', 'Scikit-learn', 'A/B Testing'],
     color: 'sky',
-    url: 'https://docs.google.com/presentation/d/1vmbymxcSdtZzmWCP03SMCH9m9QDe_eUq/edit?slide=id.p1#slide=id.p1',
+    url: 'https://github.com/ramubattu321/Ecommerce-AWS-Intelligence',
   },
   {
     title: 'Financial Data ETL Pipeline & Analysis',
