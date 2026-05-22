@@ -70,17 +70,22 @@ export default function Certifications() {
   const [lightbox, setLightbox] = useState<string | null>(null);
 
   return (
-    <section id="certifications" className="py-28 bg-[#fafafa]">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <section id="certifications" className="py-28 bg-[#fafafa] relative overflow-hidden noise-overlay">
+      <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-blue-50/30 rounded-full blur-[100px] translate-x-1/3" />
+
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <AnimatedSection className="mb-16">
           <p className="text-[13px] font-semibold text-teal-600 uppercase tracking-wider mb-3">Credentials</p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">Certifications</h2>
+          <h2 className="font-display text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">Certifications</h2>
         </AnimatedSection>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {certifications.map((cert, i) => (
             <AnimatedSection key={i} delay={i * 0.06}>
-              <div className="group h-full rounded-2xl border border-gray-200/60 bg-white overflow-hidden hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:border-gray-200 transition-all duration-300">
+              <motion.div
+                whileHover={{ y: -4 }}
+                className="group h-full rounded-2xl border border-gray-200/60 bg-white overflow-hidden hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] hover:border-gray-200 transition-all duration-300"
+              >
                 <div className="relative">
                   <div
                     className="relative cursor-pointer overflow-hidden"
@@ -89,29 +94,29 @@ export default function Certifications() {
                     <img
                       src={cert.image}
                       alt={cert.title}
-                      className="w-full h-auto object-contain bg-gray-50"
+                      className="w-full h-auto object-contain bg-gray-50 group-hover:scale-[1.02] transition-transform duration-500"
                       loading="lazy"
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors flex items-center justify-center">
-                      <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg scale-90 group-hover:scale-100 duration-300">
+                      <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg scale-75 group-hover:scale-100">
                         <ZoomIn className="text-gray-700" size={18} />
                       </div>
                     </div>
                   </div>
 
-                  <div className={`absolute top-3 left-3 ${cert.logoColor} px-2.5 py-1 rounded-lg shadow-sm`}>
+                  <div className={`absolute top-3 left-3 ${cert.logoColor} px-2.5 py-1 rounded-lg shadow-md`}>
                     <span className="text-white text-[10px] font-bold">{cert.logo}</span>
                   </div>
 
                   <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/90 backdrop-blur-sm border border-gray-200/60 shadow-sm">
                     <CheckCircle2 className="text-emerald-500" size={11} />
-                    <span className="text-emerald-600 text-[10px] font-semibold">VERIFIED</span>
+                    <span className="text-emerald-600 text-[10px] font-bold">VERIFIED</span>
                   </div>
                 </div>
 
                 <div className="p-5">
-                  <p className="text-[11px] font-medium text-gray-400 uppercase tracking-wider mb-1.5">{cert.platform}</p>
-                  <h3 className="font-semibold text-gray-900 text-[14px] leading-snug mb-2">
+                  <p className="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-1.5">{cert.platform}</p>
+                  <h3 className="font-semibold text-gray-900 text-[14px] leading-snug mb-2 group-hover:text-teal-700 transition-colors">
                     {cert.title}
                   </h3>
                   <p className="text-gray-400 text-[12px] mb-4">Issued by {cert.issuer}</p>
@@ -120,12 +125,12 @@ export default function Certifications() {
                     href={cert.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg text-[12px] font-medium text-gray-600 bg-gray-50 border border-gray-200/80 hover:bg-gray-100 hover:border-gray-300 transition-all"
+                    className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg text-[12px] font-medium text-gray-600 bg-gray-50 border border-gray-200/80 hover:bg-teal-50 hover:text-teal-700 hover:border-teal-200 transition-all"
                   >
                     View Certificate <ExternalLink size={11} />
                   </a>
                 </div>
-              </div>
+              </motion.div>
             </AnimatedSection>
           ))}
         </div>

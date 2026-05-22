@@ -19,47 +19,50 @@ function AnimatedSection({ children, className = '', delay = 0 }: { children: Re
 }
 
 const technicalSkills = [
-  { category: 'Data Visualization', skills: ['Power BI', 'Tableau', 'Looker Studio', 'Excel'] },
-  { category: 'Programming', skills: ['SQL', 'Python', 'Data Cleaning', 'ETL'] },
-  { category: 'Business Tools', skills: ['Tally ERP', 'Salesforce CRM', 'Google Analytics'] },
-  { category: 'Analysis', skills: ['Financial Analysis', 'Business Analysis', 'CRM Analytics'] },
-  { category: 'AI & LLM', skills: ['PyTorch', 'TensorFlow', 'BERT', 'LLM Fine-Tuning', 'RAG Pipelines', 'FAISS', 'HNSW', 'Hugging Face', 'Prompt Engineering'] },
-  { category: 'Cloud & Infrastructure', skills: ['AWS S3', 'AWS Glue', 'AWS Athena', 'EC2', 'Boto3', 'Git'] },
-  { category: 'ML & Statistics', skills: ['Scikit-learn', 'Gradient Boosting', 'K-Means', 'Regression', 'A/B Testing', 'Hypothesis Testing', 'SPC', 'Feature Engineering'] },
+  { category: 'Data Visualization', skills: ['Power BI', 'Tableau', 'Looker Studio', 'Excel'], gradient: 'from-blue-50 to-cyan-50', borderColor: 'hover:border-blue-200' },
+  { category: 'Programming', skills: ['SQL', 'Python', 'Data Cleaning', 'ETL'], gradient: 'from-teal-50 to-emerald-50', borderColor: 'hover:border-teal-200' },
+  { category: 'Business Tools', skills: ['Tally ERP', 'Salesforce CRM', 'Google Analytics'], gradient: 'from-amber-50 to-orange-50', borderColor: 'hover:border-amber-200' },
+  { category: 'Analysis', skills: ['Financial Analysis', 'Business Analysis', 'CRM Analytics'], gradient: 'from-rose-50 to-pink-50', borderColor: 'hover:border-rose-200' },
+  { category: 'AI & LLM', skills: ['PyTorch', 'TensorFlow', 'BERT', 'LLM Fine-Tuning', 'RAG Pipelines', 'FAISS', 'HNSW', 'Hugging Face', 'Prompt Engineering'], gradient: 'from-teal-50 to-cyan-50', borderColor: 'hover:border-teal-200' },
+  { category: 'Cloud & Infrastructure', skills: ['AWS S3', 'AWS Glue', 'AWS Athena', 'EC2', 'Boto3', 'Git'], gradient: 'from-sky-50 to-blue-50', borderColor: 'hover:border-sky-200' },
+  { category: 'ML & Statistics', skills: ['Scikit-learn', 'Gradient Boosting', 'K-Means', 'Regression', 'A/B Testing', 'Hypothesis Testing', 'SPC', 'Feature Engineering'], gradient: 'from-emerald-50 to-green-50', borderColor: 'hover:border-emerald-200' },
 ];
 
 const softSkills = [
-  { icon: LineChart, name: 'Data Storytelling' },
-  { icon: Lightbulb, name: 'Problem Solving' },
-  { icon: Target, name: 'Strategic Thinking' },
-  { icon: Users, name: 'Collaboration' },
-  { icon: Database, name: 'Attention to Detail' },
-  { icon: Code, name: 'Project Management' },
+  { icon: LineChart, name: 'Data Storytelling', color: 'text-blue-500 bg-blue-50 border-blue-100' },
+  { icon: Lightbulb, name: 'Problem Solving', color: 'text-amber-500 bg-amber-50 border-amber-100' },
+  { icon: Target, name: 'Strategic Thinking', color: 'text-teal-500 bg-teal-50 border-teal-100' },
+  { icon: Users, name: 'Collaboration', color: 'text-emerald-500 bg-emerald-50 border-emerald-100' },
+  { icon: Database, name: 'Attention to Detail', color: 'text-rose-500 bg-rose-50 border-rose-100' },
+  { icon: Code, name: 'Project Management', color: 'text-sky-500 bg-sky-50 border-sky-100' },
 ];
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <section id="skills" className="py-28 bg-white relative overflow-hidden noise-overlay">
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-teal-50/40 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/4" />
+
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <AnimatedSection className="mb-16">
           <p className="text-[13px] font-semibold text-teal-600 uppercase tracking-wider mb-3">My Expertise</p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">Skills & Expertise</h2>
+          <h2 className="font-display text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">Skills & Expertise</h2>
         </AnimatedSection>
 
         <div className="mb-20">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {technicalSkills.map((cat, i) => (
               <AnimatedSection key={i} delay={i * 0.06}>
-                <div className="h-full rounded-2xl p-6 bg-[#fafafa] border border-gray-100/80 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:border-gray-200 transition-all duration-300">
-                  <h4 className="font-display font-semibold text-gray-900 text-[15px] mb-4">{cat.category}</h4>
+                <div className={`group h-full rounded-2xl p-6 bg-gradient-to-br ${cat.gradient} border border-gray-200/60 ${cat.borderColor} hover:shadow-[0_10px_40px_rgba(0,0,0,0.05)] hover:-translate-y-0.5 transition-all duration-300`}>
+                  <h4 className="font-display font-bold text-gray-900 text-[15px] mb-4">{cat.category}</h4>
                   <div className="flex flex-wrap gap-1.5">
                     {cat.skills.map((skill, j) => (
-                      <span
+                      <motion.span
                         key={j}
-                        className="px-3 py-1.5 rounded-lg text-[13px] font-medium text-gray-600 bg-white border border-gray-200/80 hover:border-gray-300 transition-colors"
+                        whileHover={{ scale: 1.05, y: -1 }}
+                        className="px-3 py-1.5 rounded-lg text-[13px] font-medium text-gray-700 bg-white/80 border border-gray-200/80 shadow-[0_1px_3px_rgba(0,0,0,0.04)] cursor-default"
                       >
                         {skill}
-                      </span>
+                      </motion.span>
                     ))}
                   </div>
                 </div>
@@ -77,12 +80,15 @@ export default function Skills() {
             const Icon = skill.icon;
             return (
               <AnimatedSection key={i} delay={i * 0.05}>
-                <div className="rounded-2xl p-5 bg-[#fafafa] border border-gray-100/80 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:border-gray-200 transition-all duration-300 text-center group cursor-default">
-                  <div className="w-11 h-11 rounded-xl bg-white border border-gray-200/80 flex items-center justify-center mb-3 mx-auto group-hover:scale-110 group-hover:shadow-sm transition-all duration-300">
-                    <Icon className="text-gray-500 group-hover:text-teal-600 transition-colors" size={18} />
+                <motion.div
+                  whileHover={{ y: -4, scale: 1.02 }}
+                  className="rounded-2xl p-5 bg-white border border-gray-200/60 hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] transition-shadow duration-300 text-center group cursor-default"
+                >
+                  <div className={`w-11 h-11 rounded-xl ${skill.color} border flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-sm`}>
+                    <Icon size={18} />
                   </div>
                   <h4 className="font-medium text-gray-600 text-[13px]">{skill.name}</h4>
-                </div>
+                </motion.div>
               </AnimatedSection>
             );
           })}

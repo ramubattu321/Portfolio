@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { ExternalLink, ArrowUpRight, Github } from 'lucide-react';
+import { ExternalLink, ArrowUpRight, Github, Sparkles } from 'lucide-react';
 
 function AnimatedSection({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   const ref = useRef(null);
@@ -25,45 +25,47 @@ const projects = [
     tags: ['AWS', 'Python', 'Scikit-learn', 'A/B Testing'],
     url: 'https://github.com/ramubattu321/Ecommerce-AWS-Intelligence',
     featured: true,
+    gradient: 'from-teal-500 to-emerald-500',
   },
   {
     title: 'Applied AI & ML Research',
-    description: 'ACTD fine-tuning across 4 LLM architectures outperformed iterative RAG. Built FAISS/HNSW vector databases. Presented at California Central Valley Research Symposium. Published with CRC Press.',
+    description: 'ACTD fine-tuning across 4 LLM architectures outperformed iterative RAG. Built FAISS/HNSW vector databases. Presented at California Central Valley Research Symposium.',
     tags: ['PyTorch', 'RAG', 'FAISS', 'BERT', 'LLM'],
     url: 'https://github.com/ramubattu321/Machine-Learning-Practice-using-python',
     featured: true,
+    gradient: 'from-blue-500 to-cyan-500',
   },
   {
     title: 'Financial Data ETL Pipeline',
-    description: 'Python-based ETL workflow extracting and transforming semi-structured XML financial data. Processed $250M+ in financial records.',
+    description: 'Python-based ETL workflow extracting and transforming semi-structured XML financial data.',
     tags: ['Python', 'ETL', 'XML', 'Pipeline'],
     url: 'https://github.com/ramubattu321/financial-data-analysis',
     featured: false,
   },
   {
     title: 'HR Analytics Dashboard',
-    description: 'Interactive Power BI dashboard analyzing employee attrition, workforce demographics, and retention patterns.',
+    description: 'Interactive Power BI dashboard analyzing employee attrition and retention patterns.',
     tags: ['Power BI', 'DAX', 'Power Query'],
     url: 'https://github.com/ramubattu321/HR-Analytics-Dash-Board--Power-BI',
     featured: false,
   },
   {
     title: 'Vrinda Store Sales Dashboard',
-    description: 'Interactive Excel dashboard with Pivot Tables, dynamic visualizations, and regional performance analysis.',
+    description: 'Interactive Excel dashboard with Pivot Tables and regional performance analysis.',
     tags: ['Excel', 'Pivot Tables', 'Viz'],
     url: 'https://github.com/ramubattu321/Vrinda-Store-Sales-Dashboard-Business-Insights',
     featured: false,
   },
   {
     title: 'A/B Testing Analysis',
-    description: 'Marketing campaign analysis with funnel metrics including CTR, conversion rate, and revenue per user.',
+    description: 'Marketing campaign analysis with funnel metrics including CTR and conversion rate.',
     tags: ['SQL', 'Python', 'Statistics'],
     url: 'https://github.com/ramubattu321/AB-Test-Case-Study',
     featured: false,
   },
   {
     title: 'IEEE Hackathon Dashboard',
-    description: 'E-commerce sales dashboard analyzing sales performance, profit trends, and return patterns.',
+    description: 'E-commerce sales dashboard analyzing performance, profit trends, and returns.',
     tags: ['Excel', 'Pivot Tables', 'Viz'],
     url: 'https://github.com/ramubattu321/IEEE-Hackathon-2023',
     featured: false,
@@ -87,21 +89,21 @@ const projects = [
 function FeaturedCard({ project, index }: { project: typeof projects[0]; index: number }) {
   return (
     <AnimatedSection delay={index * 0.1}>
-      <a
-        href={project.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group block h-full"
-      >
-        <div className="h-full rounded-2xl bg-white border border-gray-200/60 p-8 md:p-9 transition-all duration-300 hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] hover:border-gray-200 hover:-translate-y-1 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-teal-50/60 to-transparent rounded-full -translate-y-1/3 translate-x-1/3" />
+      <a href={project.url} target="_blank" rel="noopener noreferrer" className="group block h-full">
+        <motion.div
+          whileHover={{ y: -6 }}
+          className="h-full rounded-2xl bg-white border border-gray-200/60 p-8 md:p-9 transition-all duration-300 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] hover:border-gray-200 relative overflow-hidden"
+        >
+          <div className={`absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl ${project.gradient} opacity-[0.04] rounded-full -translate-y-1/3 translate-x-1/3 group-hover:opacity-[0.08] group-hover:scale-150 transition-all duration-700`} />
+          <div className={`absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr ${project.gradient} opacity-0 group-hover:opacity-[0.04] rounded-full translate-y-1/2 -translate-x-1/4 transition-all duration-700`} />
 
           <div className="relative">
             <div className="flex items-start justify-between mb-6">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-50 border border-teal-100 text-teal-700 text-[11px] font-semibold uppercase tracking-wider">
+              <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-to-r ${project.gradient} text-white text-[11px] font-semibold uppercase tracking-wider shadow-sm`}>
+                <Sparkles size={10} />
                 Featured
               </span>
-              <span className="p-2.5 rounded-xl bg-gray-50 border border-gray-200/80 text-gray-400 group-hover:text-gray-900 group-hover:bg-gray-100 group-hover:border-gray-300 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+              <span className="p-2.5 rounded-xl bg-gray-50 border border-gray-200/80 text-gray-400 group-hover:text-white group-hover:bg-gray-900 group-hover:border-gray-900 transition-all duration-300 group-hover:shadow-lg">
                 <ArrowUpRight size={15} />
               </span>
             </div>
@@ -124,7 +126,7 @@ function FeaturedCard({ project, index }: { project: typeof projects[0]; index: 
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       </a>
     </AnimatedSection>
   );
@@ -132,15 +134,13 @@ function FeaturedCard({ project, index }: { project: typeof projects[0]; index: 
 
 function ProjectRow({ project, index }: { project: typeof projects[0]; index: number }) {
   return (
-    <AnimatedSection delay={index * 0.05}>
-      <a
-        href={project.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group block"
-      >
-        <div className="flex items-center gap-4 sm:gap-5 p-4 sm:p-5 rounded-xl bg-white border border-gray-200/60 hover:border-gray-200 hover:shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:-translate-y-0.5 transition-all duration-300">
-          <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gray-50 border border-gray-200/80 flex items-center justify-center">
+    <AnimatedSection delay={index * 0.04}>
+      <a href={project.url} target="_blank" rel="noopener noreferrer" className="group block">
+        <motion.div
+          whileHover={{ x: 4 }}
+          className="flex items-center gap-4 sm:gap-5 p-4 sm:p-5 rounded-xl bg-white border border-gray-200/60 hover:border-teal-200 hover:shadow-[0_4px_20px_rgba(20,184,166,0.06)] transition-all duration-300"
+        >
+          <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gray-50 border border-gray-200/80 flex items-center justify-center group-hover:bg-teal-50 group-hover:border-teal-100 transition-colors">
             <Github size={16} className="text-gray-400 group-hover:text-teal-600 transition-colors" />
           </div>
 
@@ -164,10 +164,10 @@ function ProjectRow({ project, index }: { project: typeof projects[0]; index: nu
             ))}
           </div>
 
-          <span className="flex-shrink-0 p-2 rounded-lg text-gray-300 group-hover:text-teal-600 transition-colors">
+          <span className="flex-shrink-0 p-2 rounded-lg text-gray-300 group-hover:text-teal-500 transition-colors">
             <ExternalLink size={15} />
           </span>
-        </div>
+        </motion.div>
       </a>
     </AnimatedSection>
   );
@@ -178,13 +178,15 @@ export default function Portfolio() {
   const others = projects.filter(p => !p.featured);
 
   return (
-    <section id="portfolio" className="py-28 bg-[#fafafa]">
-      <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
+    <section id="portfolio" className="py-28 bg-[#fafafa] relative overflow-hidden noise-overlay">
+      <div className="absolute top-1/4 left-0 w-[300px] h-[300px] bg-teal-50/40 rounded-full blur-[80px]" />
+
+      <div className="relative max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
         <AnimatedSection className="mb-16">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
             <div>
               <p className="text-[13px] font-semibold text-teal-600 uppercase tracking-wider mb-3">Projects</p>
-              <h2 className="font-display text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">
+              <h2 className="font-display text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
                 Wanna see<br />my work?
               </h2>
             </div>
@@ -207,9 +209,12 @@ export default function Portfolio() {
         </div>
 
         <AnimatedSection delay={0.15} className="mt-16">
-          <div className="rounded-2xl bg-white border border-gray-200/60 p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
-            <div>
-              <h3 className="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+          <div className="rounded-2xl bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8 shadow-[0_20px_60px_rgba(0,0,0,0.15)] relative overflow-hidden">
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(20,184,166,0.15),transparent_60%)]" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-teal-500/5 rounded-full blur-[80px]" />
+
+            <div className="relative">
+              <h3 className="font-display text-2xl md:text-3xl font-bold text-white mb-2">
                 Interested in collaboration?
               </h3>
               <p className="text-gray-400 text-[15px]">
@@ -218,7 +223,7 @@ export default function Portfolio() {
             </div>
             <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="flex-shrink-0 px-8 py-4 bg-gray-900 text-white rounded-full font-semibold transition-all hover:scale-[1.03] active:scale-[0.97] hover:bg-gray-800 text-[14px] shadow-[0_4px_20px_-4px_rgba(0,0,0,0.25)]"
+              className="relative flex-shrink-0 px-8 py-4 bg-white text-gray-900 rounded-full font-semibold transition-all hover:scale-[1.03] active:scale-[0.97] text-[14px] shadow-[0_4px_20px_rgba(255,255,255,0.1)] hover:shadow-[0_8px_30px_rgba(255,255,255,0.2)]"
             >
               Get In Touch
             </button>

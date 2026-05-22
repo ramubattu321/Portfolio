@@ -27,6 +27,7 @@ const publications = [
     year: '2026',
     orcid: '0009-0005-2744-1804',
     icon: BookOpen,
+    gradient: 'from-teal-500 to-emerald-500',
   },
   {
     type: 'Book Chapter',
@@ -36,6 +37,7 @@ const publications = [
     year: 'Editor: Dr. Jose Anand',
     note: 'Contribution Agreement Signed',
     icon: FileText,
+    gradient: 'from-blue-500 to-cyan-500',
   },
 ];
 
@@ -47,11 +49,13 @@ const presentations = [
 
 export default function Research() {
   return (
-    <section id="research" className="py-28 bg-[#fafafa]">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <section id="research" className="py-28 bg-[#fafafa] relative overflow-hidden noise-overlay">
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-50/30 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4" />
+
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <AnimatedSection className="mb-16">
           <p className="text-[13px] font-semibold text-teal-600 uppercase tracking-wider mb-3">Academic</p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">Research & Publications</h2>
+          <h2 className="font-display text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">Research & Publications</h2>
         </AnimatedSection>
 
         <div className="grid lg:grid-cols-2 gap-4 mb-6">
@@ -59,10 +63,15 @@ export default function Research() {
             const Icon = pub.icon;
             return (
               <AnimatedSection key={i} delay={i * 0.1}>
-                <div className="h-full rounded-2xl border border-gray-200/60 bg-white p-7 shadow-[0_1px_3px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-all duration-300">
-                  <div className="flex items-start gap-4 mb-5">
-                    <div className="w-11 h-11 rounded-xl bg-gray-50 border border-gray-200/80 flex items-center justify-center shrink-0">
-                      <Icon className="text-gray-500" size={20} />
+                <motion.div
+                  whileHover={{ y: -4 }}
+                  className="h-full rounded-2xl border border-gray-200/60 bg-white p-7 shadow-[0_1px_3px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] transition-all duration-300 relative overflow-hidden group"
+                >
+                  <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl ${pub.gradient} opacity-[0.03] rounded-full -translate-y-1/3 translate-x-1/3 group-hover:opacity-[0.06] group-hover:scale-150 transition-all duration-700`} />
+
+                  <div className="relative flex items-start gap-4 mb-5">
+                    <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${pub.gradient} flex items-center justify-center shrink-0 shadow-sm`}>
+                      <Icon className="text-white" size={20} />
                     </div>
                     <div>
                       <div className="flex items-center gap-2.5 mb-1 flex-wrap">
@@ -71,10 +80,10 @@ export default function Research() {
                           {pub.status}
                         </span>
                       </div>
-                      <h3 className="text-[16px] font-semibold text-gray-900 leading-snug">{pub.title}</h3>
+                      <h3 className="text-[16px] font-bold text-gray-900 leading-snug">{pub.title}</h3>
                     </div>
                   </div>
-                  <div className="ml-[60px] space-y-2">
+                  <div className="relative ml-[60px] space-y-2">
                     <p className="text-gray-400 text-[13px]">{pub.publisher} &middot; {pub.year}</p>
                     {pub.orcid && (
                       <a
@@ -90,28 +99,34 @@ export default function Research() {
                       <p className="text-gray-400 text-[13px] italic">{pub.note}</p>
                     )}
                   </div>
-                </div>
+                </motion.div>
               </AnimatedSection>
             );
           })}
         </div>
 
         <AnimatedSection delay={0.2}>
-          <div className="rounded-2xl border border-gray-200/60 bg-white p-7 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
+          <div className="rounded-2xl border border-gray-200/60 bg-white p-7 shadow-[0_1px_3px_rgba(0,0,0,0.04)] relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-teal-500 via-emerald-500 to-cyan-500 opacity-40" />
+
             <div className="flex items-start gap-4 mb-6">
-              <div className="w-11 h-11 rounded-xl bg-gray-50 border border-gray-200/80 flex items-center justify-center shrink-0">
-                <Mic className="text-gray-500" size={20} />
+              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center shrink-0 shadow-sm">
+                <Mic className="text-white" size={20} />
               </div>
               <div>
                 <span className="text-[13px] font-medium text-gray-400">Conference Presentations</span>
-                <h3 className="text-[16px] font-semibold text-gray-900">California Central Valley Research Symposium (2026)</h3>
+                <h3 className="text-[16px] font-bold text-gray-900">California Central Valley Research Symposium (2026)</h3>
               </div>
             </div>
             <div className="ml-[60px] space-y-3.5">
               {presentations.map((pres, i) => (
-                <div key={i} className="flex items-start gap-3">
-                  <span className="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center shrink-0 mt-0.5">
-                    <span className="text-[11px] font-bold text-gray-500">{i + 1}</span>
+                <motion.div
+                  key={i}
+                  whileHover={{ x: 4 }}
+                  className="flex items-start gap-3 p-3 -mx-3 rounded-lg hover:bg-gray-50 transition-colors"
+                >
+                  <span className="w-6 h-6 rounded-full bg-gradient-to-br from-teal-500 to-emerald-500 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                    <span className="text-[11px] font-bold text-white">{i + 1}</span>
                   </span>
                   <div>
                     <p className="text-gray-700 text-[14px] font-medium">{pres.title}</p>
@@ -119,7 +134,7 @@ export default function Research() {
                       <p className="text-gray-400 text-[12px] mt-0.5">Co-author: {pres.coauthor}</p>
                     )}
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>

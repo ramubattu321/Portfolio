@@ -5,12 +5,14 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#fafafa] border-t border-gray-100">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-16">
+    <footer className="bg-gray-900 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(20,184,166,0.05),transparent_50%)]" />
+
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           <div>
-            <h3 className="font-display text-xl font-bold text-gray-900 mb-3">
-              RB<span className="text-teal-600">.</span>
+            <h3 className="font-display text-xl font-bold text-white mb-3">
+              RB<span className="text-teal-400">.</span>
             </h3>
             <p className="text-gray-400 text-[13px] leading-relaxed mb-5">
               Data Scientist | Published Researcher @ CRC Press | Python, SQL, AWS, LLM/RAG | MS Data Analytics @ CSU Fresno
@@ -26,23 +28,23 @@ export default function Footer() {
                   href={href}
                   target={href.startsWith('mailto') ? undefined : '_blank'}
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1 }}
-                  className="w-9 h-9 rounded-full bg-white border border-gray-200/80 hover:border-gray-300 flex items-center justify-center text-gray-400 hover:text-gray-700 transition-all"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  className="w-9 h-9 rounded-full bg-gray-800 border border-gray-700/60 hover:border-teal-500/40 hover:bg-gray-800 flex items-center justify-center text-gray-400 hover:text-teal-400 transition-all"
                 >
-                  <Icon size={16} />
+                  <Icon size={15} />
                 </motion.a>
               ))}
             </div>
           </div>
 
           <div>
-            <h4 className="font-semibold text-gray-900 text-[13px] mb-4">Quick Links</h4>
-            <ul className="space-y-2">
+            <h4 className="font-semibold text-white text-[13px] mb-4">Quick Links</h4>
+            <ul className="space-y-2.5">
               {['Home', 'About', 'Skills', 'Certifications', 'Projects', 'Contact'].map((item) => (
                 <li key={item}>
                   <button
                     onClick={() => document.getElementById(item === 'Projects' ? 'portfolio' : item.toLowerCase())?.scrollIntoView({ behavior: 'smooth' })}
-                    className="text-gray-400 hover:text-gray-700 transition-colors text-[13px]"
+                    className="text-gray-400 hover:text-teal-400 transition-colors text-[13px]"
                   >
                     {item}
                   </button>
@@ -52,8 +54,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-gray-900 text-[13px] mb-4">Services</h4>
-            <ul className="space-y-2 text-gray-400 text-[13px]">
+            <h4 className="font-semibold text-white text-[13px] mb-4">Services</h4>
+            <ul className="space-y-2.5 text-gray-400 text-[13px]">
               <li>Data Analysis</li>
               <li>Business Intelligence</li>
               <li>Dashboard Development</li>
@@ -64,14 +66,14 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-gray-200/60 gap-4">
-          <p className="text-gray-400 text-[13px]">
+        <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-gray-800/80 gap-4">
+          <p className="text-gray-500 text-[13px]">
             Ramu Battu {currentYear}. All rights reserved.
           </p>
           <motion.button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            whileHover={{ scale: 1.1, y: -2 }}
-            className="p-2.5 rounded-full bg-white border border-gray-200/80 hover:border-gray-300 text-gray-400 hover:text-gray-700 transition-all shadow-[0_1px_2px_rgba(0,0,0,0.04)]"
+            whileHover={{ scale: 1.1, y: -3 }}
+            className="p-2.5 rounded-full bg-gray-800 border border-gray-700/60 hover:border-teal-500/40 text-gray-400 hover:text-teal-400 transition-all"
           >
             <ArrowUp size={16} />
           </motion.button>

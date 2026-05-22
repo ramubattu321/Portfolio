@@ -20,10 +20,10 @@ function AnimatedSection({ children, className = '', delay = 0 }: { children: Re
 }
 
 const contactInfo = [
-  { icon: Mail, label: 'Email', value: 'ramuusa61@gmail.com', href: 'mailto:ramuusa61@gmail.com' },
-  { icon: Phone, label: 'Phone', value: '+1 (413) 273-9688', href: 'tel:+14132739688' },
-  { icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/in/ramu-battu', href: 'https://www.linkedin.com/in/ramu-battu-01a9a336a/', external: true },
-  { icon: MapPin, label: 'Location', value: 'Fresno, California' },
+  { icon: Mail, label: 'Email', value: 'ramuusa61@gmail.com', href: 'mailto:ramuusa61@gmail.com', color: 'text-blue-500 bg-blue-50 border-blue-100' },
+  { icon: Phone, label: 'Phone', value: '+1 (413) 273-9688', href: 'tel:+14132739688', color: 'text-emerald-500 bg-emerald-50 border-emerald-100' },
+  { icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/in/ramu-battu', href: 'https://www.linkedin.com/in/ramu-battu-01a9a336a/', external: true, color: 'text-sky-500 bg-sky-50 border-sky-100' },
+  { icon: MapPin, label: 'Location', value: 'Fresno, California', color: 'text-rose-500 bg-rose-50 border-rose-100' },
 ];
 
 export default function Contact() {
@@ -60,11 +60,13 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    <section id="contact" className="py-28 bg-white relative overflow-hidden noise-overlay">
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-teal-50/30 rounded-full blur-[100px] translate-y-1/3 translate-x-1/4" />
+
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <AnimatedSection className="mb-16">
           <p className="text-[13px] font-semibold text-teal-600 uppercase tracking-wider mb-3">Contact</p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">Let's Connect</h2>
+          <h2 className="font-display text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">Let's Connect</h2>
         </AnimatedSection>
 
         <div className="grid lg:grid-cols-2 gap-10">
@@ -72,15 +74,18 @@ export default function Contact() {
             {contactInfo.map((item, i) => {
               const Icon = item.icon;
               const content = (
-                <div className="flex items-center gap-4 p-4 rounded-xl bg-[#fafafa] border border-gray-100/80 hover:border-gray-200 hover:shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:-translate-y-0.5 transition-all duration-300">
-                  <div className="w-11 h-11 rounded-xl bg-white border border-gray-200/80 flex items-center justify-center flex-shrink-0 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
-                    <Icon className="text-gray-500" size={18} />
+                <motion.div
+                  whileHover={{ x: 4 }}
+                  className="flex items-center gap-4 p-4 rounded-xl bg-[#fafafa] border border-gray-200/60 hover:border-gray-200 hover:shadow-[0_4px_20px_rgba(0,0,0,0.04)] transition-all duration-300"
+                >
+                  <div className={`w-11 h-11 rounded-xl ${item.color} border flex items-center justify-center flex-shrink-0 shadow-sm`}>
+                    <Icon size={18} />
                   </div>
                   <div>
-                    <p className="text-[11px] text-gray-400 font-medium uppercase tracking-wider">{item.label}</p>
+                    <p className="text-[11px] text-gray-400 font-semibold uppercase tracking-wider">{item.label}</p>
                     <p className="text-gray-900 font-medium text-[14px] mt-0.5">{item.value}</p>
                   </div>
-                </div>
+                </motion.div>
               );
 
               return (
@@ -95,23 +100,26 @@ export default function Contact() {
             })}
 
             <AnimatedSection delay={0.3}>
-              <div className="mt-4 p-6 rounded-xl bg-teal-50/60 border border-teal-100/60">
-                <h4 className="text-gray-900 font-semibold text-[15px] mb-2">Let's Connect!</h4>
-                <p className="text-gray-500 text-[13px] leading-relaxed mb-2">
+              <div className="mt-4 p-6 rounded-xl bg-gradient-to-br from-teal-50/80 to-emerald-50/60 border border-teal-100/60 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-20 h-20 bg-teal-100/30 rounded-full -translate-y-1/2 translate-x-1/2" />
+                <h4 className="relative text-gray-900 font-bold text-[15px] mb-2">Let's Connect!</h4>
+                <p className="relative text-gray-500 text-[13px] leading-relaxed mb-2">
                   I'm always interested in new opportunities, collaborations, or connecting with fellow data enthusiasts.
                 </p>
-                <p className="text-teal-700 text-[13px] font-medium">Response time: Within 24 hours</p>
+                <p className="relative text-teal-700 text-[13px] font-semibold">Response time: Within 24 hours</p>
               </div>
             </AnimatedSection>
           </div>
 
           <AnimatedSection delay={0.1}>
-            <div className="bg-[#fafafa] rounded-2xl p-7 border border-gray-100/80">
+            <div className="bg-[#fafafa] rounded-2xl p-7 border border-gray-200/60 relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-teal-500 via-emerald-500 to-cyan-500 opacity-60" />
+
               <form onSubmit={handleSubmit} className="space-y-4">
                 {[
-                  { id: 'name', label: 'Your Name', type: 'text' },
-                  { id: 'email', label: 'Email Address', type: 'email' },
-                  { id: 'subject', label: 'Subject', type: 'text' },
+                  { id: 'name', label: 'Your Name', type: 'text', placeholder: 'John Doe' },
+                  { id: 'email', label: 'Email Address', type: 'email', placeholder: 'john@example.com' },
+                  { id: 'subject', label: 'Subject', type: 'text', placeholder: 'Project inquiry' },
                 ].map(field => (
                   <div key={field.id}>
                     <label htmlFor={field.id} className="block text-[13px] font-medium text-gray-500 mb-1.5">{field.label}</label>
@@ -121,7 +129,8 @@ export default function Contact() {
                       name={field.id}
                       value={formData[field.id as keyof typeof formData]}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200/80 bg-white text-gray-900 focus:border-teal-400 focus:ring-2 focus:ring-teal-100 outline-none transition-all text-[14px] placeholder:text-gray-300"
+                      placeholder={field.placeholder}
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200/80 bg-white text-gray-900 focus:border-teal-400 focus:ring-2 focus:ring-teal-100 outline-none transition-all text-[14px] placeholder:text-gray-300 shadow-[0_1px_2px_rgba(0,0,0,0.04)]"
                       required
                       disabled={status === 'sending'}
                     />
@@ -136,7 +145,8 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     rows={5}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200/80 bg-white text-gray-900 focus:border-teal-400 focus:ring-2 focus:ring-teal-100 outline-none transition-all resize-none text-[14px] placeholder:text-gray-300"
+                    placeholder="Tell me about your project..."
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200/80 bg-white text-gray-900 focus:border-teal-400 focus:ring-2 focus:ring-teal-100 outline-none transition-all resize-none text-[14px] placeholder:text-gray-300 shadow-[0_1px_2px_rgba(0,0,0,0.04)]"
                     required
                     disabled={status === 'sending'}
                   />
@@ -169,13 +179,16 @@ export default function Contact() {
                   disabled={status === 'sending'}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full px-6 py-3.5 bg-gray-900 hover:bg-gray-800 disabled:bg-gray-300 disabled:cursor-not-allowed text-white rounded-full font-semibold transition-colors flex items-center justify-center gap-2 text-[14px] shadow-[0_4px_20px_-4px_rgba(0,0,0,0.25)]"
+                  className="group relative w-full px-6 py-3.5 bg-gray-900 hover:bg-gray-800 disabled:bg-gray-300 disabled:cursor-not-allowed text-white rounded-full font-semibold transition-all flex items-center justify-center gap-2 text-[14px] shadow-[0_4px_20px_-4px_rgba(0,0,0,0.25)] overflow-hidden"
                 >
-                  {status === 'sending' ? (
-                    <><Loader2 size={16} className="animate-spin" /> Sending...</>
-                  ) : (
-                    <><Send size={16} /> Send Message</>
-                  )}
+                  <span className="relative z-10 flex items-center gap-2">
+                    {status === 'sending' ? (
+                      <><Loader2 size={16} className="animate-spin" /> Sending...</>
+                    ) : (
+                      <><Send size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" /> Send Message</>
+                    )}
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-teal-600 to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </motion.button>
               </form>
             </div>
