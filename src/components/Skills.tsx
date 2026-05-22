@@ -45,6 +45,9 @@ const technicalSkills = [
   { category: 'Programming', skills: ['SQL', 'Python', 'Data Cleaning', 'ETL'], color: 'teal' },
   { category: 'Business Tools', skills: ['Tally ERP', 'Salesforce CRM', 'Google Analytics'], color: 'emerald' },
   { category: 'Analysis', skills: ['Financial Analysis', 'Business Analysis', 'CRM Analytics'], color: 'amber' },
+  { category: 'AI & LLM', skills: ['PyTorch', 'TensorFlow', 'BERT', 'LLM Fine-Tuning', 'RAG Pipelines', 'FAISS', 'HNSW', 'Hugging Face', 'Prompt Engineering'], color: 'rose' },
+  { category: 'Cloud & Infrastructure', skills: ['AWS S3', 'AWS Glue', 'AWS Athena', 'EC2', 'Boto3', 'Git'], color: 'sky' },
+  { category: 'ML & Statistics', skills: ['Scikit-learn', 'Gradient Boosting', 'K-Means', 'Regression', 'A/B Testing', 'Hypothesis Testing', 'SPC', 'Feature Engineering'], color: 'teal' },
 ];
 
 const softSkills = [
@@ -83,7 +86,7 @@ export default function Skills() {
             <h3 className="text-2xl font-bold text-white text-center">Technical Skills</h3>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {technicalSkills.map((cat, i) => {
               const c = colorMap[cat.color];
               return (
