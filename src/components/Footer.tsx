@@ -13,7 +13,7 @@ export default function Footer() {
               RB<span className="text-sky-400">.</span>
             </h3>
             <p className="text-slate-400 text-sm leading-relaxed mb-5">
-              Data Scientist & Data Analyst specializing in transforming data into actionable insights.
+              Data Scientist | Published Researcher @ CRC Press | Python · SQL · AWS · LLM/RAG · MS Data Analytics @ CSU Fresno
             </p>
             <div className="flex gap-2">
               {[
