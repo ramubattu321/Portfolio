@@ -121,18 +121,8 @@ export default function Hero() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.15 }}
-              className="flex items-center gap-5 mb-6"
+              className="mb-6"
             >
-              <div className="relative flex-shrink-0">
-                <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-sky-500/30 shadow-lg shadow-sky-500/10">
-                  <img
-                    src="https://i.postimg.cc/0N5fkdwD/Whats-App-Image-2025-10-23-at-9-19-25-AM.jpg"
-                    alt="Ramu Battu"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <span className="absolute bottom-0 right-0 w-6 h-6 bg-emerald-400 rounded-full border-[3px] border-slate-950" />
-              </div>
               <h1 className="text-5xl md:text-7xl font-bold text-white leading-[1.1]">
                 Ramu{' '}
                 <span className="relative inline-block">
