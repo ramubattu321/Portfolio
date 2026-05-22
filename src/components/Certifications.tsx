@@ -70,7 +70,7 @@ export default function Certifications() {
   const [lightbox, setLightbox] = useState<string | null>(null);
 
   return (
-    <section id="certifications" className="py-28 bg-[#fafafa] relative overflow-hidden noise-overlay">
+    <section id="certifications" className="py-28 bg-gray-50/50 relative overflow-hidden noise-overlay">
       <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-blue-50/30 rounded-full blur-[100px] translate-x-1/3" />
 
       <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">

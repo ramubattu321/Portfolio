@@ -20,7 +20,7 @@ function AnimatedSection({ children, className = '', delay = 0 }: { children: Re
 
 export default function About() {
   return (
-    <section id="about" className="py-28 bg-[#fafafa] relative overflow-hidden noise-overlay">
+    <section id="about" className="py-28 bg-gray-50/50 relative overflow-hidden noise-overlay">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-teal-50/30 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3" />
 
       <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">

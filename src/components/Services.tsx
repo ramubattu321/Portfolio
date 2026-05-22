@@ -45,7 +45,7 @@ export default function Services() {
               <AnimatedSection key={i} delay={i * 0.06}>
                 <motion.div
                   whileHover={{ y: -4 }}
-                  className="group h-full rounded-2xl p-7 bg-[#fafafa] border border-gray-200/60 hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] hover:border-gray-200 transition-all duration-300 relative overflow-hidden"
+                  className="group h-full rounded-2xl p-7 bg-gray-50 border border-gray-200/60 hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] hover:border-gray-200 transition-all duration-300 relative overflow-hidden"
                 >
                   <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-full -translate-y-1/3 translate-x-1/3`} />
 

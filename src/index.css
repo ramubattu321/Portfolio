@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply text-gray-900 bg-[#fafafa];
+    @apply text-gray-900 bg-white;
     margin: 0;
     padding: 0;
     overflow-x: hidden;

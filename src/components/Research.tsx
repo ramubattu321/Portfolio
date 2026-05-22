@@ -49,7 +49,7 @@ const presentations = [
 
 export default function Research() {
   return (
-    <section id="research" className="py-28 bg-[#fafafa] relative overflow-hidden noise-overlay">
+    <section id="research" className="py-28 bg-gray-50/50 relative overflow-hidden noise-overlay">
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-50/30 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4" />
 
       <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">

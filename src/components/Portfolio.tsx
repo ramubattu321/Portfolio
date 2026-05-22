@@ -178,7 +178,7 @@ export default function Portfolio() {
   const others = projects.filter(p => !p.featured);
 
   return (
-    <section id="portfolio" className="py-28 bg-[#fafafa] relative overflow-hidden noise-overlay">
+    <section id="portfolio" className="py-28 bg-gray-50/50 relative overflow-hidden noise-overlay">
       <div className="absolute top-1/4 left-0 w-[300px] h-[300px] bg-teal-50/40 rounded-full blur-[80px]" />
 
       <div className="relative max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">

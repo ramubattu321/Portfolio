@@ -76,7 +76,7 @@ export default function Contact() {
               const content = (
                 <motion.div
                   whileHover={{ x: 4 }}
-                  className="flex items-center gap-4 p-4 rounded-xl bg-[#fafafa] border border-gray-200/60 hover:border-gray-200 hover:shadow-[0_4px_20px_rgba(0,0,0,0.04)] transition-all duration-300"
+                  className="flex items-center gap-4 p-4 rounded-xl bg-gray-50 border border-gray-200/60 hover:border-gray-200 hover:shadow-[0_4px_20px_rgba(0,0,0,0.04)] transition-all duration-300"
                 >
                   <div className={`w-11 h-11 rounded-xl ${item.color} border flex items-center justify-center flex-shrink-0 shadow-sm`}>
                     <Icon size={18} />
@@ -112,7 +112,7 @@ export default function Contact() {
           </div>
 
           <AnimatedSection delay={0.1}>
-            <div className="bg-[#fafafa] rounded-2xl p-7 border border-gray-200/60 relative overflow-hidden">
+            <div className="bg-gray-50 rounded-2xl p-7 border border-gray-200/60 relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-teal-500 via-emerald-500 to-cyan-500 opacity-60" />
 
               <form onSubmit={handleSubmit} className="space-y-4">
