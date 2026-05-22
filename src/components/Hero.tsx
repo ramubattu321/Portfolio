@@ -186,7 +186,7 @@ export default function Hero() {
                 Contact Me
               </button>
               <a
-                href="https://drive.google.com/file/d/1nxVLeJKD__B8qmdPHxzCYlaAoLzkDb-j/view"
+                href="https://drive.google.com/drive/u/3/my-drive"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-7 py-3.5 text-sky-400 rounded-xl font-semibold transition-all hover:scale-105 border border-sky-500/30 hover:border-sky-400 hover:bg-sky-500/5"
