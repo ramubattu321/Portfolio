@@ -8,9 +8,9 @@ function AnimatedSection({ children, className = '', delay = 0 }: { children: Re
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 25 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay }}
+      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
       className={className}
     >
       {children}
@@ -31,7 +31,7 @@ const technicalSkills = [
 const softSkills = [
   { icon: LineChart, name: 'Data Storytelling' },
   { icon: Lightbulb, name: 'Problem Solving' },
-  { icon: Target, name: 'Strategic Decision Support' },
+  { icon: Target, name: 'Strategic Thinking' },
   { icon: Users, name: 'Collaboration' },
   { icon: Database, name: 'Attention to Detail' },
   { icon: Code, name: 'Project Management' },
@@ -39,30 +39,24 @@ const softSkills = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimatedSection className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Skills & Expertise</h2>
-          <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-            Technical and soft skills developed across 3+ years of hands-on experience
-          </p>
+    <section id="skills" className="py-28 bg-white">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+        <AnimatedSection className="mb-16">
+          <p className="text-[13px] font-semibold text-teal-600 uppercase tracking-wider mb-3">My Expertise</p>
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">Skills & Expertise</h2>
         </AnimatedSection>
 
-        <div className="mb-16">
-          <AnimatedSection className="mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 text-center">Technical Skills</h3>
-          </AnimatedSection>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="mb-20">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {technicalSkills.map((cat, i) => (
-              <AnimatedSection key={i} delay={i * 0.08}>
-                <div className="h-full rounded-2xl p-6 bg-gray-50 border border-gray-100 hover:shadow-md hover:border-gray-200 transition-all">
-                  <h4 className="font-semibold text-gray-900 mb-4">{cat.category}</h4>
-                  <div className="flex flex-wrap gap-2">
+              <AnimatedSection key={i} delay={i * 0.06}>
+                <div className="h-full rounded-2xl p-6 bg-[#fafafa] border border-gray-100/80 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:border-gray-200 transition-all duration-300">
+                  <h4 className="font-display font-semibold text-gray-900 text-[15px] mb-4">{cat.category}</h4>
+                  <div className="flex flex-wrap gap-1.5">
                     {cat.skills.map((skill, j) => (
                       <span
                         key={j}
-                        className="px-3 py-1.5 rounded-lg text-sm font-medium text-gray-700 bg-white border border-gray-200"
+                        className="px-3 py-1.5 rounded-lg text-[13px] font-medium text-gray-600 bg-white border border-gray-200/80 hover:border-gray-300 transition-colors"
                       >
                         {skill}
                       </span>
@@ -75,19 +69,19 @@ export default function Skills() {
         </div>
 
         <AnimatedSection className="mb-8">
-          <h3 className="text-2xl font-bold text-gray-900 text-center">Soft Skills</h3>
+          <h3 className="font-display text-xl font-bold text-gray-900">Soft Skills</h3>
         </AnimatedSection>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
           {softSkills.map((skill, i) => {
             const Icon = skill.icon;
             return (
-              <AnimatedSection key={i} delay={i * 0.06}>
-                <div className="rounded-2xl p-5 bg-gray-50 border border-gray-100 hover:shadow-md hover:border-gray-200 transition-all text-center group">
-                  <div className="w-12 h-12 rounded-xl bg-white border border-gray-200 flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform">
-                    <Icon className="text-gray-600" size={20} />
+              <AnimatedSection key={i} delay={i * 0.05}>
+                <div className="rounded-2xl p-5 bg-[#fafafa] border border-gray-100/80 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:border-gray-200 transition-all duration-300 text-center group cursor-default">
+                  <div className="w-11 h-11 rounded-xl bg-white border border-gray-200/80 flex items-center justify-center mb-3 mx-auto group-hover:scale-110 group-hover:shadow-sm transition-all duration-300">
+                    <Icon className="text-gray-500 group-hover:text-teal-600 transition-colors" size={18} />
                   </div>
-                  <h4 className="font-medium text-gray-700 text-sm">{skill.name}</h4>
+                  <h4 className="font-medium text-gray-600 text-[13px]">{skill.name}</h4>
                 </div>
               </AnimatedSection>
             );

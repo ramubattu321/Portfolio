@@ -8,9 +8,9 @@ function AnimatedSection({ children, className = '', delay = 0 }: { children: Re
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 25 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay }}
+      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
       className={className}
     >
       {children}
@@ -70,19 +70,17 @@ export default function Certifications() {
   const [lightbox, setLightbox] = useState<string | null>(null);
 
   return (
-    <section id="certifications" className="py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimatedSection className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Certifications</h2>
-          <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-            Certified expertise in data analysis, business intelligence, and technical skills
-          </p>
+    <section id="certifications" className="py-28 bg-[#fafafa]">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+        <AnimatedSection className="mb-16">
+          <p className="text-[13px] font-semibold text-teal-600 uppercase tracking-wider mb-3">Credentials</p>
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">Certifications</h2>
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {certifications.map((cert, i) => (
-            <AnimatedSection key={i} delay={i * 0.08}>
-              <div className="group h-full rounded-2xl border border-gray-100 bg-white overflow-hidden hover:shadow-lg hover:border-gray-200 transition-all">
+            <AnimatedSection key={i} delay={i * 0.06}>
+              <div className="group h-full rounded-2xl border border-gray-200/60 bg-white overflow-hidden hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:border-gray-200 transition-all duration-300">
                 <div className="relative">
                   <div
                     className="relative cursor-pointer overflow-hidden"
@@ -94,37 +92,37 @@ export default function Certifications() {
                       className="w-full h-auto object-contain bg-gray-50"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                      <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/80 backdrop-blur-sm rounded-full p-3 shadow-lg">
-                        <ZoomIn className="text-gray-700" size={20} />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors flex items-center justify-center">
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg scale-90 group-hover:scale-100 duration-300">
+                        <ZoomIn className="text-gray-700" size={18} />
                       </div>
                     </div>
                   </div>
 
-                  <div className={`absolute top-3 left-3 ${cert.logoColor} px-2.5 py-1 rounded-lg shadow-lg`}>
+                  <div className={`absolute top-3 left-3 ${cert.logoColor} px-2.5 py-1 rounded-lg shadow-sm`}>
                     <span className="text-white text-[10px] font-bold">{cert.logo}</span>
                   </div>
 
-                  <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/90 backdrop-blur-sm border border-gray-200">
-                    <CheckCircle2 className="text-emerald-500" size={12} />
+                  <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/90 backdrop-blur-sm border border-gray-200/60 shadow-sm">
+                    <CheckCircle2 className="text-emerald-500" size={11} />
                     <span className="text-emerald-600 text-[10px] font-semibold">VERIFIED</span>
                   </div>
                 </div>
 
                 <div className="p-5">
-                  <p className="text-xs font-medium text-gray-400 mb-1.5">{cert.platform}</p>
-                  <h3 className="font-semibold text-gray-900 text-sm leading-snug mb-2">
+                  <p className="text-[11px] font-medium text-gray-400 uppercase tracking-wider mb-1.5">{cert.platform}</p>
+                  <h3 className="font-semibold text-gray-900 text-[14px] leading-snug mb-2">
                     {cert.title}
                   </h3>
-                  <p className="text-gray-400 text-xs mb-4">Issued by {cert.issuer}</p>
+                  <p className="text-gray-400 text-[12px] mb-4">Issued by {cert.issuer}</p>
 
                   <a
                     href={cert.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium text-gray-700 bg-gray-50 border border-gray-200 hover:bg-gray-100 transition-colors"
+                    className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg text-[12px] font-medium text-gray-600 bg-gray-50 border border-gray-200/80 hover:bg-gray-100 hover:border-gray-300 transition-all"
                   >
-                    View Certificate <ExternalLink size={12} />
+                    View Certificate <ExternalLink size={11} />
                   </a>
                 </div>
               </div>
@@ -143,17 +141,17 @@ export default function Certifications() {
         >
           <button
             onClick={() => setLightbox(null)}
-            className="absolute top-6 right-6 p-2 rounded-full bg-white/20 hover:bg-white/30 text-white transition-colors"
+            className="absolute top-6 right-6 p-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
           >
-            <X size={24} />
+            <X size={22} />
           </button>
           <motion.img
-            initial={{ scale: 0.9, opacity: 0 }}
+            initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.3 }}
             src={lightbox}
             alt="Certificate"
-            className="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl"
+            className="max-w-full max-h-[90vh] object-contain rounded-2xl shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           />
         </motion.div>

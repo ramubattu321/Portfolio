@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply text-gray-900 bg-gray-50;
+    @apply text-gray-900 bg-[#fafafa];
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -18,6 +18,12 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    letter-spacing: -0.03em;
   }
 
   * {
@@ -28,5 +34,13 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-xl border border-gray-200/60 shadow-[0_1px_3px_rgba(0,0,0,0.04)];
+  }
+
+  .glass-card-hover {
+    @apply hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:border-gray-300/60 hover:-translate-y-0.5;
   }
 }
