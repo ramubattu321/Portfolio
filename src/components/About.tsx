@@ -103,11 +103,11 @@ export default function About() {
                   type: 'Remote',
                   color: 'sky',
                   bullets: [
-                    'Built interactive Power BI dashboards, reducing reporting time by 30% and improving KPI visibility',
-                    'Analyzed eCommerce and CRM datasets using SQL and Python to identify customer behavior patterns',
-                    'Conducted A/B testing on marketing campaigns using statistical analysis',
-                    'Developed a Customer Lifetime Value (CLV) model for data-driven customer segmentation',
-                    'Created predictive models for revenue forecasting and business planning',
+                    'Built Python/SQL ETL pipeline on 500K+ row datasets — cut 3 days of manual work to under 2 hours with zero inconsistencies',
+                    'Confirmed +15% CVR lift and +14% revenue lift via A/B testing (p-value 0.05) — influenced $50K+ in campaign budget reallocation',
+                    'Built CLV model segmenting 10,000+ customers into 4 value tiers using regression and feature engineering',
+                    'Wrote production SQL (CTEs, window functions) powering KPI dashboards and customer segmentation',
+                    'Built Tableau and Power BI dashboards enabling self-serve analytics',
                   ],
                 },
                 {
