@@ -274,9 +274,9 @@ export default function Hero() {
         >
           {[
             { value: '3+', label: 'Years Experience' },
-            { value: '20+', label: 'Projects Completed' },
-            { value: '5+', label: 'Certifications' },
-            { value: '100%', label: 'Client Satisfaction' },
+            { value: '$250M+', label: 'Data Processed' },
+            { value: '2', label: 'CRC Press Publications' },
+            { value: '3', label: 'Research Presentations' },
           ].map((stat, i) => (
             <motion.div
               key={i}
