@@ -118,11 +118,10 @@ export default function About() {
                   location: 'Suryapet, India',
                   color: 'teal',
                   bullets: [
-                    'Analyzed financial statements to evaluate company performance and financial health',
-                    'Built Power BI dashboards to track budget vs actual performance',
-                    'Extracted and transformed financial data from Tally ERP (XML) into structured datasets',
-                    'Processed financial datasets exceeding $250M+, improving reporting efficiency',
-                    'Supported internal and external audits by identifying anomalies',
+                    'Processed $250M+ in Tally ERP financial records through automated Python/SQL pipeline — reduced data prep time by 80%',
+                    'Built automated anomaly detection flagging 15+ irregularities per quarter previously missed by manual review',
+                    'Built Power BI dashboards tracking budget vs actual financial KPIs',
+                    'Documented data lineage and transformation logic for audit-ready output',
                   ],
                 },
               ].map((job, i) => (
