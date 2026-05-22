@@ -31,7 +31,7 @@ export default function Hero() {
               <div className="absolute -inset-4 bg-gradient-to-br from-teal-100/50 to-gray-100/50 rounded-[2rem] blur-2xl" />
               <div className="relative w-52 h-52 sm:w-60 sm:h-60 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-[2rem] overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] border border-gray-100">
                 <img
-                  src="https://i.postimg.cc/cCZdhQ8z/image-606a6029.png"
+                  src="https://i.postimg.cc/GmD2rJ1k/Gemini-Generated-Image-t3ye70t3ye70t3ye.png"
                   alt="Ramu Battu"
                   className="w-full h-full object-cover object-top"
                 />
