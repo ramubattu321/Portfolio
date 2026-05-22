@@ -125,9 +125,9 @@ const projects = [
     url: 'https://github.com/ramubattu321/Vrinda-Store-Sales-Dashboard-Business-Insights',
   },
   {
-    title: 'ML for Production Optimization',
-    description: 'Applied data analysis and ML techniques to analyze production data. Built and compared Random Forest, Gradient Boosting, SVM models. Presented at California Central Valley Research Symposium.',
-    tags: ['Python', 'Scikit-learn', 'Machine Learning'],
+    title: 'Applied AI & ML Research: LLM Fine-Tuning, RAG & NLP',
+    description: 'Implemented ACTD fine-tuning across 4 LLM architectures — outperformed iterative RAG (Iter-RetGen) in every case. Built FAISS/HNSW vector databases for semantic search. Benchmarked Word2Vec, GloVe, BERT across 5 NLP datasets. Built 2-layer LSTM (perplexity 30). Presented at California Central Valley Research Symposium (2026). Accepted for publication with CRC Press.',
+    tags: ['PyTorch', 'RAG', 'FAISS', 'BERT', 'LLM Fine-Tuning'],
     color: 'green',
     url: 'https://github.com/ramubattu321/Machine-Learning-Practice-using-python',
   },
