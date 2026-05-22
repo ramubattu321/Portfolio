@@ -9,9 +9,9 @@ function AnimatedSection({ children, className = '', delay = 0 }: { children: Re
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.7, delay }}
+      transition={{ duration: 0.6, delay }}
       className={className}
     >
       {children}
@@ -60,17 +60,11 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-28 bg-slate-950 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-sky-500/20 to-transparent" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <AnimatedSection className="text-center mb-20">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-sm font-medium mb-6">
-            Get In Touch
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Contact Me</h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-sky-400 to-teal-400 mx-auto rounded-full mb-6" />
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+    <section id="contact" className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <AnimatedSection className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Let's Connect</h2>
+          <p className="text-gray-500 text-lg max-w-2xl mx-auto">
             Let's discuss how I can help with your data analytics and business intelligence needs
           </p>
         </AnimatedSection>
@@ -78,24 +72,21 @@ export default function Contact() {
         <div className="grid lg:grid-cols-2 gap-12">
           <div className="space-y-4">
             <AnimatedSection>
-              <h3 className="text-xl font-semibold text-white mb-6">Contact Information</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-6">Contact Information</h3>
             </AnimatedSection>
 
             {contactInfo.map((item, i) => {
               const Icon = item.icon;
               const content = (
-                <motion.div
-                  whileHover={{ x: 4 }}
-                  className="flex items-center gap-4 p-4 rounded-xl bg-slate-900/50 border border-slate-800/50 hover:border-sky-500/20 transition-colors"
-                >
-                  <div className="w-11 h-11 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center flex-shrink-0">
-                    <Icon className="text-sky-400" size={20} />
+                <div className="flex items-center gap-4 p-4 rounded-xl bg-gray-50 border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all">
+                  <div className="w-11 h-11 rounded-xl bg-white border border-gray-200 flex items-center justify-center flex-shrink-0">
+                    <Icon className="text-gray-600" size={20} />
                   </div>
                   <div>
-                    <p className="text-xs text-slate-500 mb-0.5">{item.label}</p>
-                    <p className="text-white font-medium text-sm">{item.value}</p>
+                    <p className="text-xs text-gray-400 mb-0.5">{item.label}</p>
+                    <p className="text-gray-900 font-medium text-sm">{item.value}</p>
                   </div>
-                </motion.div>
+                </div>
               );
 
               return (
@@ -110,18 +101,18 @@ export default function Contact() {
             })}
 
             <AnimatedSection delay={0.4}>
-              <div className="mt-4 p-6 rounded-xl bg-gradient-to-br from-sky-500/5 to-teal-500/5 border border-sky-500/10">
-                <h4 className="text-white font-semibold mb-2">Let's Connect!</h4>
-                <p className="text-slate-400 text-sm leading-relaxed mb-2">
+              <div className="mt-4 p-6 rounded-xl bg-teal-50 border border-teal-100">
+                <h4 className="text-gray-900 font-semibold mb-2">Let's Connect!</h4>
+                <p className="text-gray-600 text-sm leading-relaxed mb-2">
                   I'm always interested in new opportunities, collaborations, or connecting with fellow data enthusiasts.
                 </p>
-                <p className="text-sky-400 text-sm">Response time: Within 24 hours</p>
+                <p className="text-teal-700 text-sm font-medium">Response time: Within 24 hours</p>
               </div>
             </AnimatedSection>
           </div>
 
           <AnimatedSection delay={0.15}>
-            <div className="bg-slate-900/50 rounded-2xl p-8 border border-slate-800/50">
+            <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
               <form onSubmit={handleSubmit} className="space-y-5">
                 {[
                   { id: 'name', label: 'Your Name', type: 'text' },
@@ -129,14 +120,14 @@ export default function Contact() {
                   { id: 'subject', label: 'Subject', type: 'text' },
                 ].map(field => (
                   <div key={field.id}>
-                    <label htmlFor={field.id} className="block text-sm font-medium text-slate-400 mb-2">{field.label}</label>
+                    <label htmlFor={field.id} className="block text-sm font-medium text-gray-600 mb-2">{field.label}</label>
                     <input
                       type={field.type}
                       id={field.id}
                       name={field.id}
                       value={formData[field.id as keyof typeof formData]}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-slate-700/50 bg-slate-950/50 text-white focus:border-sky-500/50 focus:ring-2 focus:ring-sky-500/10 outline-none transition-all text-sm"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 focus:border-teal-500 focus:ring-2 focus:ring-teal-100 outline-none transition-all text-sm"
                       required
                       disabled={status === 'sending'}
                     />
@@ -144,14 +135,14 @@ export default function Contact() {
                 ))}
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-slate-400 mb-2">Message</label>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-600 mb-2">Message</label>
                   <textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     rows={5}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-700/50 bg-slate-950/50 text-white focus:border-sky-500/50 focus:ring-2 focus:ring-sky-500/10 outline-none transition-all resize-none text-sm"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 focus:border-teal-500 focus:ring-2 focus:ring-teal-100 outline-none transition-all resize-none text-sm"
                     required
                     disabled={status === 'sending'}
                   />
@@ -161,7 +152,7 @@ export default function Contact() {
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center gap-2 p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-xl text-emerald-400 text-sm"
+                    className="flex items-center gap-2 p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-700 text-sm"
                   >
                     <CheckCircle size={18} />
                     Message sent successfully! I'll get back to you soon.
@@ -172,7 +163,7 @@ export default function Contact() {
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center gap-2 p-4 bg-rose-500/10 border border-rose-500/20 rounded-xl text-rose-400 text-sm"
+                    className="flex items-center gap-2 p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm"
                   >
                     <XCircle size={18} />
                     {errorMessage}
@@ -184,7 +175,7 @@ export default function Contact() {
                   disabled={status === 'sending'}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full px-6 py-3.5 bg-sky-500 hover:bg-sky-600 disabled:bg-sky-500/50 disabled:cursor-not-allowed text-white rounded-xl font-semibold transition-colors flex items-center justify-center gap-2 shadow-lg shadow-sky-500/20"
+                  className="w-full px-6 py-3.5 bg-gray-900 hover:bg-gray-800 disabled:bg-gray-400 disabled:cursor-not-allowed text-white rounded-full font-semibold transition-colors flex items-center justify-center gap-2"
                 >
                   {status === 'sending' ? (
                     <><Loader2 size={18} className="animate-spin" /> Sending...</>

@@ -35,14 +35,14 @@ export default function Header() {
       transition={{ duration: 0.6 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-slate-950/90 backdrop-blur-xl border-b border-slate-800/50 shadow-lg shadow-slate-950/50'
+          ? 'bg-white/90 backdrop-blur-xl border-b border-gray-200 shadow-sm'
           : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <button onClick={() => scrollTo('home')} className="text-xl font-bold text-white hover:text-sky-400 transition-colors">
-            RB<span className="text-sky-400">.</span>
+          <button onClick={() => scrollTo('home')} className="text-xl font-bold text-gray-900 hover:text-teal-600 transition-colors">
+            RB<span className="text-teal-600">.</span>
           </button>
 
           <nav className="hidden md:flex items-center gap-1">
@@ -50,7 +50,7 @@ export default function Header() {
               <button
                 key={item.id}
                 onClick={() => scrollTo(item.id)}
-                className="px-4 py-2 text-sm font-medium text-slate-400 hover:text-white rounded-lg hover:bg-white/5 transition-all"
+                className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-100 transition-all"
               >
                 {item.label}
               </button>
@@ -59,14 +59,14 @@ export default function Header() {
               href="https://drive.google.com/drive/u/3/my-drive"
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-2 px-5 py-2 text-sm font-semibold text-sky-400 rounded-lg border border-sky-500/30 hover:bg-sky-500/10 transition-all"
+              className="ml-2 px-5 py-2 text-sm font-semibold text-white bg-gray-900 rounded-full hover:bg-gray-800 transition-all"
             >
               Resume
             </a>
           </nav>
 
           <button
-            className="md:hidden p-2 text-slate-400 hover:text-white transition-colors"
+            className="md:hidden p-2 text-gray-600 hover:text-gray-900 transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -80,14 +80,14 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-slate-950/95 backdrop-blur-xl border-t border-slate-800/50 overflow-hidden"
+            className="md:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 overflow-hidden"
           >
             <nav className="flex flex-col px-4 py-4 gap-1">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollTo(item.id)}
-                  className="text-left px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-lg transition-all font-medium"
+                  className="text-left px-4 py-3 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all font-medium"
                 >
                   {item.label}
                 </button>
@@ -96,7 +96,7 @@ export default function Header() {
                 href="https://drive.google.com/drive/u/3/my-drive"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-3 text-sky-400 hover:bg-sky-500/10 rounded-lg transition-all font-medium"
+                className="mx-4 mt-2 px-4 py-3 text-center text-white bg-gray-900 rounded-full font-medium"
               >
                 Resume
               </a>
