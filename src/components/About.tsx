@@ -70,12 +70,13 @@ export default function About() {
               <div className="relative space-y-7">
                 <div className="relative pl-6 border-l-2 border-teal-200">
                   <div className="absolute -left-[5px] top-1.5 w-2 h-2 bg-teal-500 rounded-full ring-4 ring-teal-50" />
-                  <h4 className="font-semibold text-gray-900 text-[15px]">MS, Data Analytics</h4>
+                  <h4 className="font-semibold text-gray-900 text-[15px]">Master's Degree, Industrial Technology</h4>
                   <p className="text-teal-600 text-sm font-medium mt-0.5">California State University, Fresno</p>
                   <p className="text-gray-400 text-[13px] mt-1.5 flex items-center gap-1.5">
                     <Calendar size={12} /> Jan 2025 - Dec 2026 (Expected)
                   </p>
                   <p className="text-gray-500 text-[13px] mt-1">GPA: 3.5/4.0 - NRTW Scholar</p>
+                  <p className="text-gray-500 text-[13px] mt-1.5"><span className="font-medium text-gray-600">Coursework:</span> Data Analytics, Machine Learning, Statistical Methods, Database Systems, Data Visualization</p>
                 </div>
                 <div className="relative pl-6 border-l-2 border-gray-200">
                   <div className="absolute -left-[5px] top-1.5 w-2 h-2 bg-gray-300 rounded-full ring-4 ring-gray-50" />
