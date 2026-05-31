@@ -76,7 +76,8 @@ export default function About() {
                     <Calendar size={12} /> Jan 2025 - Dec 2026 (Expected)
                   </p>
                   <p className="text-gray-500 text-[13px] mt-1">GPA: 3.5/4.0 - NRTW Scholar</p>
-                  <p className="text-gray-500 text-[13px] mt-1.5"><span className="font-medium text-gray-600">Coursework:</span> Data Analytics, Machine Learning, Statistical Methods, Database Systems, Data Visualization</p>
+                  <p className="text-gray-500 text-[13px] mt-1.5"><span className="font-medium text-gray-600">Coursework:</span> Numerical Mathematics, Statistical Learning & Data Mining, Probability Theory, Machine Learning, Data Intensive Computing, Data Models Query Language, Python Programming</p>
+                  <p className="text-gray-500 text-[13px] mt-1.5">3 research presentations at the California Central Valley Research Symposium (2026). Published researcher — CRC Press, Taylor & Francis Group.</p>
                 </div>
                 <div className="relative pl-6 border-l-2 border-gray-200">
                   <div className="absolute -left-[5px] top-1.5 w-2 h-2 bg-gray-300 rounded-full ring-4 ring-gray-50" />
