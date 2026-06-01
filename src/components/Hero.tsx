@@ -65,7 +65,7 @@ export default function Hero() {
                 className="absolute -top-4 -right-6 bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-100 px-4 py-3"
               >
                 <p className="text-[10px] text-gray-400 font-semibold uppercase tracking-wider">Experience</p>
-                <p className="text-[13px] font-bold text-gray-900">3+ Years</p>
+                <p className="text-[13px] font-bold text-gray-900">3 Years</p>
               </motion.div>
 
               {/* Floating accent dots */}
@@ -191,7 +191,7 @@ export default function Hero() {
           className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-28 pt-12 border-t border-gray-100"
         >
           {[
-            { value: '3+', label: 'Years Experience' },
+            { value: '3', label: 'Years Experience' },
             { value: '$250M+', label: 'Data Processed' },
             { value: '2', label: 'CRC Press Publications' },
             { value: '3', label: 'Research Presentations' },
