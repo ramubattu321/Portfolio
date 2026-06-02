@@ -35,16 +35,20 @@ export default function About() {
           <div className="space-y-4">
             {[
               {
-                content: <>I'm a <span className="font-semibold text-gray-900">Data Scientist and Analytics Engineer</span> with 3 years of experience building ML models, ETL pipelines, LLM systems, and BI dashboards that drive real business decisions.</>,
+                content: <>I'm a <span className="font-semibold text-gray-900">Data Analyst and Data Professional</span> with 3+ years of experience building ML models, ETL pipelines, LLM systems, and BI dashboards that drive real business decisions.</>,
                 delay: 0,
               },
               {
-                content: <>I processed <span className="font-semibold text-gray-900">$250M+ in financial records</span> through automated Python/SQL pipelines, confirmed +15% CVR lift through A/B testing (p&lt;0.05) on 10,000+ users, and built demand forecasting models using Gradient Boosting (R²=0.89).</>,
+                content: <>I processed <span className="font-semibold text-gray-900">$250M+ in financial records</span> through automated Python/SQL pipelines, confirmed +15% CVR lift through A/B testing (p&lt;0.05) on 10,000+ users, and built demand forecasting models using Gradient Boosting (R²=0.89). I also architected an AWS data lake on 100K+ e-commerce orders, automated 3-sigma SPC anomaly detection flagging 270 anomalies in real time, and built production Tableau and Power BI dashboards for KPI monitoring and customer segmentation.</>,
                 delay: 0.08,
               },
               {
-                content: <>Currently pursuing my <span className="font-semibold text-gray-900">MS in Data Analytics at CSU Fresno (GPA 3.5, NRTW Scholar)</span>, I'm actively seeking Data Scientist, Data Analyst, Data Engineer, and Analytics Engineer roles across the United States.</>,
+                content: <>As a <span className="font-semibold text-gray-900">Student Researcher at California State University, Fresno</span>, I presented applied ML research at the California Central Valley Research Symposium (CCVRS 2026) across three sessions covering LLM Fine-Tuning and RAG, Tokenization and Vector Embedding, and ML Algorithms in Data Analysis including Decision Trees, Regression, and Clustering. My research on Smart Building Technologies for Energy-Efficient Urban Ecosystems is accepted for publication with CRC Press, Taylor and Francis Group (2026), with a second chapter on Microgrid Systems currently in progress.</>,
                 delay: 0.16,
+              },
+              {
+                content: <>Currently pursuing <span className="font-semibold text-gray-900">MS Industrial Technology (Data Analytics and AI) at California State University, Fresno</span> — GPA 3.71, NRTW Scholar.</>,
+                delay: 0.24,
               },
             ].map((item, i) => (
               <AnimatedSection key={i} delay={item.delay}>
