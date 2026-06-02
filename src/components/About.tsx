@@ -109,6 +109,19 @@ export default function About() {
 
               {[
                 {
+                  title: 'Student Researcher',
+                  company: 'California State University, Fresno',
+                  period: 'Aug 2025 - Apr 2026',
+                  type: 'Research',
+                  primary: true,
+                  bullets: [
+                    'Presented 3 sessions at CCVRS 2026 on Applied AI & ML Research, Tokenization & Vector Embedding, and ML Algorithms in Data Analysis (Decision Trees, Regression). Co-authored with Prof. N.P. Mahalik',
+                    'Book Chapter (Accepted, In Press, 2026): "Smart Building Technologies for Energy-Efficient Urban Ecosystems" — CRC Press, Taylor & Francis Group',
+                    'Book Chapter (In Progress): Microgrid Systems — CRC Press, edited by Dr. Jose Anand',
+                    'ORCID: 0009-0005-2744-1804',
+                  ],
+                },
+                {
                   title: 'Data Analyst',
                   company: 'TEXCEL INFOTECH',
                   period: 'Oct 2023 - Nov 2024',
