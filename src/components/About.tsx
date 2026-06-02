@@ -193,14 +193,14 @@ export default function About() {
                         href={job.image}
                         target="_blank"
                         rel="noopener noreferrer"
-                        whileHover={{ scale: 1.01 }}
-                        className="block mt-5 rounded-2xl overflow-hidden border border-gray-200/70 shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.1)] transition-shadow duration-300 bg-gray-50 group"
+                        whileHover={{ scale: 1.02 }}
+                        className="inline-block mt-5 max-w-[220px] rounded-xl overflow-hidden border border-gray-200/70 shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.1)] transition-shadow duration-300 bg-gray-50 group"
                       >
                         <img
                           src={job.image}
                           alt={'imageAlt' in job ? (job.imageAlt as string) : ''}
                           loading="lazy"
-                          className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                          className="w-full h-auto object-cover group-hover:scale-[1.03] transition-transform duration-500"
                         />
                       </motion.a>
                     )}
