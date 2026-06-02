@@ -118,6 +118,8 @@ export default function About() {
                   period: 'Aug 2025 - Apr 2026',
                   type: 'Research',
                   primary: true,
+                  image: 'https://i.postimg.cc/T5qshCFr/Screenshot-2026-06-02-161819.png',
+                  imageAlt: 'CCVRS 2026 research presentation at California State University, Fresno',
                   bullets: [
                     'Presented 3 sessions at CCVRS 2026 on Applied AI & ML Research, Tokenization & Vector Embedding, and ML Algorithms in Data Analysis (Decision Trees, Regression). Co-authored with Prof. N.P. Mahalik',
                     'Book Chapter (Accepted, In Press, 2026): "Smart Building Technologies for Energy-Efficient Urban Ecosystems" — CRC Press, Taylor & Francis Group',
@@ -186,6 +188,22 @@ export default function About() {
                         </li>
                       ))}
                     </ul>
+                    {'image' in job && job.image && (
+                      <motion.a
+                        href={job.image}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.01 }}
+                        className="block mt-5 rounded-2xl overflow-hidden border border-gray-200/70 shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.1)] transition-shadow duration-300 bg-gray-50 group"
+                      >
+                        <img
+                          src={job.image}
+                          alt={'imageAlt' in job ? (job.imageAlt as string) : ''}
+                          loading="lazy"
+                          className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                        />
+                      </motion.a>
+                    )}
                   </div>
                 </AnimatedSection>
               ))}

@@ -65,7 +65,7 @@ export default function Hero() {
                 className="absolute -top-4 -right-6 bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-100 px-4 py-3"
               >
                 <p className="text-[10px] text-gray-400 font-semibold uppercase tracking-wider">Experience</p>
-                <p className="text-[13px] font-bold text-gray-900">3 Years</p>
+                <p className="text-[13px] font-bold text-gray-900">3+ Years</p>
               </motion.div>
 
               {/* Floating accent dots */}
@@ -130,7 +130,7 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.3 }}
               className="text-[17px] text-gray-500 leading-[1.7] mb-10 max-w-lg"
             >
-              3 years building ML models, LLM/RAG pipelines, and data products that drive business decisions. Published researcher @ CRC Press.
+              3+ years building ML models, LLM/RAG pipelines, and data products that drive business decisions. Published researcher @ CRC Press.
             </motion.p>
 
             <motion.div
