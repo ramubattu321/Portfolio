@@ -35,19 +35,19 @@ export default function About() {
           <div className="space-y-4">
             {[
               {
-                content: <>I'm a <span className="font-semibold text-gray-900">Data Analyst and Data Professional</span> with 3+ years of experience building ML models, ETL pipelines, LLM systems, and BI dashboards that drive real business decisions.</>,
+                content: <>Data Analyst with <span className="font-semibold text-gray-900">3 years of professional experience</span> at Texcel Infotech and Gautam Joshi & Co., targeting Data Analyst / Data Scientist / Data Engineer roles across technology, analytics, and AI-driven industries.</>,
                 delay: 0,
               },
               {
-                content: <>I processed <span className="font-semibold text-gray-900">$250M+ in financial records</span> through automated Python/SQL pipelines, confirmed +15% CVR lift through A/B testing (p&lt;0.05) on 10,000+ users, and built demand forecasting models using Gradient Boosting (R²=0.89). I also architected an AWS data lake on 100K+ e-commerce orders, automated 3-sigma SPC anomaly detection flagging 270 anomalies in real time, and built production Tableau and Power BI dashboards for KPI monitoring and customer segmentation.</>,
+                content: <>Hands-on experience building <span className="font-semibold text-gray-900">production ETL pipelines, SQL-based reporting, A/B testing frameworks, customer segmentation models, and BI dashboards</span> influencing $50K+ in business decisions.</>,
                 delay: 0.08,
               },
               {
-                content: <>As a <span className="font-semibold text-gray-900">Student Researcher at California State University, Fresno</span>, I presented applied ML research at the California Central Valley Research Symposium (CCVRS 2026) across three sessions covering LLM Fine-Tuning and RAG, Tokenization and Vector Embedding, and ML Algorithms in Data Analysis including Decision Trees, Regression, and Clustering. My research on Smart Building Technologies for Energy-Efficient Urban Ecosystems is accepted for publication with CRC Press, Taylor and Francis Group (2026), with a second chapter on Microgrid Systems currently in progress.</>,
+                content: <>Currently pursuing <span className="font-semibold text-gray-900">MS in Industrial Technology (Data Analytics & AI)</span> at California State University, Fresno (GPA 3.71, NRTW Scholar, Expected Dec 2026). Graduate research includes LLM fine-tuning, RAG pipelines, NLP benchmarking, and ML algorithms — presented at CCVRS 2026 and accepted for publication with CRC Press.</>,
                 delay: 0.16,
               },
               {
-                content: <>Currently pursuing <span className="font-semibold text-gray-900">MS Industrial Technology (Data Analytics and AI) at California State University, Fresno</span> — GPA 3.71, NRTW Scholar.</>,
+                content: <>Proficient in <span className="font-semibold text-gray-900">Python, SQL, Tableau, Power BI, AWS (S3, Glue, Athena), Scikit-learn, PyTorch, and Excel</span> (MS Office Specialist).</>,
                 delay: 0.24,
               },
             ].map((item, i) => (
