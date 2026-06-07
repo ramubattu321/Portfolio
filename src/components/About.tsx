@@ -35,7 +35,7 @@ export default function About() {
           <div className="space-y-4">
             {[
               {
-                content: <>Data Analyst with <span className="font-semibold text-gray-900">3 years of professional experience</span> at Texcel Infotech and Gautam Joshi & Co., targeting Data Analyst / Data Scientist / Data Engineer roles across technology, analytics, and AI-driven industries.</>,
+                content: <>Data Analyst with <span className="font-semibold text-gray-900">3+ years of professional experience</span> at Texcel Infotech and Gautam Joshi & Co., targeting Data Analyst / Data Scientist / Data Engineer roles across technology, analytics, and AI-driven industries.</>,
                 delay: 0,
               },
               {
