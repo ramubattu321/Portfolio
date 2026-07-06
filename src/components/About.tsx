@@ -113,18 +113,16 @@ export default function About() {
 
               {[
                 {
-                  title: 'Student Researcher',
-                  company: 'California State University, Fresno',
-                  period: 'Aug 2025 - Apr 2026',
-                  type: 'Research',
+                  title: 'Data Analyst',
+                  company: 'Bank of America',
+                  period: 'Jan 2026 - Present',
+                  type: 'Charlotte, NC',
                   primary: true,
-                  image: 'https://i.postimg.cc/T5qshCFr/Screenshot-2026-06-02-161819.png',
-                  imageAlt: 'CCVRS 2026 research presentation at California State University, Fresno',
                   bullets: [
-                    'Presented 3 sessions at CCVRS 2026 on Applied AI & ML Research, Tokenization & Vector Embedding, and ML Algorithms in Data Analysis (Decision Trees, Regression). Co-authored with Prof. N.P. Mahalik',
-                    'Book Chapter (Accepted, In Press, 2026): "Smart Building Technologies for Energy-Efficient Urban Ecosystems" — CRC Press, Taylor & Francis Group',
-                    'Book Chapter (In Progress): Microgrid Systems — CRC Press, edited by Dr. Jose Anand',
-                    'ORCID: 0009-0005-2744-1804',
+                    'Designed financial reporting dashboards with Power BI, Tableau, and SQL, improving KPI visibility, variance tracking, and executive review readiness for banking stakeholders and teams.',
+                    'Developed SQL data models across Snowflake and SQL Server, enhancing financial datasets, report consistency, and downstream analytics for operational decision support and governance reviews.',
+                    'Standardized reconciliation workflows in Excel, Power Query, and VBA, reducing manual research effort while improving audit trails, exception tracking, and accuracy for monthly close.',
+                    'Optimized recurring SQL queries, stored procedures, and data validation rules, increasing report reliability, performance tuning, and timely delivery for compliance requests across risk teams.',
                   ],
                 },
                 {
