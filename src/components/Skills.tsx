@@ -19,13 +19,13 @@ function AnimatedSection({ children, className = '', delay = 0 }: { children: Re
 }
 
 const technicalSkills = [
-  { category: 'Data Visualization', skills: ['Power BI', 'Tableau', 'Looker Studio', 'Excel'], gradient: 'from-blue-50 to-cyan-50', borderColor: 'hover:border-blue-200' },
-  { category: 'Programming', skills: ['SQL', 'Python', 'Data Cleaning', 'ETL'], gradient: 'from-teal-50 to-emerald-50', borderColor: 'hover:border-teal-200' },
-  { category: 'Business Tools', skills: ['Tally ERP', 'Salesforce CRM', 'Google Analytics'], gradient: 'from-amber-50 to-orange-50', borderColor: 'hover:border-amber-200' },
-  { category: 'Analysis', skills: ['Financial Analysis', 'Business Analysis', 'CRM Analytics'], gradient: 'from-rose-50 to-pink-50', borderColor: 'hover:border-rose-200' },
-  { category: 'AI & LLM', skills: ['PyTorch', 'TensorFlow', 'BERT', 'LLM Fine-Tuning', 'RAG Pipelines', 'FAISS', 'HNSW', 'Hugging Face', 'Prompt Engineering'], gradient: 'from-teal-50 to-cyan-50', borderColor: 'hover:border-teal-200' },
-  { category: 'Cloud & Infrastructure', skills: ['AWS S3', 'AWS Glue', 'AWS Athena', 'EC2', 'Boto3', 'Git'], gradient: 'from-sky-50 to-blue-50', borderColor: 'hover:border-sky-200' },
-  { category: 'ML & Statistics', skills: ['Scikit-learn', 'Gradient Boosting', 'K-Means', 'Regression', 'A/B Testing', 'Hypothesis Testing', 'SPC', 'Feature Engineering'], gradient: 'from-emerald-50 to-green-50', borderColor: 'hover:border-emerald-200' },
+  { category: 'Data Analytics & BI', skills: ['SQL', 'Power BI', 'Tableau', 'Excel', 'Power Query', 'Power Automate', 'Power Apps', 'Looker', 'Qlik', 'SAP BI', 'KPI Design', 'Ad-hoc Analysis', 'Dashboarding', 'Self-Service Analytics'], gradient: 'from-blue-50 to-cyan-50', borderColor: 'hover:border-blue-200' },
+  { category: 'Data Engineering & Warehousing', skills: ['ETL', 'ELT', 'dbt', 'Apache Airflow', 'Data Pipelines', 'Data Modeling', 'Dimensional Modeling', 'Data Warehouse', 'Data Marts', 'Data Lake', 'Data Quality', 'Data Governance'], gradient: 'from-teal-50 to-emerald-50', borderColor: 'hover:border-teal-200' },
+  { category: 'Cloud & Big Data Platforms', skills: ['AWS', 'Azure', 'GCP', 'Hadoop', 'Spark', 'S3', 'Databricks'], gradient: 'from-sky-50 to-blue-50', borderColor: 'hover:border-sky-200' },
+  { category: 'Process & Collaboration', skills: ['Agile', 'Scrum', 'Kanban', 'JIRA', 'Confluence', 'Git', 'GitHub', 'Stakeholder Management', 'Requirements Gathering', 'UAT Coordination'], gradient: 'from-amber-50 to-orange-50', borderColor: 'hover:border-amber-200' },
+  { category: 'Databases', skills: ['Snowflake', 'Amazon Redshift', 'Google BigQuery', 'Oracle', 'MySQL', 'PostgreSQL', 'SQL Server', 'MongoDB'], gradient: 'from-rose-50 to-pink-50', borderColor: 'hover:border-rose-200' },
+  { category: 'Programming & Statistical Analysis', skills: ['Python', 'R', 'SAS', 'MATLAB', 'STATA', 'Statistical Modeling', 'Regression', 'Classification', 'Clustering', 'Time-Series Analysis', 'A/B Testing', 'Machine Learning', 'NLP'], gradient: 'from-emerald-50 to-green-50', borderColor: 'hover:border-emerald-200' },
+  { category: 'Reporting & Productivity', skills: ['PowerPoint', 'SharePoint', 'Advanced Excel', 'Power Pivot', 'Macros', 'Documentation', 'Executive Reporting', 'Storytelling Decks'], gradient: 'from-slate-50 to-gray-50', borderColor: 'hover:border-slate-200' },
 ];
 
 const softSkills = [
