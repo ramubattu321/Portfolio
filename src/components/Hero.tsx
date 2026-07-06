@@ -191,7 +191,7 @@ export default function Hero() {
           className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-28 pt-12 border-t border-gray-100"
         >
           {[
-            { value: '3+', label: 'Years Experience' },
+            { value: '4+', label: 'Years Experience' },
             { value: '$250M+', label: 'Data Processed' },
             { value: '2', label: 'CRC Press Publications' },
             { value: '3', label: 'Research Presentations' },
