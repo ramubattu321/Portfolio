@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Linkedin, Mail, Github, ArrowDown, Sparkles } from 'lucide-react';
 
-const roles = ['Data Scientist', 'Data Analyst', 'ML Engineer', 'BI Specialist'];
+const roles = ['Data Analyst', 'Business Intelligence', 'Data Engineer', 'Analytics Engineer'];
 
 export default function Hero() {
   const [roleIdx, setRoleIdx] = useState(0);
@@ -56,7 +56,7 @@ export default function Hero() {
                 className="absolute -bottom-4 -left-6 bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-100 px-4 py-3"
               >
                 <p className="text-[10px] text-gray-400 font-semibold uppercase tracking-wider">Location</p>
-                <p className="text-[13px] font-bold text-gray-900">Fresno, CA</p>
+                <p className="text-[13px] font-bold text-gray-900">Charlotte, NC</p>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
@@ -65,7 +65,7 @@ export default function Hero() {
                 className="absolute -top-4 -right-6 bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-100 px-4 py-3"
               >
                 <p className="text-[10px] text-gray-400 font-semibold uppercase tracking-wider">Experience</p>
-                <p className="text-[13px] font-bold text-gray-900">3+ Years</p>
+                <p className="text-[13px] font-bold text-gray-900">4+ Years</p>
               </motion.div>
 
               {/* Floating accent dots */}
@@ -130,7 +130,7 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.3 }}
               className="text-[17px] text-gray-500 leading-[1.7] mb-10 max-w-lg"
             >
-              3+ years building ML models, LLM/RAG pipelines, and data products that drive business decisions. Published researcher @ CRC Press.
+              4+ years turning complex datasets into decision-ready insights through BI, data engineering, and analytics. Published researcher @ CRC Press.
             </motion.p>
 
             <motion.div

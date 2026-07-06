@@ -35,19 +35,19 @@ export default function About() {
           <div className="space-y-4">
             {[
               {
-                content: <>Data Analyst with <span className="font-semibold text-gray-900">3+ years of professional experience</span> at Texcel Infotech and Gautam Joshi & Co., targeting Data Analyst / Data Scientist / Data Engineer roles across technology, analytics, and AI-driven industries.</>,
+                content: <>I'm Ramu Battu, a Data Analyst with <span className="font-semibold text-gray-900">4+ years of experience</span> turning complex datasets into clear, decision-ready insights. My work sits at the intersection of business intelligence, data engineering, and analytics — using SQL, Python, Power BI, Tableau, and AWS to build dashboards, data models, and reporting systems that stakeholders actually trust.</>,
                 delay: 0,
               },
               {
-                content: <>Hands-on experience building <span className="font-semibold text-gray-900">production ETL pipelines, SQL-based reporting, A/B testing frameworks, customer segmentation models, and BI dashboards</span> influencing $50K+ in business decisions.</>,
+                content: <>Currently, I'm a Data Analyst at <span className="font-semibold text-gray-900">Bank of America</span>, where I design financial reporting dashboards, build SQL data models across Snowflake and SQL Server, and standardize reconciliation workflows that improve accuracy and audit readiness for banking operations. Before that, I worked with Cognizant and Gautam Joshi & Co. LLP, delivering analytics solutions across finance, healthcare, operations, and accounting.</>,
                 delay: 0.08,
               },
               {
-                content: <>Currently pursuing <span className="font-semibold text-gray-900">MS in Industrial Technology (Data Analytics & AI)</span> at California State University, Fresno (GPA 3.71, NRTW Scholar, Expected Dec 2026). Graduate research includes LLM fine-tuning, RAG pipelines, NLP benchmarking, and ML algorithms — presented at CCVRS 2026 and accepted for publication with CRC Press.</>,
+                content: <>Beyond traditional BI work, I'm also a <span className="font-semibold text-gray-900">published researcher with CRC Press</span>, and I've been exploring how LLMs and RAG (Retrieval-Augmented Generation) architectures can extend the boundaries of analytics — from smarter data exploration to more intuitive, conversational reporting tools.</>,
                 delay: 0.16,
               },
               {
-                content: <>Proficient in <span className="font-semibold text-gray-900">Python, SQL, Tableau, Power BI, AWS (S3, Glue, Athena), Scikit-learn, PyTorch, and Excel</span> (MS Office Specialist).</>,
+                content: <>I hold a <span className="font-semibold text-gray-900">Master's in Industrial Technology from California State University, Fresno</span>, and I'm always looking for ways to bridge rigorous data practices with emerging AI capabilities to solve real business problems. Let's connect if you're working on data analytics, BI, or applied LLM/RAG projects.</>,
                 delay: 0.24,
               },
             ].map((item, i) => (
@@ -77,18 +77,18 @@ export default function About() {
                   <h4 className="font-semibold text-gray-900 text-[15px]">Master's Degree, Industrial Technology</h4>
                   <p className="text-teal-600 text-sm font-medium mt-0.5">California State University, Fresno</p>
                   <p className="text-gray-400 text-[13px] mt-1.5 flex items-center gap-1.5">
-                    <Calendar size={12} /> Jan 2025 - Dec 2026 (Expected)
+                    <Calendar size={12} /> Dec 2026
                   </p>
                   <p className="text-gray-500 text-[13px] mt-1">GPA: 3.71/4.0 - NRTW Scholar</p>
-                  <p className="text-gray-500 text-[13px] mt-1.5"><span className="font-medium text-gray-600">Coursework:</span> Numerical Mathematics, Statistical Learning & Data Mining, Probability Theory, Machine Learning, Data Intensive Computing, Data Models Query Language, Python Programming</p>
-                  <p className="text-gray-500 text-[13px] mt-1.5">3 research presentations at the California Central Valley Research Symposium (2026). Published researcher — CRC Press, Taylor & Francis Group.</p>
+                  <p className="text-gray-500 text-[13px] mt-1.5"><span className="font-medium text-gray-600">Focus:</span> Data Analytics & AI, LLM Fine-Tuning, RAG Pipelines, Statistical Learning, Machine Learning</p>
+                  <p className="text-gray-500 text-[13px] mt-1.5">Published researcher — CRC Press, Taylor & Francis Group.</p>
                 </div>
                 <div className="relative pl-6 border-l-2 border-gray-200">
                   <div className="absolute -left-[5px] top-1.5 w-2 h-2 bg-gray-300 rounded-full ring-4 ring-gray-50" />
                   <h4 className="font-semibold text-gray-900 text-[15px]">Bachelor of Engineering</h4>
                   <p className="text-gray-600 text-sm font-medium mt-0.5">Matrusri Engineering College, Osmania University</p>
                   <p className="text-gray-400 text-[13px] mt-1.5 flex items-center gap-1.5">
-                    <MapPin size={12} /> Hyderabad, India - Jun 2024
+                    <MapPin size={12} /> Hyderabad, India - Dec 2024
                   </p>
                   <p className="text-gray-500 text-[13px] mt-1">GPA: 3.0/4.0</p>
                 </div>
