@@ -127,16 +127,15 @@ export default function About() {
                 },
                 {
                   title: 'Data Analyst',
-                  company: 'TEXCEL INFOTECH',
-                  period: 'Oct 2023 - Nov 2024',
-                  type: 'Remote',
+                  company: 'Cognizant',
+                  period: 'Jan 2023 - Dec 2024',
+                  type: 'Hyderabad, India',
                   primary: true,
                   bullets: [
-                    'Built Python/SQL ETL pipeline on 500K+ row datasets — cut 3 days of manual work to under 2 hours',
-                    'Confirmed +15% CVR lift and +14% revenue lift via A/B testing (p-value 0.05)',
-                    'Built CLV model segmenting 10,000+ customers into 4 value tiers',
-                    'Wrote production SQL (CTEs, window functions) powering KPI dashboards',
-                    'Built Tableau and Power BI dashboards enabling self-serve analytics',
+                    'Analyzed client reporting requirements with SQL, Tableau, and Excel, improving dashboard specifications, KPI definitions, and delivery alignment for business intelligence stakeholders across project teams.',
+                    'Transformed raw operational datasets through Python, Power Query, and SQL, improving data quality, repeatable reporting workflows, and insight generation for cross-functional decision makers.',
+                    'Documented data mappings, business rules, and validation logic in Confluence and Jira, strengthening requirements traceability and delivery coordination across analytics initiatives.',
+                    'Monitored recurring dashboards, SQL extracts, and report refreshes, improving issue detection, stakeholder communication, and timely analytics support for enterprise reporting operations.',
                   ],
                 },
                 {
