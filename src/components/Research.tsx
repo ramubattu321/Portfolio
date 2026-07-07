@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { BookOpen, Mic, ExternalLink, Calendar, MapPin, Users, Award } from 'lucide-react';
+import { BookOpen, FlaskConical, Calendar, Users, Award, CheckCircle, Clock } from 'lucide-react';
 
 function AnimatedSection({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   const ref = useRef(null);
@@ -20,49 +20,47 @@ function AnimatedSection({ children, className = '', delay = 0 }: { children: Re
 
 const publications = [
   {
-    type: 'Book Chapter',
-    title: 'Retrieval-Augmented Generation for Intelligent Data Analytics: Architectures, Benchmarks, and Enterprise Applications',
+    status: 'accepted',
+    statusLabel: 'Accepted · In Press',
+    chapter: 'Chapter 16',
+    title: 'Smart Building Technologies for Energy-Efficient Urban Ecosystems',
+    book: 'Smart Technologies for Sustainable Development Goals: Clean Water and Sanitation',
     publisher: 'CRC Press, Taylor & Francis Group',
-    year: '2026',
-    description: 'A comprehensive study of RAG pipeline architectures for enterprise analytics, covering vector database integration, LLM fine-tuning strategies, and performance benchmarking across domain-specific datasets.',
-    tags: ['RAG', 'LLM', 'NLP', 'Enterprise Analytics'],
-    status: 'Accepted',
+    date: 'May 18, 2026',
+    editors: 'Dr. A. Jose Anand & Dr. Saravanan Krishnan',
+    orcid: '0009-0005-2744-1804',
+    tags: ['Smart Buildings', 'Energy Efficiency', 'Urban Systems', 'Sustainability'],
   },
   {
-    type: 'Book Chapter',
-    title: 'Machine Learning-Driven Anomaly Detection in Financial Data Streams: A Comparative Analysis of Classical and Deep Learning Approaches',
+    status: 'inprogress',
+    statusLabel: 'In Progress · Agreement Signed',
+    chapter: null,
+    title: 'Microgrid Systems',
+    book: 'CRC Press Forthcoming Volume',
     publisher: 'CRC Press, Taylor & Francis Group',
-    year: '2026',
-    description: 'Investigates supervised and unsupervised anomaly detection techniques applied to high-frequency financial transaction data, with emphasis on model interpretability and regulatory compliance.',
-    tags: ['Machine Learning', 'Anomaly Detection', 'FinTech', 'Deep Learning'],
-    status: 'Accepted',
+    date: 'Forthcoming',
+    editors: 'Dr. Jose Anand',
+    orcid: null,
+    tags: ['Microgrid', 'Power Systems', 'Energy Engineering'],
   },
 ];
 
-const presentations = [
+const researchPoints = [
   {
-    title: 'Fine-Tuning Large Language Models for Domain-Specific Data Exploration and Conversational Reporting',
-    event: 'California Central Valley Research Symposium (CCVRS)',
-    location: 'California State University, Fresno',
-    date: 'Spring 2026',
-    description: 'Presented a novel framework for adapting open-source LLMs to structured enterprise data, enabling natural-language querying of BI dashboards and automated report narration.',
-    tags: ['LLM Fine-Tuning', 'BI', 'NLP'],
+    heading: 'Data Analysis',
+    detail: 'Descriptive and inferential statistics applied to production datasets to surface patterns and anomalies.',
   },
   {
-    title: 'Scalable ETL Pipeline Design Using Apache Airflow and Snowflake for Real-Time Financial Reconciliation',
-    event: 'California Central Valley Research Symposium (CCVRS)',
-    location: 'California State University, Fresno',
-    date: 'Spring 2026',
-    description: 'Demonstrated a production-grade data engineering architecture integrating Airflow orchestration with Snowflake data warehousing to automate financial reconciliation workflows at scale.',
-    tags: ['Data Engineering', 'Airflow', 'Snowflake', 'ETL'],
+    heading: 'Predictive Modeling',
+    detail: 'Regression and time series techniques — AR, MA, ARMA — used for production forecasting and trend analysis.',
   },
   {
-    title: 'Clustering-Based Customer Segmentation Using K-Means and HDBSCAN for Predictive Retail Analytics',
-    event: 'California Central Valley Research Symposium (CCVRS)',
-    location: 'California State University, Fresno',
-    date: 'Spring 2026',
-    description: 'Compared density-based and centroid-based clustering algorithms on large retail datasets, proposing a hybrid approach that improved segment cohesion and downstream campaign targeting accuracy.',
-    tags: ['Clustering', 'ML', 'Retail Analytics', 'Python'],
+    heading: 'Machine Learning',
+    detail: 'SVM, PCA, kNN, k-means, decision trees, random forests, and gradient boosting for classification and segmentation tasks.',
+  },
+  {
+    heading: 'Model Evaluation',
+    detail: 'Rigorous performance assessment using R² and MAE metrics to validate predictive accuracy and generalizability.',
   },
 ];
 
@@ -77,7 +75,7 @@ export default function Research() {
           <p className="text-[13px] font-semibold text-teal-600 uppercase tracking-wider mb-3">Academia</p>
           <h2 className="font-display text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">Research & Publications</h2>
           <p className="mt-4 text-gray-500 text-[16px] max-w-2xl leading-relaxed">
-            Published researcher with CRC Press, Taylor & Francis Group, and presenter at the California Central Valley Research Symposium (CCVRS 2026).
+            Published researcher with CRC Press, Taylor & Francis Group, with graduate research focused on machine learning applications in production data analysis.
           </p>
         </AnimatedSection>
 
@@ -97,33 +95,61 @@ export default function Research() {
             <AnimatedSection key={i} delay={i * 0.1}>
               <motion.div
                 whileHover={{ y: -4 }}
-                className="group h-full bg-white/90 backdrop-blur-sm rounded-2xl p-7 border border-gray-200/60 shadow-[0_1px_3px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_50px_rgba(0,0,0,0.07)] hover:border-blue-200/60 transition-all duration-400"
+                className="group h-full bg-white/90 backdrop-blur-sm rounded-2xl p-7 border border-gray-200/60 shadow-[0_1px_3px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_50px_rgba(0,0,0,0.07)] hover:border-blue-200/60 transition-all duration-400 flex flex-col"
               >
-                <div className="flex items-start justify-between gap-3 mb-4">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-[12px] font-semibold">
-                    <BookOpen size={11} />
-                    {pub.type}
-                  </span>
-                  <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-600 text-[11px] font-semibold">
-                    <Award size={10} />
-                    {pub.status}
-                  </span>
+                <div className="flex items-start justify-between gap-3 mb-5">
+                  <div className="flex items-center gap-2">
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-[11px] font-semibold">
+                      <BookOpen size={10} />
+                      Book Chapter
+                    </span>
+                    {pub.chapter && (
+                      <span className="px-2.5 py-1 rounded-full bg-gray-100 text-gray-500 text-[11px] font-semibold">{pub.chapter}</span>
+                    )}
+                  </div>
+                  {pub.status === 'accepted' ? (
+                    <span className="flex-shrink-0 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-600 text-[11px] font-semibold">
+                      <CheckCircle size={10} />
+                      {pub.statusLabel}
+                    </span>
+                  ) : (
+                    <span className="flex-shrink-0 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-50 border border-amber-100 text-amber-600 text-[11px] font-semibold">
+                      <Clock size={10} />
+                      {pub.statusLabel}
+                    </span>
+                  )}
                 </div>
 
-                <h4 className="font-display font-bold text-gray-900 text-[15px] leading-snug mb-3 group-hover:text-blue-900 transition-colors">
+                <h4 className="font-display font-bold text-gray-900 text-[16px] leading-snug mb-3 group-hover:text-blue-900 transition-colors">
                   {pub.title}
                 </h4>
 
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="w-5 h-5 rounded bg-gradient-to-br from-blue-500 to-sky-600 flex items-center justify-center flex-shrink-0">
-                    <BookOpen size={10} className="text-white" />
+                <p className="text-[13px] text-blue-700 font-medium italic mb-4 leading-relaxed">{pub.book}</p>
+
+                <div className="space-y-2 mb-5 flex-1">
+                  <div className="flex items-center gap-2 text-[13px] text-gray-500">
+                    <div className="w-5 h-5 rounded bg-gradient-to-br from-blue-500 to-sky-600 flex items-center justify-center flex-shrink-0">
+                      <BookOpen size={9} className="text-white" />
+                    </div>
+                    <span className="font-medium text-gray-700">{pub.publisher}</span>
                   </div>
-                  <p className="text-[13px] text-gray-500 font-medium">{pub.publisher} · {pub.year}</p>
+                  <div className="flex items-center gap-2 text-[13px] text-gray-500">
+                    <Calendar size={13} className="flex-shrink-0 text-gray-400" />
+                    <span>{pub.date}</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-[13px] text-gray-500">
+                    <Users size={13} className="flex-shrink-0 text-gray-400" />
+                    <span>Editors: {pub.editors}</span>
+                  </div>
+                  {pub.orcid && (
+                    <div className="flex items-center gap-2 text-[13px] text-gray-500">
+                      <Award size={13} className="flex-shrink-0 text-gray-400" />
+                      <span>ORCID: <span className="font-mono text-[12px] text-gray-600">{pub.orcid}</span></span>
+                    </div>
+                  )}
                 </div>
 
-                <p className="text-[14px] text-gray-500 leading-relaxed mb-5">{pub.description}</p>
-
-                <div className="flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-1.5 pt-4 border-t border-gray-100">
                   {pub.tags.map((tag, j) => (
                     <span key={j} className="px-2.5 py-1 rounded-lg bg-gray-50 border border-gray-200/80 text-[12px] font-medium text-gray-600">
                       {tag}
@@ -135,64 +161,75 @@ export default function Research() {
           ))}
         </div>
 
-        {/* Presentations */}
+        {/* Graduate Research */}
         <AnimatedSection className="mb-5">
           <div className="flex items-center gap-3 mb-8">
             <div className="w-10 h-10 bg-gradient-to-br from-teal-50 to-emerald-50 rounded-xl flex items-center justify-center border border-teal-100 shadow-[0_2px_8px_rgba(20,184,166,0.1)]">
-              <Mic className="text-teal-600" size={18} />
+              <FlaskConical className="text-teal-600" size={18} />
             </div>
-            <h3 className="font-display text-xl font-bold text-gray-900">Conference Presentations</h3>
-            <span className="px-2.5 py-0.5 rounded-full bg-teal-50 border border-teal-100 text-teal-600 text-[12px] font-semibold">CCVRS 2026</span>
+            <h3 className="font-display text-xl font-bold text-gray-900">Graduate Research</h3>
+            <span className="px-2.5 py-0.5 rounded-full bg-teal-50 border border-teal-100 text-teal-600 text-[12px] font-semibold">MS Research</span>
           </div>
         </AnimatedSection>
 
-        <div className="space-y-4">
-          {presentations.map((pres, i) => (
-            <AnimatedSection key={i} delay={i * 0.08}>
-              <motion.div
-                whileHover={{ x: 4 }}
-                className="group bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/60 shadow-[0_1px_3px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] hover:border-teal-200/60 transition-all duration-300 flex gap-5"
-              >
-                <div className="flex-shrink-0 pt-0.5">
-                  <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-teal-50 to-emerald-50 border border-teal-100 flex items-center justify-center text-teal-500 font-bold text-[13px] font-display shadow-sm">
-                    {String(i + 1).padStart(2, '0')}
-                  </div>
-                </div>
-
-                <div className="flex-1 min-w-0">
-                  <h4 className="font-display font-bold text-gray-900 text-[15px] leading-snug mb-2 group-hover:text-teal-800 transition-colors">
-                    {pres.title}
+        <AnimatedSection delay={0.1}>
+          <motion.div
+            whileHover={{ y: -3 }}
+            className="bg-white/90 backdrop-blur-sm rounded-2xl border border-gray-200/60 shadow-[0_1px_3px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_50px_rgba(0,0,0,0.07)] hover:border-teal-200/60 transition-all duration-400 overflow-hidden"
+          >
+            <div className="h-2 bg-gradient-to-r from-teal-500 via-emerald-500 to-teal-400" />
+            <div className="p-8 md:p-10">
+              <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
+                <div>
+                  <h4 className="font-display font-bold text-gray-900 text-xl leading-snug mb-2">
+                    Study on Machine Learning Algorithms used in Production Data Analysis
                   </h4>
-
-                  <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 mb-3">
-                    <span className="flex items-center gap-1.5 text-[13px] text-teal-600 font-medium">
-                      <Users size={12} />
-                      {pres.event}
-                    </span>
-                    <span className="flex items-center gap-1.5 text-[13px] text-gray-400">
-                      <MapPin size={11} />
-                      {pres.location}
-                    </span>
-                    <span className="flex items-center gap-1.5 text-[13px] text-gray-400">
-                      <Calendar size={11} />
-                      {pres.date}
-                    </span>
-                  </div>
-
-                  <p className="text-[14px] text-gray-500 leading-relaxed mb-4">{pres.description}</p>
-
-                  <div className="flex flex-wrap gap-1.5">
-                    {pres.tags.map((tag, j) => (
-                      <span key={j} className="px-2.5 py-1 rounded-lg bg-teal-50/70 border border-teal-100 text-[12px] font-medium text-teal-700">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                  <p className="text-[14px] text-teal-600 font-medium">Master's Research · California State University, Fresno</p>
                 </div>
-              </motion.div>
-            </AnimatedSection>
-          ))}
-        </div>
+                <span className="flex-shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-teal-50 border border-teal-100 text-teal-700 text-[12px] font-semibold">
+                  <CheckCircle size={12} />
+                  Completed
+                </span>
+              </div>
+
+              <p className="text-[15px] text-gray-500 leading-relaxed mb-8 max-w-3xl">
+                Applied data analysis and machine learning techniques to extract actionable insights from production datasets and improve data-driven decision-making in manufacturing systems.
+              </p>
+
+              <div className="grid sm:grid-cols-2 gap-4">
+                {researchPoints.map((point, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.07, duration: 0.5 }}
+                    className="group flex gap-3 p-4 rounded-xl bg-gray-50/80 border border-gray-100 hover:bg-teal-50/50 hover:border-teal-100 transition-all"
+                  >
+                    <div className="flex-shrink-0 w-7 h-7 rounded-lg bg-gradient-to-br from-teal-500 to-emerald-500 flex items-center justify-center shadow-[0_2px_8px_rgba(20,184,166,0.25)]">
+                      <span className="text-white text-[11px] font-bold">{String(i + 1).padStart(2, '0')}</span>
+                    </div>
+                    <div>
+                      <p className="text-[13px] font-semibold text-gray-800 mb-0.5 group-hover:text-teal-800 transition-colors">{point.heading}</p>
+                      <p className="text-[13px] text-gray-500 leading-relaxed">{point.detail}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className="mt-7 pt-6 border-t border-gray-100">
+                <p className="text-[12px] text-gray-400 font-semibold uppercase tracking-wider mb-3">Methods & Tools</p>
+                <div className="flex flex-wrap gap-2">
+                  {['SVM', 'PCA', 'kNN', 'k-Means', 'Decision Trees', 'Random Forests', 'Boosting', 'AR/MA/ARMA', 'Regression', 'R²', 'MAE'].map((tag, i) => (
+                    <span key={i} className="px-2.5 py-1 rounded-lg bg-teal-50/70 border border-teal-100 text-[12px] font-medium text-teal-700">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </AnimatedSection>
       </div>
     </section>
   );
