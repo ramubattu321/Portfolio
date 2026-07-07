@@ -4,6 +4,7 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Certifications from './components/Certifications';
 import Awards from './components/Awards';
+import Research from './components/Research';
 import Services from './components/Services';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
@@ -18,6 +19,7 @@ function App() {
       <Skills />
       <Certifications />
       <Awards />
+      <Research />
       <Services />
       <Portfolio />
       <Contact />

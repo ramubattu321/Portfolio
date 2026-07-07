@@ -8,6 +8,7 @@ const navItems = [
   { id: 'skills', label: 'Skills' },
   { id: 'certifications', label: 'Certifications' },
   { id: 'awards', label: 'Awards' },
+  { id: 'research', label: 'Research' },
   { id: 'portfolio', label: 'Projects' },
   { id: 'contact', label: 'Contact' },
 ];
@@ -54,14 +55,6 @@ export default function Header() {
                 {item.label}
               </button>
             ))}
-            <a
-              href="https://drive.google.com/drive/u/3/my-drive"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ml-3 px-5 py-2 text-[13px] font-semibold text-white bg-gray-900 rounded-full hover:bg-gray-800 transition-all hover:scale-[1.02] active:scale-[0.98]"
-            >
-              Resume
-            </a>
           </nav>
 
           <button
@@ -92,14 +85,6 @@ export default function Header() {
                   {item.label}
                 </button>
               ))}
-              <a
-                href="https://drive.google.com/drive/u/3/my-drive"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mx-4 mt-3 px-4 py-3 text-center text-white bg-gray-900 rounded-full font-medium text-[15px]"
-              >
-                Resume
-              </a>
             </nav>
           </motion.div>
         )}
