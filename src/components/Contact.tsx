@@ -21,7 +21,7 @@ function AnimatedSection({ children, className = '', delay = 0 }: { children: Re
 
 const contactInfo = [
   { icon: Mail, label: 'Email', value: 'ramuusa61@gmail.com', href: 'mailto:ramuusa61@gmail.com', color: 'text-blue-500 bg-blue-50 border-blue-100' },
-  { icon: Phone, label: 'Phone', value: '+1 (413) 273-9688', href: 'tel:+14132739688', color: 'text-emerald-500 bg-emerald-50 border-emerald-100' },
+  { icon: Phone, label: 'Phone', value: '+1 (559) 351-2124', href: 'tel:+15593512124', color: 'text-emerald-500 bg-emerald-50 border-emerald-100' },
   { icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/in/ramu-battu', href: 'https://www.linkedin.com/in/ramu-battu-01a9a336a/', external: true, color: 'text-sky-500 bg-sky-50 border-sky-100' },
   { icon: MapPin, label: 'Location', value: 'Fresno, California', color: 'text-rose-500 bg-rose-50 border-rose-100' },
 ];
