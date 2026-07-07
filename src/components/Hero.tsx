@@ -56,7 +56,7 @@ export default function Hero() {
                 className="absolute -bottom-4 -left-6 bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-100 px-4 py-3"
               >
                 <p className="text-[10px] text-gray-400 font-semibold uppercase tracking-wider">Location</p>
-                <p className="text-[13px] font-bold text-gray-900">Charlotte, NC</p>
+                <p className="text-[13px] font-bold text-gray-900">Fresno, CA</p>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
