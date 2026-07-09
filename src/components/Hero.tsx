@@ -166,7 +166,7 @@ export default function Hero() {
               {[
                 { href: 'https://www.linkedin.com/in/ramu-battu-01a9a336a/', icon: Linkedin },
                 { href: 'https://github.com/ramubattu321', icon: Github },
-                { href: 'mailto:ramuusa61@gmail.com', icon: Mail },
+                { href: 'mailto:ramubattu966@gmail.com', icon: Mail },
               ].map(({ href, icon: Icon }, i) => (
                 <motion.a
                   key={i}
