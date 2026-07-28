@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { ExternalLink, CheckCircle2, ZoomIn, X } from 'lucide-react';
+import { ExternalLink, CheckCircle2, ZoomIn, X, BarChart3 } from 'lucide-react';
 
 function AnimatedSection({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   const ref = useRef(null);
@@ -17,6 +17,13 @@ function AnimatedSection({ children, className = '', delay = 0 }: { children: Re
     </motion.div>
   );
 }
+
+const ga4Cert = {
+  title: 'Google Analytics 4 Certification',
+  issuer: 'Google',
+  platform: 'Google Skillshop',
+  url: 'https://skillshop.credential.net/526fb952-56bc-4939-b046-70b888bc5e0c#acc.cnb2SoQO',
+};
 
 const certifications = [
   {
@@ -80,8 +87,63 @@ export default function Certifications() {
         </AnimatedSection>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <AnimatedSection delay={0}>
+            <motion.div
+              whileHover={{ y: -4 }}
+              className="group h-full rounded-2xl border border-gray-200/60 bg-white overflow-hidden hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] hover:border-gray-200 transition-all duration-300"
+            >
+              <div className="relative">
+                <div className="relative aspect-[1.414/1] bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 flex items-center justify-center overflow-hidden p-6">
+                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(255,255,255,0.15),transparent_60%)]" />
+                  <div className="absolute -bottom-12 -right-12 w-48 h-48 bg-blue-400/10 rounded-full blur-2xl" />
+                  <div className="absolute -top-12 -left-12 w-40 h-40 bg-cyan-300/10 rounded-full blur-2xl" />
+
+                  <div className="relative text-center">
+                    <div className="w-14 h-14 bg-white/15 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 border border-white/20 shadow-lg">
+                      <BarChart3 className="text-white" size={26} />
+                    </div>
+                    <p className="text-white/70 text-[10px] font-semibold uppercase tracking-[0.2em] mb-1.5">Google Skillshop</p>
+                    <h4 className="text-white font-display font-bold text-lg leading-tight mb-3">Google Analytics 4</h4>
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/15 backdrop-blur-sm border border-white/25">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                      <span className="text-white text-[10px] font-semibold uppercase tracking-wider">Certified</span>
+                    </div>
+                  </div>
+
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500" />
+                </div>
+
+                <div className="absolute top-3 left-3 bg-white px-2.5 py-1 rounded-lg shadow-md">
+                  <span className="text-gray-900 text-[10px] font-bold tracking-tight">GA4</span>
+                </div>
+
+                <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/90 backdrop-blur-sm border border-gray-200/60 shadow-sm">
+                  <CheckCircle2 className="text-emerald-500" size={11} />
+                  <span className="text-emerald-600 text-[10px] font-bold">VERIFIED</span>
+                </div>
+              </div>
+
+              <div className="p-5">
+                <p className="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-1.5">{ga4Cert.platform}</p>
+                <h3 className="font-semibold text-gray-900 text-[14px] leading-snug mb-2 group-hover:text-teal-700 transition-colors">
+                  {ga4Cert.title}
+                </h3>
+                <p className="text-gray-400 text-[12px] mb-4">Issued by {ga4Cert.issuer}</p>
+
+                <a
+                  href={ga4Cert.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg text-[12px] font-medium text-gray-600 bg-gray-50 border border-gray-200/80 hover:bg-teal-50 hover:text-teal-700 hover:border-teal-200 transition-all"
+                >
+                  View Certificate <ExternalLink size={11} />
+                </a>
+              </div>
+            </motion.div>
+          </AnimatedSection>
+
           {certifications.map((cert, i) => (
-            <AnimatedSection key={i} delay={i * 0.06}>
+            <AnimatedSection key={i} delay={(i + 1) * 0.06}>
               <motion.div
                 whileHover={{ y: -4 }}
                 className="group h-full rounded-2xl border border-gray-200/60 bg-white overflow-hidden hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] hover:border-gray-200 transition-all duration-300"
