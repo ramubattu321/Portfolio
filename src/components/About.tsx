@@ -79,7 +79,7 @@ export default function About() {
                   <p className="text-gray-400 text-[13px] mt-1.5 flex items-center gap-1.5">
                     <Calendar size={12} /> Dec 2026
                   </p>
-                  <p className="text-gray-500 text-[13px] mt-1">GPA: 3.71/4.0 - NRTW Scholar</p>
+                  <p className="text-gray-500 text-[13px] mt-1">GPA: 3.77/4.0 - NRTW Scholar</p>
                   <p className="text-gray-500 text-[13px] mt-1.5"><span className="font-medium text-gray-600">Focus:</span> Data Analytics & AI, LLM Fine-Tuning, RAG Pipelines, Statistical Learning, Machine Learning</p>
                   <p className="text-gray-500 text-[13px] mt-1.5">Published researcher — CRC Press, Taylor & Francis Group.</p>
                 </div>
@@ -115,7 +115,7 @@ export default function About() {
                 {
                   title: 'Data Analyst',
                   company: 'Bank of America',
-                  period: 'Jan 2026 - Present',
+                  period: 'Jan 2026 - July 2026',
                   type: 'Charlotte, NC',
                   primary: true,
                   bullets: [
