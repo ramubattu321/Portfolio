@@ -112,7 +112,7 @@ export default function Hero() {
                   transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                   className="inline-block bg-gradient-to-r from-teal-600 via-teal-500 to-emerald-500 bg-clip-text text-transparent"
                 >
-                  {roles[roleIdx]}
+                  Business Analyst
                 </motion.span>
                 <motion.span
                   className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-teal-500 to-emerald-400 rounded-full"
