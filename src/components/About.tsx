@@ -35,19 +35,19 @@ export default function About() {
           <div className="space-y-4">
             {[
               {
-                content: <>I'm Ramu Battu, a Data Analyst with <span className="font-semibold text-gray-900">4+ years of experience</span> turning complex datasets into clear, decision-ready insights. My work sits at the intersection of business intelligence, data engineering, and analytics — using SQL, Python, Power BI, Tableau, and AWS to build dashboards, data models, and reporting systems that stakeholders actually trust.</>,
+                content: <>I'm a <span className="font-semibold text-gray-900">Business Analyst</span> with <span className="font-semibold text-gray-900">4+ years of experience</span> across banking, healthcare, and consulting. I like taking messy, complicated requirements and turning them into something a team can actually build and test.</>,
                 delay: 0,
               },
               {
-                content: <>Currently, I'm a Data Analyst at <span className="font-semibold text-gray-900">Bank of America</span>, where I design financial reporting dashboards, build SQL data models across Snowflake and SQL Server, and standardize reconciliation workflows that improve accuracy and audit readiness for banking operations. Before that, I worked with Cognizant and Gautam Joshi & Co. LLP, delivering analytics solutions across finance, healthcare, operations, and accounting.</>,
+                content: <>At <span className="font-semibold text-gray-900">Bank of America</span>, I worked on payments and fraud/AML requirements — writing user stories, mapping data flows, and running UAT so releases went out with fewer surprises. Before that, I did similar work in healthcare at <span className="font-semibold text-gray-900">Cognizant</span> and in consulting at <span className="font-semibold text-gray-900">Gautam Joshi & Co.</span>, primarily focused on requirements gathering, stakeholder workshops, and reporting.</>,
                 delay: 0.08,
               },
               {
-                content: <>Beyond traditional BI work, I'm also a <span className="font-semibold text-gray-900">published researcher with CRC Press</span>, and I've been exploring how LLMs and RAG (Retrieval-Augmented Generation) architectures can extend the boundaries of analytics — from smarter data exploration to more intuitive, conversational reporting tools.</>,
+                content: <>Tools I use day to day: <span className="font-semibold text-gray-900">Jira, Confluence, SQL, Power BI, Tableau, Salesforce, and Visio</span>. I'm comfortable working in Agile, Scrum, and Waterfall environments, and I've also published research with <span className="font-semibold text-gray-900">CRC Press</span>.</>,
                 delay: 0.16,
               },
               {
-                content: <>I hold a <span className="font-semibold text-gray-900">Master's in Industrial Technology from California State University, Fresno</span>, and I'm always looking for ways to bridge rigorous data practices with emerging AI capabilities to solve real business problems. Let's connect if you're working on data analytics, BI, or applied LLM/RAG projects.</>,
+                content: <>I hold a <span className="font-semibold text-gray-900">Master's in Industrial Technology from California State University, Fresno</span>, and I'm certified in Google Data Analytics and GA4. Open to full-time Business Analyst roles — happy to connect.</>,
                 delay: 0.24,
               },
             ].map((item, i) => (
@@ -80,7 +80,7 @@ export default function About() {
                     <Calendar size={12} /> Dec 2026
                   </p>
                   <p className="text-gray-500 text-[13px] mt-1">GPA: 3.77/4.0 - NRTW Scholar</p>
-                  <p className="text-gray-500 text-[13px] mt-1.5"><span className="font-medium text-gray-600">Focus:</span> Data Analytics & AI, LLM Fine-Tuning, RAG Pipelines, Statistical Learning, Machine Learning</p>
+                  <p className="text-gray-500 text-[13px] mt-1.5"><span className="font-medium text-gray-600">Focus:</span> Business Analysis, Requirements Engineering, Data Analytics, Process Improvement, Reporting</p>
                   <p className="text-gray-500 text-[13px] mt-1.5">Published researcher — CRC Press, Taylor & Francis Group.</p>
                 </div>
                 <div className="relative pl-6 border-l-2 border-gray-200">
@@ -113,42 +113,42 @@ export default function About() {
 
               {[
                 {
-                  title: 'Data Analyst',
+                  title: 'Business Analyst',
                   company: 'Bank of America',
                   period: 'Jan 2026 - July 2026',
                   type: 'Charlotte, NC',
                   primary: true,
                   bullets: [
-                    'Designed financial reporting dashboards with Power BI, Tableau, and SQL, improving KPI visibility, variance tracking, and executive review readiness for banking stakeholders and teams.',
-                    'Developed SQL data models across Snowflake and SQL Server, enhancing financial datasets, report consistency, and downstream analytics for operational decision support and governance reviews.',
-                    'Standardized reconciliation workflows in Excel, Power Query, and VBA, reducing manual research effort while improving audit trails, exception tracking, and accuracy for monthly close.',
-                    'Optimized recurring SQL queries, stored procedures, and data validation rules, increasing report reliability, performance tuning, and timely delivery for compliance requests across risk teams.',
+                    'Gathered and documented requirements for payments and fraud/AML initiatives, translating business needs into user stories, acceptance criteria, and process flows in Jira and Confluence.',
+                    'Mapped end-to-end data flows and system interactions in Visio, giving stakeholders a clear picture of upstream and downstream impacts before development began.',
+                    'Coordinated UAT cycles across business and tech teams, writing test cases, tracking defects, and validating that releases met acceptance criteria before go-live.',
+                    'Partnered with developers, QA, and compliance stakeholders to resolve requirement gaps early, reducing rework and keeping releases on schedule with fewer production surprises.',
                   ],
                 },
                 {
-                  title: 'Data Analyst',
+                  title: 'Business Analyst',
                   company: 'Cognizant',
                   period: 'Jan 2023 - Dec 2024',
                   type: 'Hyderabad, India',
                   primary: true,
                   bullets: [
-                    'Analyzed client reporting requirements with SQL, Tableau, and Excel, improving dashboard specifications, KPI definitions, and delivery alignment for business intelligence stakeholders across project teams.',
-                    'Transformed raw operational datasets through Python, Power Query, and SQL, improving data quality, repeatable reporting workflows, and insight generation for cross-functional decision makers.',
-                    'Documented data mappings, business rules, and validation logic in Confluence and Jira, strengthening requirements traceability and delivery coordination across analytics initiatives.',
-                    'Monitored recurring dashboards, SQL extracts, and report refreshes, improving issue detection, stakeholder communication, and timely analytics support for enterprise reporting operations.',
+                    'Led requirements gathering sessions and stakeholder workshops for healthcare clients, capturing business needs and translating them into functional specifications and user stories.',
+                    'Authored BRDs, FRDs, and process flow diagrams in Visio and Confluence, giving development teams clear, traceable requirements that reduced ambiguity and rework.',
+                    'Built Power BI and Tableau dashboards to support reporting needs, working with SQL to validate data and ensure KPIs matched stakeholder definitions.',
+                    'Facilitated backlog grooming and sprint planning in Jira, prioritizing user stories with product owners and tracking delivery against sprint commitments.',
                   ],
                 },
                 {
-                  title: 'Account Executive Analyst',
+                  title: 'Business Analyst',
                   company: 'Gautam Joshi & Co. LLP',
                   period: 'Apr 2021 - Dec 2022',
                   type: 'Hybrid',
                   primary: false,
                   bullets: [
-                    'Processed $250M+ in Tally ERP financial records through automated Python/SQL pipeline',
-                    'Built automated anomaly detection flagging 15+ irregularities per quarter',
-                    'Built Power BI dashboards tracking budget vs actual financial KPIs',
-                    'Documented data lineage and transformation logic for audit-ready output',
+                    'Gathered requirements from partners and auditors, documenting financial reporting workflows and translating them into actionable specifications for the delivery team.',
+                    'Conducted stakeholder workshops to align on KPI definitions, reporting cadences, and exception-handling rules across accounting engagements.',
+                    'Built Power BI dashboards tracking budget vs. actual financial KPIs, giving leadership real-time visibility into engagement performance.',
+                    'Documented business rules and data lineage in Confluence, ensuring audit-ready output and clear traceability from source records to final reports.',
                   ],
                 },
               ].map((job, i) => (
