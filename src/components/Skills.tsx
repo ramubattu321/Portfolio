@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Database, LineChart, Code, Users, Lightbulb, Target } from 'lucide-react';
+import { Database, LineChart, Users, Lightbulb, Target, Workflow } from 'lucide-react';
 
 function AnimatedSection({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   const ref = useRef(null);
@@ -19,22 +19,23 @@ function AnimatedSection({ children, className = '', delay = 0 }: { children: Re
 }
 
 const technicalSkills = [
-  { category: 'Data Analytics & BI', skills: ['SQL', 'Power BI', 'Tableau', 'Excel', 'Power Query', 'Power Automate', 'Power Apps', 'Looker', 'Qlik', 'SAP BI', 'KPI Design', 'Ad-hoc Analysis', 'Dashboarding', 'Self-Service Analytics'], gradient: 'from-blue-50 to-cyan-50', borderColor: 'hover:border-blue-200' },
-  { category: 'Data Engineering & Warehousing', skills: ['ETL', 'ELT', 'dbt', 'Apache Airflow', 'Data Pipelines', 'Data Modeling', 'Dimensional Modeling', 'Data Warehouse', 'Data Marts', 'Data Lake', 'Data Quality', 'Data Governance'], gradient: 'from-teal-50 to-emerald-50', borderColor: 'hover:border-teal-200' },
-  { category: 'Cloud & Big Data Platforms', skills: ['AWS', 'Azure', 'GCP', 'Hadoop', 'Spark', 'S3', 'Databricks'], gradient: 'from-sky-50 to-blue-50', borderColor: 'hover:border-sky-200' },
-  { category: 'Process & Collaboration', skills: ['Agile', 'Scrum', 'Kanban', 'JIRA', 'Confluence', 'Git', 'GitHub', 'Stakeholder Management', 'Requirements Gathering', 'UAT Coordination'], gradient: 'from-amber-50 to-orange-50', borderColor: 'hover:border-amber-200' },
-  { category: 'Databases', skills: ['Snowflake', 'Amazon Redshift', 'Google BigQuery', 'Oracle', 'MySQL', 'PostgreSQL', 'SQL Server', 'MongoDB'], gradient: 'from-rose-50 to-pink-50', borderColor: 'hover:border-rose-200' },
-  { category: 'Programming & Statistical Analysis', skills: ['Python', 'R', 'SAS', 'MATLAB', 'STATA', 'Statistical Modeling', 'Regression', 'Classification', 'Clustering', 'Time-Series Analysis', 'A/B Testing', 'Machine Learning', 'NLP'], gradient: 'from-emerald-50 to-green-50', borderColor: 'hover:border-emerald-200' },
-  { category: 'Reporting & Productivity', skills: ['PowerPoint', 'SharePoint', 'Advanced Excel', 'Power Pivot', 'Macros', 'Documentation', 'Executive Reporting', 'Storytelling Decks'], gradient: 'from-slate-50 to-gray-50', borderColor: 'hover:border-slate-200' },
+  { category: 'Data Analysis & Reporting', skills: ['SQL', 'Advanced Excel', 'Pivot Tables', 'Power Query', 'VLOOKUP/XLOOKUP', 'Data Validation', 'Data Profiling', 'KPI Definition', 'Dashboarding', 'Ad-hoc Reporting', 'Trend Analysis'], gradient: 'from-blue-50 to-cyan-50', borderColor: 'hover:border-blue-200' },
+  { category: 'Business Analysis & Requirements', skills: ['Requirements Elicitation', 'BRD', 'FRD', 'User Stories', 'Epics', 'Acceptance Criteria', 'Gap Analysis', 'Impact Analysis', 'Process Mapping (AS-IS / TO-BE)', 'Stakeholder Management', 'Workshop Facilitation', 'BPR', 'Root Cause Analysis', 'UAT Coordination'], gradient: 'from-teal-50 to-emerald-50', borderColor: 'hover:border-teal-200' },
+  { category: 'Process & Methodologies', skills: ['Agile', 'Scrum', 'Kanban', 'Waterfall', 'SDLC', 'Scrum Ceremonies', 'Backlog Grooming', 'Sprint Planning'], gradient: 'from-amber-50 to-orange-50', borderColor: 'hover:border-amber-200' },
+  { category: 'Tools & Collaboration', skills: ['Jira', 'Confluence', 'Azure DevOps', 'Microsoft Visio', 'Lucidchart', 'Miro', 'SharePoint', 'MS Office Suite', 'Figma (Wireframing)'], gradient: 'from-sky-50 to-blue-50', borderColor: 'hover:border-sky-200' },
+  { category: 'Visualization & BI Tools', skills: ['Power BI', 'Tableau', 'Looker', 'Excel Dashboards', 'Report Automation'], gradient: 'from-rose-50 to-pink-50', borderColor: 'hover:border-rose-200' },
+  { category: 'Data & Integration Concepts', skills: ['ETL Processes', 'Data Mapping', 'APIs (REST/SOAP Basics)', 'Data Warehousing Concepts', 'Data Governance', 'Data Quality Frameworks'], gradient: 'from-emerald-50 to-green-50', borderColor: 'hover:border-emerald-200' },
+  { category: 'Enterprise Systems & Platforms', skills: ['Salesforce', 'ServiceNow', 'SAP', 'Oracle', 'Microsoft Dynamics 365', 'Workday'], gradient: 'from-indigo-50 to-blue-50', borderColor: 'hover:border-indigo-200' },
+  { category: 'Testing & QA Support', skills: ['Test Planning', 'Test Case Design', 'Test Execution', 'Regression Testing', 'Defect Tracking', 'UAT Support'], gradient: 'from-slate-50 to-gray-50', borderColor: 'hover:border-slate-200' },
 ];
 
 const softSkills = [
   { icon: LineChart, name: 'Data Storytelling', color: 'text-blue-500 bg-blue-50 border-blue-100' },
   { icon: Lightbulb, name: 'Problem Solving', color: 'text-amber-500 bg-amber-50 border-amber-100' },
   { icon: Target, name: 'Strategic Thinking', color: 'text-teal-500 bg-teal-50 border-teal-100' },
-  { icon: Users, name: 'Collaboration', color: 'text-emerald-500 bg-emerald-50 border-emerald-100' },
+  { icon: Users, name: 'Stakeholder Collaboration', color: 'text-emerald-500 bg-emerald-50 border-emerald-100' },
   { icon: Database, name: 'Attention to Detail', color: 'text-rose-500 bg-rose-50 border-rose-100' },
-  { icon: Code, name: 'Project Management', color: 'text-sky-500 bg-sky-50 border-sky-100' },
+  { icon: Workflow, name: 'Process Thinking', color: 'text-sky-500 bg-sky-50 border-sky-100' },
 ];
 
 export default function Skills() {
