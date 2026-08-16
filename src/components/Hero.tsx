@@ -42,7 +42,7 @@ export default function Hero() {
               <div className="absolute -inset-3 bg-gradient-to-br from-teal-200/30 via-blue-100/20 to-emerald-100/30 rounded-[2.2rem] blur-xl" />
               <div className="relative w-52 h-52 sm:w-60 sm:h-60 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-[2rem] overflow-hidden shadow-[0_25px_80px_-15px_rgba(0,0,0,0.12)] border-2 border-white/80">
                 <img
-                  src="https://i.postimg.cc/GmD2rJ1k/Gemini-Generated-Image-t3ye70t3ye70t3ye.png"
+                  src="https://i.postimg.cc/L4b1HymY/Chat-GPT-Image-Aug-14-2026-02-38-32-PM.png"
                   alt="Ramu Battu"
                   className="w-full h-full object-cover object-top"
                 />
