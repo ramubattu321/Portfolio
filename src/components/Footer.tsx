@@ -20,7 +20,7 @@ export default function Footer() {
             <div className="flex gap-2">
               {[
                 { href: 'https://www.linkedin.com/in/ramu-battu-01a9a336a/', icon: Linkedin },
-                { href: 'mailto:ramubattu966@gmail.com', icon: Mail },
+                { href: 'mailto:ramubattu999@gmail.com', icon: Mail },
                 { href: 'https://github.com/ramubattu321', icon: Github },
               ].map(({ href, icon: Icon }, i) => (
                 <motion.a
