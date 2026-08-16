@@ -20,68 +20,40 @@ function AnimatedSection({ children, className = '', delay = 0 }: { children: Re
 
 const projects = [
   {
-    title: 'E-Commerce Intelligence Platform',
-    description: 'Architected AWS data lake (S3 + Glue + Athena) on 100K+ e-commerce orders. Gradient Boosting won at R\u00B2=0.89. K-Means segmentation identified 10x spend gap. Confirmed +15% CVR lift from A/B test.',
-    tags: ['AWS', 'Python', 'Scikit-learn', 'A/B Testing'],
-    url: 'https://github.com/ramubattu321/Ecommerce-AWS-Intelligence',
-    featured: true,
-    gradient: 'from-teal-500 to-emerald-500',
-  },
-  {
-    title: 'Applied AI & ML Research',
-    description: 'ACTD fine-tuning across 4 LLM architectures outperformed iterative RAG. Built FAISS/HNSW vector databases. Presented at California Central Valley Research Symposium.',
-    tags: ['PyTorch', 'RAG', 'FAISS', 'BERT', 'LLM'],
+    title: 'AI/ML Solution Evaluation & Research Analysis',
+    description: 'Led comparative analysis of fine-tuning across 4 LLM architectures vs iterative RAG. Built FAISS/HNSW vector databases. Benchmarked Word2Vec, GloVe, BERT across 5 datasets. Evaluated 2-layer LSTM (perplexity 30). Presented at California Central Valley Research Symposium (2026); accepted for publication with CRC Press.',
+    tags: ['LLM', 'RAG', 'FAISS', 'BERT', 'NLP'],
     url: 'https://github.com/ramubattu321/Machine-Learning-Practice-using-python',
     featured: true,
     gradient: 'from-blue-500 to-cyan-500',
   },
   {
-    title: 'Financial Data ETL Pipeline',
-    description: 'Python-based ETL workflow extracting and transforming semi-structured XML financial data.',
-    tags: ['Python', 'ETL', 'XML', 'Pipeline'],
+    title: 'E-Commerce Analytics & Requirements Platform',
+    description: 'Defined reporting and analytics requirements for an e-commerce data platform. Partnered on AWS data lake (S3 + Glue + Athena) covering 100K+ orders. Gradient Boosting selected (R\u00B2=0.89). K-Means segmentation identified 10x spend gap. Validated +15% CVR lift via A/B testing (p<0.05). Delivered Flask REST API (3 endpoints).',
+    tags: ['AWS', 'Python', 'A/B Testing', 'SQL', 'Requirements'],
+    url: 'https://github.com/ramubattu321/Ecommerce-AWS-Intelligence',
+    featured: true,
+    gradient: 'from-teal-500 to-emerald-500',
+  },
+  {
+    title: 'Financial Reporting & Data Requirements Analysis',
+    description: 'Defined data requirements and designed a 3-table schema supporting financial reporting across $250M+ in ERP records. Built automated validation (null checks, anomaly detection via 1.5x average CTE thresholds). Delivered SQL analytics for P&L rollup, quarterly aggregation, and annual scorecard reporting.',
+    tags: ['SQL', 'Requirements', 'Data Quality', 'Reporting'],
     url: 'https://github.com/ramubattu321/financial-data-analysis',
     featured: false,
   },
   {
-    title: 'HR Analytics Dashboard',
-    description: 'Interactive Power BI dashboard analyzing employee attrition and retention patterns.',
-    tags: ['Power BI', 'DAX', 'Power Query'],
+    title: 'HR Analytics Requirements & Dashboard Delivery',
+    description: 'Gathered reporting requirements from HR and people ops stakeholders. Delivered end-to-end analytics dashboard tracking headcount, attrition, compensation distribution, and workforce KPIs \u2014 supporting workforce planning and data-driven HR decisions.',
+    tags: ['Power BI', 'Requirements', 'KPIs', 'Dashboarding'],
     url: 'https://github.com/ramubattu321/HR-Analytics-Dash-Board--Power-BI',
     featured: false,
   },
   {
-    title: 'Vrinda Store Sales Dashboard',
-    description: 'Interactive Excel dashboard with Pivot Tables and regional performance analysis.',
-    tags: ['Excel', 'Pivot Tables', 'Viz'],
-    url: 'https://github.com/ramubattu321/Vrinda-Store-Sales-Dashboard-Business-Insights',
-    featured: false,
-  },
-  {
-    title: 'A/B Testing Analysis',
-    description: 'Marketing campaign analysis with funnel metrics including CTR and conversion rate.',
-    tags: ['SQL', 'Python', 'Statistics'],
+    title: 'Marketing Campaign Requirements & Performance Analysis',
+    description: 'Partnered on analysis requirements to evaluate marketing campaign performance via A/B testing. Defined and calculated funnel metrics (CTR, add-to-cart rate, conversion rate, revenue per user) in SQL. Segmented by device and region. Applied statistical hypothesis testing in Python for go/no-go recommendations.',
+    tags: ['SQL', 'Python', 'A/B Testing', 'Statistics'],
     url: 'https://github.com/ramubattu321/AB-Test-Case-Study',
-    featured: false,
-  },
-  {
-    title: 'IEEE Hackathon Dashboard',
-    description: 'E-commerce sales dashboard analyzing performance, profit trends, and returns.',
-    tags: ['Excel', 'Pivot Tables', 'Viz'],
-    url: 'https://github.com/ramubattu321/IEEE-Hackathon-2023',
-    featured: false,
-  },
-  {
-    title: 'Manufacturing Process & SPC',
-    description: 'Manufacturing process monitoring with 3-sigma control charts for anomaly detection.',
-    tags: ['Python', 'Pandas', 'SPC'],
-    url: 'https://github.com/ramubattu321/manufacturing-process-analysis-eda',
-    featured: false,
-  },
-  {
-    title: 'Hotel Booking Data Wrangling',
-    description: 'Semi-structured hotel booking data cleaning and platform-level booking analysis.',
-    tags: ['Python', 'Pandas', 'EDA'],
-    url: 'https://github.com/ramubattu321/Hotel-Booking-Data-Wrangling-Platform-Analysis',
     featured: false,
   },
 ];
@@ -191,7 +163,7 @@ export default function Portfolio() {
               </h2>
             </div>
             <p className="text-gray-400 max-w-sm text-[14px] leading-relaxed">
-              Data science and analytics projects spanning ML, ETL pipelines, dashboards, and research.
+              Business analysis projects spanning requirements definition, data validation, dashboarding, and research.
             </p>
           </div>
         </AnimatedSection>
