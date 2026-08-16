@@ -130,7 +130,7 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.3 }}
               className="text-[17px] text-gray-500 leading-[1.7] mb-10 max-w-lg"
             >
-              4+ years turning complex datasets into decision-ready insights through BI, data engineering, and analytics. Published researcher @ CRC Press.
+              4+ years turning ambiguous business problems into clear requirements, actionable dashboards, and confident decisions. Published researcher @ CRC Press.
             </motion.p>
 
             <motion.div
