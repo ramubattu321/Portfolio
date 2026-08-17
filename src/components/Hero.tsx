@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Linkedin, Mail, Github, ArrowDown, Sparkles } from 'lucide-react';
 
-const roles = ['Data Analyst', 'Business Intelligence', 'Data Engineer', 'Analytics Engineer'];
+const roles = ['Business Analyst', 'Data Analyst', 'BI Analyst', 'Reporting Analyst'];
 
 export default function Hero() {
   const [roleIdx, setRoleIdx] = useState(0);

@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { BarChart3, LayoutGrid as Layout, TrendingUp, Database, TestTube, FileSpreadsheet } from 'lucide-react';
+import { BarChart3, LayoutGrid as Layout, TrendingUp, ClipboardList, TestTube, FileSpreadsheet } from 'lucide-react';
 
 function AnimatedSection({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   const ref = useRef(null);
@@ -24,7 +24,7 @@ const services = [
   { icon: FileSpreadsheet, title: 'Financial Reporting & Forecasting', description: 'Deliver accurate financial reports and predictive models to support strategic planning and budgeting.', gradient: 'from-amber-500 to-orange-500' },
   { icon: TrendingUp, title: 'Business Intelligence & KPIs', description: 'Create compelling visualizations of key performance indicators to drive data-driven decisions.', gradient: 'from-emerald-500 to-green-500' },
   { icon: TestTube, title: 'A/B Testing & Optimization', description: 'Design and analyze experiments to optimize user experience and improve conversion rates.', gradient: 'from-rose-500 to-pink-500' },
-  { icon: Database, title: 'Database Management & ETL', description: 'Manage SQL databases and implement efficient ETL processes for data integration and quality.', gradient: 'from-sky-500 to-blue-500' },
+  { icon: ClipboardList, title: 'Requirements Elicitation & BRD/FRD', description: 'Gather, document, and trace business requirements from stakeholder interviews into clear user stories, acceptance criteria, and functional specs.', gradient: 'from-sky-500 to-blue-500' },
 ];
 
 export default function Services() {

@@ -15,7 +15,7 @@ export default function Footer() {
               RB<span className="text-teal-400">.</span>
             </h3>
             <p className="text-gray-400 text-[13px] leading-relaxed mb-5">
-              Data Scientist | Published Researcher @ CRC Press | Python, SQL, AWS, LLM/RAG | MS Data Analytics @ CSU Fresno
+              Business Analyst | Published Researcher @ CRC Press | SQL, Power BI, Tableau, Jira | MS Industrial Technology @ CSU Fresno
             </p>
             <div className="flex gap-2">
               {[
@@ -56,12 +56,12 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-white text-[13px] mb-4">Services</h4>
             <ul className="space-y-2.5 text-gray-400 text-[13px]">
-              <li>Data Analysis</li>
-              <li>Business Intelligence</li>
+              <li>Requirements Elicitation</li>
               <li>Dashboard Development</li>
               <li>Financial Reporting</li>
-              <li>A/B Testing</li>
-              <li>Machine Learning</li>
+              <li>Process Mapping</li>
+              <li>UAT Coordination</li>
+              <li>Stakeholder Collaboration</li>
             </ul>
           </div>
         </div>
