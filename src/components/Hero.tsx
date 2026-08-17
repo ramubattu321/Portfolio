@@ -1,8 +1,30 @@
-import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { useEffect, useState, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { Linkedin, Mail, Github, ArrowDown, Sparkles } from 'lucide-react';
+import { useCountUp } from '../hooks/useAnimations';
 
 const roles = ['Business Analyst', 'Data Analyst', 'BI Analyst', 'Reporting Analyst'];
+
+function AnimatedStat({ value, label, suffix = '', delay }: { value: number; label: string; suffix?: string; delay: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: '-40px' });
+  const count = useCountUp(value, 1800, inView);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 15 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ delay }}
+      className="text-center group cursor-default"
+    >
+      <div className="font-display text-3xl md:text-4xl font-extrabold bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent mb-1 group-hover:from-teal-400 group-hover:to-emerald-400 transition-all duration-300">
+        {count}{suffix}
+      </div>
+      <div className="text-[13px] text-gray-500 font-medium">{label}</div>
+    </motion.div>
+  );
+}
 
 export default function Hero() {
   const [roleIdx, setRoleIdx] = useState(0);
@@ -142,21 +164,26 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.4 }}
               className="flex flex-wrap gap-3 mb-10"
             >
-              <button
+              <motion.button
                 onClick={() => scrollTo('contact')}
-                className="group relative px-7 py-3.5 bg-white hover:bg-gray-100 text-gray-900 rounded-full font-semibold text-[15px] transition-all hover:scale-[1.03] active:scale-[0.97] shadow-[0_4px_25px_-4px_rgba(255,255,255,0.2)] overflow-hidden"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className="group relative px-7 py-3.5 bg-white hover:bg-gray-100 text-gray-900 rounded-full font-semibold text-[15px] transition-colors shadow-[0_4px_25px_-4px_rgba(255,255,255,0.2)] overflow-hidden"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   <Sparkles size={16} className="group-hover:rotate-12 transition-transform" />
                   Contact Me
                 </span>
-              </button>
-              <button
+                <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </motion.button>
+              <motion.button
                 onClick={() => scrollTo('portfolio')}
-                className="px-7 py-3.5 text-white rounded-full font-semibold text-[15px] transition-all hover:scale-[1.03] active:scale-[0.97] border border-white/15 hover:border-teal-400/40 hover:text-teal-400 hover:bg-teal-500/5 hover:shadow-[0_4px_20px_rgba(20,184,166,0.15)]"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className="group px-7 py-3.5 text-white rounded-full font-semibold text-[15px] transition-colors border border-white/15 hover:border-teal-400/40 hover:text-teal-400 hover:bg-teal-500/5"
               >
                 View Projects
-              </button>
+              </motion.button>
             </motion.div>
 
             <motion.div
@@ -192,23 +219,10 @@ export default function Hero() {
           transition={{ delay: 0.9 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-28 pt-12 border-t border-white/10"
         >
-          {[
-            { value: '4+', label: 'Years Experience' },
-            { value: '$250M+', label: 'Data Processed' },
-            { value: '2', label: 'CRC Press Publications' },
-            { value: '3', label: 'Research Presentations' },
-          ].map((stat, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1 + i * 0.1 }}
-              className="text-center group"
-            >
-              <div className="font-display text-3xl md:text-4xl font-extrabold bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent mb-1 group-hover:from-teal-400 group-hover:to-emerald-400 transition-all duration-300">{stat.value}</div>
-              <div className="text-[13px] text-gray-500 font-medium">{stat.label}</div>
-            </motion.div>
-          ))}
+          <AnimatedStat value={4} suffix="+" label="Years Experience" delay={0.1} />
+          <AnimatedStat value={250} suffix="M+" label="Data Processed" delay={0.2} />
+          <AnimatedStat value={2} label="CRC Press Publications" delay={0.3} />
+          <AnimatedStat value={3} label="Research Presentations" delay={0.4} />
         </motion.div>
       </div>
 

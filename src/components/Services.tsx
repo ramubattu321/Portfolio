@@ -41,11 +41,17 @@ export default function Services() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {services.map((service, i) => {
             const Icon = service.icon;
+            const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
+              const rect = e.currentTarget.getBoundingClientRect();
+              e.currentTarget.style.setProperty('--mx', `${e.clientX - rect.left}px`);
+              e.currentTarget.style.setProperty('--my', `${e.clientY - rect.top}px`);
+            };
             return (
               <AnimatedSection key={i} delay={i * 0.06}>
                 <motion.div
                   whileHover={{ y: -4 }}
-                  className="group h-full rounded-2xl p-7 bg-white/[0.03] border border-white/10 hover:shadow-[0_12px_40px_rgba(20,184,166,0.1)] hover:border-white/20 transition-all duration-300 relative overflow-hidden"
+                  onMouseMove={onMove}
+                  className="spotlight-card group h-full rounded-2xl p-7 bg-white/[0.03] border border-white/10 hover:shadow-[0_12px_40px_rgba(20,184,166,0.1)] hover:border-white/20 transition-all duration-300 relative overflow-hidden"
                 >
                   <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl ${service.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-full -translate-y-1/3 translate-x-1/3`} />
 

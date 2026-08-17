@@ -16,10 +16,23 @@ const navItems = [
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', onScroll);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 50);
+
+      const sections = navItems.map(item => document.getElementById(item.id)).filter(Boolean);
+      const scrollPos = window.scrollY + 120;
+      for (let i = sections.length - 1; i >= 0; i--) {
+        if (sections[i]!.offsetTop <= scrollPos) {
+          setActiveSection(navItems[i].id);
+          break;
+        }
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
@@ -50,9 +63,19 @@ export default function Header() {
               <button
                 key={item.id}
                 onClick={() => scrollTo(item.id)}
-                className="px-3.5 py-2 text-[13px] font-medium text-gray-400 hover:text-white rounded-lg hover:bg-white/5 transition-all"
+                className={`relative px-3.5 py-2 text-[13px] font-medium rounded-lg transition-all ${
+                  activeSection === item.id
+                    ? 'text-white bg-white/5'
+                    : 'text-gray-400 hover:text-white hover:bg-white/5'
+                }`}
               >
                 {item.label}
+                {activeSection === item.id && (
+                  <motion.span
+                    layoutId="navIndicator"
+                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-teal-400 shadow-[0_0_8px_rgba(20,184,166,0.6)]"
+                  />
+                )}
               </button>
             ))}
           </nav>
@@ -80,7 +103,11 @@ export default function Header() {
                 <button
                   key={item.id}
                   onClick={() => scrollTo(item.id)}
-                  className="text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-all font-medium text-[15px]"
+                  className={`text-left px-4 py-3 rounded-xl transition-all font-medium text-[15px] ${
+                    activeSection === item.id
+                      ? 'text-teal-400 bg-teal-500/10'
+                      : 'text-gray-300 hover:text-white hover:bg-white/5'
+                  }`}
                 >
                   {item.label}
                 </button>

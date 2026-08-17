@@ -95,7 +95,12 @@ export default function Research() {
             <AnimatedSection key={i} delay={i * 0.1}>
               <motion.div
                 whileHover={{ y: -4 }}
-                className="group h-full bg-white/[0.03] backdrop-blur-sm rounded-2xl p-7 border border-white/10 shadow-[0_1px_3px_rgba(0,0,0,0.2)] hover:shadow-[0_16px_50px_rgba(59,130,246,0.1)] hover:border-blue-500/20 transition-all duration-400 flex flex-col"
+                onMouseMove={(e) => {
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  e.currentTarget.style.setProperty('--mx', `${e.clientX - rect.left}px`);
+                  e.currentTarget.style.setProperty('--my', `${e.clientY - rect.top}px`);
+                }}
+                className="spotlight-card group h-full bg-white/[0.03] backdrop-blur-sm rounded-2xl p-7 border border-white/10 shadow-[0_1px_3px_rgba(0,0,0,0.2)] hover:shadow-[0_16px_50px_rgba(59,130,246,0.1)] hover:border-blue-500/20 transition-all duration-400 flex flex-col"
               >
                 <div className="flex items-start justify-between gap-3 mb-5">
                   <div className="flex items-center gap-2">

@@ -53,7 +53,14 @@ export default function Skills() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {technicalSkills.map((cat, i) => (
               <AnimatedSection key={i} delay={i * 0.06}>
-                <div className={`group h-full rounded-2xl p-6 bg-gradient-to-br ${cat.gradient} border border-white/10 ${cat.borderColor} hover:shadow-[0_10px_40px_rgba(20,184,166,0.08)] hover:-translate-y-0.5 transition-all duration-300`}>
+                <div
+                  onMouseMove={(e) => {
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    e.currentTarget.style.setProperty('--mx', `${e.clientX - rect.left}px`);
+                    e.currentTarget.style.setProperty('--my', `${e.clientY - rect.top}px`);
+                  }}
+                  className={`spotlight-card group h-full rounded-2xl p-6 bg-gradient-to-br ${cat.gradient} border border-white/10 ${cat.borderColor} hover:shadow-[0_10px_40px_rgba(20,184,166,0.08)] hover:-translate-y-0.5 transition-all duration-300`}
+                >
                   <h4 className="font-display font-bold text-white text-[15px] mb-4">{cat.category}</h4>
                   <div className="flex flex-wrap gap-1.5">
                     {cat.skills.map((skill, j) => (

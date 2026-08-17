@@ -59,12 +59,19 @@ const projects = [
 ];
 
 function FeaturedCard({ project, index }: { project: typeof projects[0]; index: number }) {
+  const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    e.currentTarget.style.setProperty('--mx', `${e.clientX - rect.left}px`);
+    e.currentTarget.style.setProperty('--my', `${e.clientY - rect.top}px`);
+  };
+
   return (
     <AnimatedSection delay={index * 0.1}>
       <a href={project.url} target="_blank" rel="noopener noreferrer" className="group block h-full">
         <motion.div
           whileHover={{ y: -6 }}
-          className="h-full rounded-2xl bg-white/[0.03] border border-white/10 p-8 md:p-9 transition-all duration-300 hover:shadow-[0_20px_60px_rgba(20,184,166,0.1)] hover:border-white/20 relative overflow-hidden"
+          onMouseMove={onMove}
+          className="spotlight-card h-full rounded-2xl bg-white/[0.03] border border-white/10 p-8 md:p-9 transition-all duration-300 hover:shadow-[0_20px_60px_rgba(20,184,166,0.1)] hover:border-white/20 relative overflow-hidden"
         >
           <div className={`absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl ${project.gradient} opacity-[0.05] rounded-full -translate-y-1/3 translate-x-1/3 group-hover:opacity-[0.12] group-hover:scale-150 transition-all duration-700`} />
           <div className={`absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr ${project.gradient} opacity-0 group-hover:opacity-[0.06] rounded-full translate-y-1/2 -translate-x-1/4 transition-all duration-700`} />
