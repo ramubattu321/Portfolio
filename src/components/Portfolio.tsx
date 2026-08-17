@@ -64,10 +64,10 @@ function FeaturedCard({ project, index }: { project: typeof projects[0]; index: 
       <a href={project.url} target="_blank" rel="noopener noreferrer" className="group block h-full">
         <motion.div
           whileHover={{ y: -6 }}
-          className="h-full rounded-2xl bg-white border border-gray-200/60 p-8 md:p-9 transition-all duration-300 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] hover:border-gray-200 relative overflow-hidden"
+          className="h-full rounded-2xl bg-white/[0.03] border border-white/10 p-8 md:p-9 transition-all duration-300 hover:shadow-[0_20px_60px_rgba(20,184,166,0.1)] hover:border-white/20 relative overflow-hidden"
         >
-          <div className={`absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl ${project.gradient} opacity-[0.04] rounded-full -translate-y-1/3 translate-x-1/3 group-hover:opacity-[0.08] group-hover:scale-150 transition-all duration-700`} />
-          <div className={`absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr ${project.gradient} opacity-0 group-hover:opacity-[0.04] rounded-full translate-y-1/2 -translate-x-1/4 transition-all duration-700`} />
+          <div className={`absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl ${project.gradient} opacity-[0.05] rounded-full -translate-y-1/3 translate-x-1/3 group-hover:opacity-[0.12] group-hover:scale-150 transition-all duration-700`} />
+          <div className={`absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr ${project.gradient} opacity-0 group-hover:opacity-[0.06] rounded-full translate-y-1/2 -translate-x-1/4 transition-all duration-700`} />
 
           <div className="relative">
             <div className="flex items-start justify-between mb-6">
@@ -75,15 +75,15 @@ function FeaturedCard({ project, index }: { project: typeof projects[0]; index: 
                 <Sparkles size={10} />
                 Featured
               </span>
-              <span className="p-2.5 rounded-xl bg-gray-50 border border-gray-200/80 text-gray-400 group-hover:text-white group-hover:bg-gray-900 group-hover:border-gray-900 transition-all duration-300 group-hover:shadow-lg">
+              <span className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-gray-500 group-hover:text-white group-hover:bg-teal-500/20 group-hover:border-teal-500/30 transition-all duration-300 group-hover:shadow-lg">
                 <ArrowUpRight size={15} />
               </span>
             </div>
 
-            <h3 className="font-display text-xl font-bold text-gray-900 mb-3 group-hover:text-teal-700 transition-colors">
+            <h3 className="font-display text-xl font-bold text-white mb-3 group-hover:text-teal-400 transition-colors">
               {project.title}
             </h3>
-            <p className="text-gray-500 leading-relaxed mb-7 text-[14px]">
+            <p className="text-gray-400 leading-relaxed mb-7 text-[14px]">
               {project.description}
             </p>
 
@@ -91,7 +91,7 @@ function FeaturedCard({ project, index }: { project: typeof projects[0]; index: 
               {project.tags.map((tag, j) => (
                 <span
                   key={j}
-                  className="px-3 py-1.5 rounded-lg bg-gray-50 text-gray-600 text-[12px] font-medium border border-gray-200/80"
+                  className="px-3 py-1.5 rounded-lg bg-white/5 text-gray-400 text-[12px] font-medium border border-white/10"
                 >
                   {tag}
                 </span>
@@ -110,17 +110,17 @@ function ProjectRow({ project, index }: { project: typeof projects[0]; index: nu
       <a href={project.url} target="_blank" rel="noopener noreferrer" className="group block">
         <motion.div
           whileHover={{ x: 4 }}
-          className="flex items-center gap-4 sm:gap-5 p-4 sm:p-5 rounded-xl bg-white border border-gray-200/60 hover:border-teal-200 hover:shadow-[0_4px_20px_rgba(20,184,166,0.06)] transition-all duration-300"
+          className="flex items-center gap-4 sm:gap-5 p-4 sm:p-5 rounded-xl bg-white/[0.03] border border-white/10 hover:border-teal-500/30 hover:shadow-[0_4px_20px_rgba(20,184,166,0.08)] transition-all duration-300"
         >
-          <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gray-50 border border-gray-200/80 flex items-center justify-center group-hover:bg-teal-50 group-hover:border-teal-100 transition-colors">
-            <Github size={16} className="text-gray-400 group-hover:text-teal-600 transition-colors" />
+          <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-teal-500/10 group-hover:border-teal-500/20 transition-colors">
+            <Github size={16} className="text-gray-500 group-hover:text-teal-400 transition-colors" />
           </div>
 
           <div className="flex-1 min-w-0">
-            <h4 className="text-gray-900 font-semibold text-[14px] group-hover:text-teal-700 transition-colors truncate">
+            <h4 className="text-white font-semibold text-[14px] group-hover:text-teal-400 transition-colors truncate">
               {project.title}
             </h4>
-            <p className="text-gray-400 text-[13px] mt-0.5 hidden sm:block truncate">
+            <p className="text-gray-500 text-[13px] mt-0.5 hidden sm:block truncate">
               {project.description}
             </p>
           </div>
@@ -129,14 +129,14 @@ function ProjectRow({ project, index }: { project: typeof projects[0]; index: nu
             {project.tags.slice(0, 3).map((tag, j) => (
               <span
                 key={j}
-                className="px-2.5 py-1 rounded-md bg-gray-50 text-gray-500 text-[11px] font-medium border border-gray-100"
+                className="px-2.5 py-1 rounded-md bg-white/5 text-gray-400 text-[11px] font-medium border border-white/10"
               >
                 {tag}
               </span>
             ))}
           </div>
 
-          <span className="flex-shrink-0 p-2 rounded-lg text-gray-300 group-hover:text-teal-500 transition-colors">
+          <span className="flex-shrink-0 p-2 rounded-lg text-gray-600 group-hover:text-teal-400 transition-colors">
             <ExternalLink size={15} />
           </span>
         </motion.div>
@@ -150,19 +150,19 @@ export default function Portfolio() {
   const others = projects.filter(p => !p.featured);
 
   return (
-    <section id="portfolio" className="py-28 bg-gray-50/50 relative overflow-hidden noise-overlay">
-      <div className="absolute top-1/4 left-0 w-[300px] h-[300px] bg-teal-50/40 rounded-full blur-[80px]" />
+    <section id="portfolio" className="py-28 bg-zinc-950 relative overflow-hidden noise-overlay">
+      <div className="absolute top-1/4 left-0 w-[300px] h-[300px] bg-teal-500/8 rounded-full blur-[100px]" />
 
       <div className="relative max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
         <AnimatedSection className="mb-16">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
             <div>
-              <p className="text-[13px] font-semibold text-teal-600 uppercase tracking-wider mb-3">Projects</p>
-              <h2 className="font-display text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
+              <p className="text-[13px] font-semibold text-teal-400 uppercase tracking-wider mb-3">Projects</p>
+              <h2 className="font-display text-4xl md:text-5xl font-extrabold text-white tracking-tight">
                 Wanna see<br />my work?
               </h2>
             </div>
-            <p className="text-gray-400 max-w-sm text-[14px] leading-relaxed">
+            <p className="text-gray-500 max-w-sm text-[14px] leading-relaxed">
               Business analysis projects spanning requirements definition, data validation, dashboarding, and research.
             </p>
           </div>
@@ -181,9 +181,9 @@ export default function Portfolio() {
         </div>
 
         <AnimatedSection delay={0.15} className="mt-16">
-          <div className="rounded-2xl bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8 shadow-[0_20px_60px_rgba(0,0,0,0.15)] relative overflow-hidden">
+          <div className="rounded-2xl bg-gradient-to-br from-white/[0.06] via-white/[0.04] to-white/[0.02] p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8 shadow-[0_20px_60px_rgba(0,0,0,0.3)] relative overflow-hidden border border-white/10">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(20,184,166,0.15),transparent_60%)]" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-teal-500/5 rounded-full blur-[80px]" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-teal-500/10 rounded-full blur-[80px]" />
 
             <div className="relative">
               <h3 className="font-display text-2xl md:text-3xl font-bold text-white mb-2">

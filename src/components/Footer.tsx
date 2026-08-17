@@ -5,8 +5,8 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(20,184,166,0.05),transparent_50%)]" />
+    <footer className="bg-zinc-950 relative overflow-hidden border-t border-white/10">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(20,184,166,0.08),transparent_50%)]" />
 
       <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
@@ -29,7 +29,7 @@ export default function Footer() {
                   target={href.startsWith('mailto') ? undefined : '_blank'}
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
-                  className="w-9 h-9 rounded-full bg-gray-800 border border-gray-700/60 hover:border-teal-500/40 hover:bg-gray-800 flex items-center justify-center text-gray-400 hover:text-teal-400 transition-all"
+                  className="w-9 h-9 rounded-full bg-white/5 border border-white/10 hover:border-teal-500/40 hover:bg-teal-500/10 flex items-center justify-center text-gray-400 hover:text-teal-400 transition-all"
                 >
                   <Icon size={15} />
                 </motion.a>
@@ -66,14 +66,14 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-gray-800/80 gap-4">
+        <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-white/10 gap-4">
           <p className="text-gray-500 text-[13px]">
             Ramu Battu {currentYear}. All rights reserved.
           </p>
           <motion.button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             whileHover={{ scale: 1.1, y: -3 }}
-            className="p-2.5 rounded-full bg-gray-800 border border-gray-700/60 hover:border-teal-500/40 text-gray-400 hover:text-teal-400 transition-all"
+            className="p-2.5 rounded-full bg-white/5 border border-white/10 hover:border-teal-500/40 text-gray-400 hover:text-teal-400 transition-all"
           >
             <ArrowUp size={16} />
           </motion.button>

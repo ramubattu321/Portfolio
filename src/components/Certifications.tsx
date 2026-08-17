@@ -77,20 +77,20 @@ export default function Certifications() {
   const [lightbox, setLightbox] = useState<string | null>(null);
 
   return (
-    <section id="certifications" className="py-28 bg-gray-50/50 relative overflow-hidden noise-overlay">
-      <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-blue-50/30 rounded-full blur-[100px] translate-x-1/3" />
+    <section id="certifications" className="py-28 bg-zinc-950 relative overflow-hidden noise-overlay">
+      <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-blue-500/8 rounded-full blur-[120px] translate-x-1/3" />
 
       <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <AnimatedSection className="mb-16">
-          <p className="text-[13px] font-semibold text-teal-600 uppercase tracking-wider mb-3">Credentials</p>
-          <h2 className="font-display text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">Certifications</h2>
+          <p className="text-[13px] font-semibold text-teal-400 uppercase tracking-wider mb-3">Credentials</p>
+          <h2 className="font-display text-4xl md:text-5xl font-extrabold text-white tracking-tight">Certifications</h2>
         </AnimatedSection>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           <AnimatedSection delay={0}>
             <motion.div
               whileHover={{ y: -4 }}
-              className="group h-full rounded-2xl border border-gray-200/60 bg-white overflow-hidden hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] hover:border-gray-200 transition-all duration-300"
+              className="group h-full rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden hover:shadow-[0_12px_40px_rgba(20,184,166,0.1)] hover:border-white/20 transition-all duration-300"
             >
               <div className="relative">
                 <div className="relative aspect-[1.414/1] bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 flex items-center justify-center overflow-hidden p-6">
@@ -113,28 +113,28 @@ export default function Certifications() {
                   <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500" />
                 </div>
 
-                <div className="absolute top-3 left-3 bg-white px-2.5 py-1 rounded-lg shadow-md">
-                  <span className="text-gray-900 text-[10px] font-bold tracking-tight">GA4</span>
+                <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-sm px-2.5 py-1 rounded-lg shadow-md border border-white/10">
+                  <span className="text-white text-[10px] font-bold tracking-tight">GA4</span>
                 </div>
 
-                <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/90 backdrop-blur-sm border border-gray-200/60 shadow-sm">
-                  <CheckCircle2 className="text-emerald-500" size={11} />
-                  <span className="text-emerald-600 text-[10px] font-bold">VERIFIED</span>
+                <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-500/15 backdrop-blur-sm border border-emerald-500/30 shadow-sm">
+                  <CheckCircle2 className="text-emerald-400" size={11} />
+                  <span className="text-emerald-400 text-[10px] font-bold">VERIFIED</span>
                 </div>
               </div>
 
               <div className="p-5">
-                <p className="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-1.5">{ga4Cert.platform}</p>
-                <h3 className="font-semibold text-gray-900 text-[14px] leading-snug mb-2 group-hover:text-teal-700 transition-colors">
+                <p className="text-[11px] font-semibold text-gray-500 uppercase tracking-wider mb-1.5">{ga4Cert.platform}</p>
+                <h3 className="font-semibold text-white text-[14px] leading-snug mb-2 group-hover:text-teal-400 transition-colors">
                   {ga4Cert.title}
                 </h3>
-                <p className="text-gray-400 text-[12px] mb-4">Issued by {ga4Cert.issuer}</p>
+                <p className="text-gray-500 text-[12px] mb-4">Issued by {ga4Cert.issuer}</p>
 
                 <a
                   href={ga4Cert.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg text-[12px] font-medium text-gray-600 bg-gray-50 border border-gray-200/80 hover:bg-teal-50 hover:text-teal-700 hover:border-teal-200 transition-all"
+                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg text-[12px] font-medium text-gray-300 bg-white/5 border border-white/10 hover:bg-teal-500/10 hover:text-teal-400 hover:border-teal-500/30 transition-all"
                 >
                   View Certificate <ExternalLink size={11} />
                 </a>
@@ -146,7 +146,7 @@ export default function Certifications() {
             <AnimatedSection key={i} delay={(i + 1) * 0.06}>
               <motion.div
                 whileHover={{ y: -4 }}
-                className="group h-full rounded-2xl border border-gray-200/60 bg-white overflow-hidden hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] hover:border-gray-200 transition-all duration-300"
+                className="group h-full rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden hover:shadow-[0_12px_40px_rgba(20,184,166,0.1)] hover:border-white/20 transition-all duration-300"
               >
                 <div className="relative">
                   <div
@@ -156,12 +156,12 @@ export default function Certifications() {
                     <img
                       src={cert.image}
                       alt={cert.title}
-                      className="w-full h-auto object-contain bg-gray-50 group-hover:scale-[1.02] transition-transform duration-500"
+                      className="w-full h-auto object-contain bg-white/5 group-hover:scale-[1.02] transition-transform duration-500"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors flex items-center justify-center">
-                      <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg scale-75 group-hover:scale-100">
-                        <ZoomIn className="text-gray-700" size={18} />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                      <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 bg-white/10 backdrop-blur-sm rounded-full p-3 shadow-lg scale-75 group-hover:scale-100 border border-white/20">
+                        <ZoomIn className="text-white" size={18} />
                       </div>
                     </div>
                   </div>
@@ -170,24 +170,24 @@ export default function Certifications() {
                     <span className="text-white text-[10px] font-bold">{cert.logo}</span>
                   </div>
 
-                  <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/90 backdrop-blur-sm border border-gray-200/60 shadow-sm">
-                    <CheckCircle2 className="text-emerald-500" size={11} />
-                    <span className="text-emerald-600 text-[10px] font-bold">VERIFIED</span>
+                  <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-500/15 backdrop-blur-sm border border-emerald-500/30 shadow-sm">
+                    <CheckCircle2 className="text-emerald-400" size={11} />
+                    <span className="text-emerald-400 text-[10px] font-bold">VERIFIED</span>
                   </div>
                 </div>
 
                 <div className="p-5">
-                  <p className="text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-1.5">{cert.platform}</p>
-                  <h3 className="font-semibold text-gray-900 text-[14px] leading-snug mb-2 group-hover:text-teal-700 transition-colors">
+                  <p className="text-[11px] font-semibold text-gray-500 uppercase tracking-wider mb-1.5">{cert.platform}</p>
+                  <h3 className="font-semibold text-white text-[14px] leading-snug mb-2 group-hover:text-teal-400 transition-colors">
                     {cert.title}
                   </h3>
-                  <p className="text-gray-400 text-[12px] mb-4">Issued by {cert.issuer}</p>
+                  <p className="text-gray-500 text-[12px] mb-4">Issued by {cert.issuer}</p>
 
                   <a
                     href={cert.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg text-[12px] font-medium text-gray-600 bg-gray-50 border border-gray-200/80 hover:bg-teal-50 hover:text-teal-700 hover:border-teal-200 transition-all"
+                    className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg text-[12px] font-medium text-gray-300 bg-white/5 border border-white/10 hover:bg-teal-500/10 hover:text-teal-400 hover:border-teal-500/30 transition-all"
                   >
                     View Certificate <ExternalLink size={11} />
                   </a>
@@ -203,12 +203,12 @@ export default function Certifications() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4"
           onClick={() => setLightbox(null)}
         >
           <button
             onClick={() => setLightbox(null)}
-            className="absolute top-6 right-6 p-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+            className="absolute top-6 right-6 p-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors border border-white/10"
           >
             <X size={22} />
           </button>

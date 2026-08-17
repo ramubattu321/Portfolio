@@ -15,13 +15,16 @@ export default function Hero() {
   const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center bg-white overflow-hidden noise-overlay">
+    <section id="home" className="relative min-h-screen flex items-center bg-black overflow-hidden noise-overlay">
       {/* Decorative blobs */}
-      <div className="absolute top-20 right-[10%] w-[500px] h-[500px] bg-teal-100/40 rounded-full blur-[100px] animate-blob" />
-      <div className="absolute bottom-20 left-[5%] w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-[80px] animate-blob" style={{ animationDelay: '-4s' }} />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-50/30 rounded-full blur-[120px]" />
+      <div className="absolute top-20 right-[10%] w-[500px] h-[500px] bg-teal-500/10 rounded-full blur-[120px] animate-blob" />
+      <div className="absolute bottom-20 left-[5%] w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[100px] animate-blob" style={{ animationDelay: '-4s' }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/8 rounded-full blur-[140px]" />
 
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
+      {/* Grid overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
+
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-32 w-full">
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
@@ -34,50 +37,50 @@ export default function Hero() {
             <div className="relative">
               {/* Animated ring */}
               <motion.div
-                className="absolute -inset-6 rounded-[2.5rem] border-2 border-dashed border-teal-200/40"
+                className="absolute -inset-6 rounded-[2.5rem] border-2 border-dashed border-teal-500/20"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
               />
 
-              <div className="absolute -inset-3 bg-gradient-to-br from-teal-200/30 via-blue-100/20 to-emerald-100/30 rounded-[2.2rem] blur-xl" />
-              <div className="relative w-52 h-52 sm:w-60 sm:h-60 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-[2rem] overflow-hidden shadow-[0_25px_80px_-15px_rgba(0,0,0,0.12)] border-2 border-white/80">
+              <div className="absolute -inset-3 bg-gradient-to-br from-teal-500/20 via-blue-500/15 to-emerald-500/20 rounded-[2.2rem] blur-xl" />
+              <div className="relative w-52 h-52 sm:w-60 sm:h-60 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-[2rem] overflow-hidden shadow-[0_25px_80px_-15px_rgba(20,184,166,0.25)] border-2 border-white/10">
                 <img
                   src="https://i.postimg.cc/L4b1HymY/Chat-GPT-Image-Aug-14-2026-02-38-32-PM.png"
                   alt="Ramu Battu"
                   className="w-full h-full object-cover object-top"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
               </div>
 
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1 }}
-                className="absolute -bottom-4 -left-6 bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-100 px-4 py-3"
+                className="absolute -bottom-4 -left-6 bg-white/5 backdrop-blur-xl rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.3)] border border-white/10 px-4 py-3"
               >
-                <p className="text-[10px] text-gray-400 font-semibold uppercase tracking-wider">Location</p>
-                <p className="text-[13px] font-bold text-gray-900">Fresno, CA</p>
+                <p className="text-[10px] text-gray-500 font-semibold uppercase tracking-wider">Location</p>
+                <p className="text-[13px] font-bold text-white">Fresno, CA</p>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.2 }}
-                className="absolute -top-4 -right-6 bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-100 px-4 py-3"
+                className="absolute -top-4 -right-6 bg-white/5 backdrop-blur-xl rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.3)] border border-white/10 px-4 py-3"
               >
-                <p className="text-[10px] text-gray-400 font-semibold uppercase tracking-wider">Experience</p>
-                <p className="text-[13px] font-bold text-gray-900">4+ Years</p>
+                <p className="text-[10px] text-gray-500 font-semibold uppercase tracking-wider">Experience</p>
+                <p className="text-[13px] font-bold text-white">4+ Years</p>
               </motion.div>
 
               {/* Floating accent dots */}
               <motion.div
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 3, repeat: Infinity }}
-                className="absolute top-1/4 -right-10 w-3 h-3 bg-teal-400 rounded-full shadow-[0_0_20px_rgba(20,184,166,0.4)]"
+                className="absolute top-1/4 -right-10 w-3 h-3 bg-teal-400 rounded-full shadow-[0_0_20px_rgba(20,184,166,0.6)]"
               />
               <motion.div
                 animate={{ y: [0, 8, 0] }}
                 transition={{ duration: 4, repeat: Infinity, delay: 1 }}
-                className="absolute bottom-1/3 -left-8 w-2 h-2 bg-blue-400 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.4)]"
+                className="absolute bottom-1/3 -left-8 w-2 h-2 bg-blue-400 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.6)]"
               />
             </div>
           </motion.div>
@@ -87,7 +90,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200/60 text-emerald-700 text-[13px] font-medium mb-8 shadow-[0_2px_10px_rgba(16,185,129,0.08)]"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-emerald-500/10 to-teal-500/10 border border-emerald-500/20 text-emerald-400 text-[13px] font-medium mb-8 shadow-[0_2px_10px_rgba(16,185,129,0.1)]"
             >
               <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
@@ -100,7 +103,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="font-display text-5xl sm:text-6xl md:text-7xl font-extrabold text-gray-900 leading-[1.05] mb-6 tracking-tight"
+              className="font-display text-5xl sm:text-6xl md:text-7xl font-extrabold text-white leading-[1.05] mb-6 tracking-tight"
             >
               Hi, I'm a<br />
               <span className="relative inline-block min-w-[280px]">
@@ -110,12 +113,12 @@ export default function Hero() {
                   animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
                   exit={{ y: -40, opacity: 0 }}
                   transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  className="inline-block bg-gradient-to-r from-teal-600 via-teal-500 to-emerald-500 bg-clip-text text-transparent"
+                  className="inline-block bg-gradient-to-r from-teal-400 via-teal-300 to-emerald-400 bg-clip-text text-transparent"
                 >
                   Business Analyst
                 </motion.span>
                 <motion.span
-                  className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-teal-500 to-emerald-400 rounded-full"
+                  className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-teal-400 to-emerald-400 rounded-full"
                   initial={{ width: 0, opacity: 0 }}
                   animate={{ width: '80%', opacity: 1 }}
                   key={`line-${roleIdx}`}
@@ -128,7 +131,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="text-[17px] text-gray-500 leading-[1.7] mb-10 max-w-lg"
+              className="text-[17px] text-gray-400 leading-[1.7] mb-10 max-w-lg"
             >
               4+ years turning ambiguous business problems into clear requirements, actionable dashboards, and confident decisions. Published researcher @ CRC Press.
             </motion.p>
@@ -141,17 +144,16 @@ export default function Hero() {
             >
               <button
                 onClick={() => scrollTo('contact')}
-                className="group relative px-7 py-3.5 bg-gray-900 hover:bg-gray-800 text-white rounded-full font-semibold text-[15px] transition-all hover:scale-[1.03] active:scale-[0.97] shadow-[0_4px_25px_-4px_rgba(0,0,0,0.3)] overflow-hidden"
+                className="group relative px-7 py-3.5 bg-white hover:bg-gray-100 text-gray-900 rounded-full font-semibold text-[15px] transition-all hover:scale-[1.03] active:scale-[0.97] shadow-[0_4px_25px_-4px_rgba(255,255,255,0.2)] overflow-hidden"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   <Sparkles size={16} className="group-hover:rotate-12 transition-transform" />
                   Contact Me
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-teal-600 to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </button>
               <button
                 onClick={() => scrollTo('portfolio')}
-                className="px-7 py-3.5 text-gray-700 rounded-full font-semibold text-[15px] transition-all hover:scale-[1.03] active:scale-[0.97] border border-gray-200 hover:border-teal-300 hover:text-teal-700 hover:bg-teal-50/50 hover:shadow-[0_4px_20px_rgba(20,184,166,0.1)]"
+                className="px-7 py-3.5 text-white rounded-full font-semibold text-[15px] transition-all hover:scale-[1.03] active:scale-[0.97] border border-white/15 hover:border-teal-400/40 hover:text-teal-400 hover:bg-teal-500/5 hover:shadow-[0_4px_20px_rgba(20,184,166,0.15)]"
               >
                 View Projects
               </button>
@@ -175,7 +177,7 @@ export default function Hero() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.15, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="p-3 rounded-xl border border-gray-200/80 text-gray-400 hover:text-teal-600 hover:border-teal-200 hover:bg-teal-50/50 transition-colors shadow-[0_2px_8px_rgba(0,0,0,0.04)]"
+                  className="p-3 rounded-xl border border-white/10 text-gray-400 hover:text-teal-400 hover:border-teal-400/30 hover:bg-teal-500/5 transition-colors shadow-[0_2px_8px_rgba(0,0,0,0.2)]"
                 >
                   <Icon size={18} />
                 </motion.a>
@@ -188,7 +190,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-28 pt-12 border-t border-gray-100"
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-28 pt-12 border-t border-white/10"
         >
           {[
             { value: '4+', label: 'Years Experience' },
@@ -203,8 +205,8 @@ export default function Hero() {
               transition={{ delay: 1 + i * 0.1 }}
               className="text-center group"
             >
-              <div className="font-display text-3xl md:text-4xl font-extrabold bg-gradient-to-b from-gray-900 to-gray-600 bg-clip-text text-transparent mb-1 group-hover:from-teal-600 group-hover:to-emerald-600 transition-all duration-300">{stat.value}</div>
-              <div className="text-[13px] text-gray-400 font-medium">{stat.label}</div>
+              <div className="font-display text-3xl md:text-4xl font-extrabold bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent mb-1 group-hover:from-teal-400 group-hover:to-emerald-400 transition-all duration-300">{stat.value}</div>
+              <div className="text-[13px] text-gray-500 font-medium">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>
@@ -214,7 +216,7 @@ export default function Hero() {
         onClick={() => scrollTo('about')}
         animate={{ y: [0, 6, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 p-2.5 text-gray-300 hover:text-teal-500 transition-colors rounded-full border border-gray-200/50 hover:border-teal-200"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 p-2.5 text-gray-600 hover:text-teal-400 transition-colors rounded-full border border-white/10 hover:border-teal-400/30"
       >
         <ArrowDown size={18} />
       </motion.button>

@@ -20,19 +20,19 @@ function AnimatedSection({ children, className = '', delay = 0 }: { children: Re
 
 export default function Awards() {
   return (
-    <section id="awards" className="py-28 bg-white relative overflow-hidden noise-overlay">
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-amber-50/30 rounded-full blur-[100px]" />
+    <section id="awards" className="py-28 bg-black relative overflow-hidden noise-overlay">
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-amber-500/8 rounded-full blur-[120px]" />
 
       <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <AnimatedSection className="mb-16">
-          <p className="text-[13px] font-semibold text-amber-600 uppercase tracking-wider mb-3">Recognition</p>
-          <h2 className="font-display text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">Awards & Achievements</h2>
+          <p className="text-[13px] font-semibold text-amber-400 uppercase tracking-wider mb-3">Recognition</p>
+          <h2 className="font-display text-4xl md:text-5xl font-extrabold text-white tracking-tight">Awards & Achievements</h2>
         </AnimatedSection>
 
         <AnimatedSection delay={0.1} className="max-w-lg mx-auto">
           <motion.div
             whileHover={{ y: -6 }}
-            className="rounded-2xl border border-gray-200/60 bg-white overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] transition-all duration-500"
+            className="rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_60px_rgba(245,158,11,0.1)] transition-all duration-500"
           >
             <div className="h-40 bg-gradient-to-br from-amber-400 via-amber-500 to-orange-500 flex items-center justify-center relative overflow-hidden">
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(255,255,255,0.2),transparent_60%)]" />
@@ -56,15 +56,15 @@ export default function Awards() {
               </motion.div>
             </div>
             <div className="p-8">
-              <h3 className="font-display text-xl font-bold text-gray-900 mb-3">Academic Merit Scholarship</h3>
-              <p className="text-gray-500 leading-relaxed text-[15px] mb-6">
+              <h3 className="font-display text-xl font-bold text-white mb-3">Academic Merit Scholarship</h3>
+              <p className="text-gray-400 leading-relaxed text-[15px] mb-6">
                 Awarded for academic excellence in the Master's program. Recognizes outstanding academic performance and potential in graduate studies.
               </p>
               <a
                 href="https://drive.google.com/file/d/1BPrLSc-tonRDX9JczdKc20fs6vpIl6OF/view"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-semibold bg-gray-900 text-white hover:bg-amber-600 transition-all hover:scale-[1.03] active:scale-[0.97] shadow-sm"
+                className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-semibold bg-white text-gray-900 hover:bg-amber-500 hover:text-white transition-all hover:scale-[1.03] active:scale-[0.97] shadow-sm"
               >
                 View Award <ExternalLink size={13} className="group-hover:translate-x-0.5 transition-transform" />
               </a>
