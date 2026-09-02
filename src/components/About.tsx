@@ -115,7 +115,7 @@ export default function About() {
                 {
                   title: 'Business Analyst · Internship',
                   company: 'Bank of America',
-                  period: 'Jan 2026 - Aug 2026',
+                  period: 'Jan 2026 - Sept 2026',
                   type: 'Charlotte, NC · On-site',
                   primary: true,
                   bullets: [
