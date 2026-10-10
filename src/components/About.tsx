@@ -39,7 +39,7 @@ export default function About() {
                 delay: 0,
               },
               {
-                content: <>I did healthcare business analysis at <span className="font-semibold text-white">Cognizant</span>, working on clinical claims workflows, HIPAA compliance, and UAT validation. Before that, I worked in consulting at <span className="font-semibold text-white">Gautam Joshi & Co.</span>, focused on requirements gathering, stakeholder workshops, and reporting.</>,
+                content: <>At <span className="font-semibold text-white">Bank of America</span>, I worked on payments and fraud/AML requirements — writing user stories, mapping data flows, and running UAT so releases went out with fewer surprises. Before that, I did similar work in healthcare at <span className="font-semibold text-white">Cognizant</span> and in consulting at <span className="font-semibold text-white">Gautam Joshi & Co.</span>, primarily focused on requirements gathering, stakeholder workshops, and reporting.</>,
                 delay: 0.08,
               },
               {
@@ -112,6 +112,19 @@ export default function About() {
               <div className="absolute left-[11px] top-2 bottom-2 w-px bg-gradient-to-b from-teal-500/40 via-teal-500/20 to-transparent hidden md:block" />
 
               {[
+                {
+                  title: 'Business Analyst',
+                  company: 'Bank of America',
+                  period: 'Jan 2026 - Oct 2026',
+                  type: 'Charlotte, NC · On-site',
+                  primary: true,
+                  bullets: [
+                    'Analyzed payments workflows with SQL and Visio, documenting data flows, controls, and exceptions that strengthened banking compliance reviews and improved operational readiness for stakeholders.',
+                    'Refined fraud and AML requirements in Jira, aligning user stories, acceptance criteria, and risk rules to accelerate sprint planning and QA validation cycles reliably.',
+                    'Documented regulatory reporting processes in Confluence, mapping KYC data needs and reconciliation steps that enhanced traceability for audit preparation teams and release approvals consistently.',
+                    'Validated UAT scenarios and dashboards with Excel and Power BI, improving defect resolution, stakeholder sign-off, and release confidence across financial platforms during implementation cycles.',
+                  ],
+                },
                 {
                   title: 'Business Analyst · Full-time',
                   company: 'Cognizant',
